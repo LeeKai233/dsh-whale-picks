@@ -25,6 +25,10 @@ node <path-to>/dsh-whale-picks/scripts/check-plugin.mjs . --init
 - **scope.does / scope.doesNot：Unix 单功能合同，全店最有分量的两行**。does 说清它做的唯一一件事（≤3 条，理想 1 条）；doesNot 明确拒绝做什么（≥1 条）；
 - category：真实分类；capabilities.network / telemetry：按事实填（本地插件就 false）；
 - maintainers / links：真实信息。
+- v1.1 可选字段（供 dsh-appearance 外观管理器的体检使用，不填不影响门槛）：
+  - `deps`：依赖的其他鲸选插件 id（依赖缺失 → 冲突提示）；
+  - `perf.polls` / `perf.memoryEstimateMB` / `perf.gpu` / `perf.timers`：轮询周期、内存估算、是否用显存、常驻定时器数（性能检查输入）；
+  - `security.verdict` / `security.scanBy`：体检管道扫描裁决（`passed`/`review`/`unknown`）与来源；浏览器端管理器只呈现裁决，不重复扫描代码。
 
 示例（dsh-ui-attention 的实际声明）：
 

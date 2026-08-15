@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "whalepicks.json manifest v1.0",
-  "description": "The whale-picks plugin manifest. Lives at the root of a plugin repo. It is the listing contract: agents read it to build/refactor plugins, the store's check-plugin validates it, and compliance is the admission gate (one-vote veto).",
+  "title": "whalepicks.json manifest v1.1",
+  "description": "The whale-picks plugin manifest. Lives at the root of a plugin repo. It is the listing contract: agents read it to build/refactor plugins, the store's check-plugin validates it, and compliance is the admission gate (one-vote veto). v1.1 adds optional deps/perf/security fields consumed by the dsh-appearance manager's conflict/danger/performance checks; 1.0 manifests remain valid.",
   "type": "object",
   "required": [
     "schemaVersion",
@@ -22,7 +22,11 @@
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "1.0"
+      "enum": [
+        "1.0",
+        "1.1"
+      ],
+      "description": "1.0 = base manifest; 1.1 adds the optional deps/perf/security fields"
     },
     "id": {
       "type": "string",
@@ -189,6 +193,60 @@
             "type": "string"
           },
           "default": []
+        }
+      }
+    },
+    "deps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Whale-picks plugin ids this plugin requires (conflict surface for the appearance manager)"
+    },
+    "perf": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "polls": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 1000
+          },
+          "default": {},
+          "description": "Named poll cadences in milliseconds"
+        },
+        "memoryEstimateMB": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Declared steady-state memory estimate in MB"
+        },
+        "gpu": {
+          "type": "boolean",
+          "description": "Whether the plugin claims GPU/VRAM usage"
+        },
+        "timers": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of long-lived timers/interval loops"
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "verdict": {
+          "enum": [
+            "passed",
+            "review",
+            "unknown"
+          ]
+        },
+        "scanBy": {
+          "type": "string",
+          "description": "Which pipeline produced the verdict, e.g. whalepicks check-plugin"
         }
       }
     },

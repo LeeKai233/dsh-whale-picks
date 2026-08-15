@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-10-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-11-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -70,6 +70,13 @@
 
   ```sh
   dsh plugin --profile web add dsh-find-plugin
+  ```
+
+- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — 鲸选商店入口：DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、六轴雷达与体检结论，一键复制安装命令
+  <br><sub>0⭐ · MIT · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#dsh-whale-picks-store)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-whale-picks-store
   ```
 
 ### UI 与皮肤

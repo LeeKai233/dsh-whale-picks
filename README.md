@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-10-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-11-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -70,6 +70,13 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
 
   ```sh
   dsh plugin --profile web add dsh-find-plugin
+  ```
+
+- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — The whale-picks store entry: a 鲸选 section below Agent Presets in DSH settings, browsing suits and curated plugins with radars and copyable install commands
+  <br><sub>0⭐ · MIT · machine pass 2026-08-15 · [pass findings](docs/security-report.md#dsh-whale-picks-store)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-whale-picks-store
   ```
 
 ### UI & Themes

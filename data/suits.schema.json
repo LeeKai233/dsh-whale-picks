@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "whale-picks suits registry",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "suits"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "suits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/suit"
+      }
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "zh",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "suit": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "description",
+        "plugins",
+        "synergy",
+        "tier"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "description": {
+          "$ref": "#/definitions/bilingual"
+        },
+        "plugins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "description": "member plugin ids, all listed or above"
+        },
+        "synergy": {
+          "$ref": "#/definitions/bilingual",
+          "description": "why the combination is 1+1>2"
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "plugin ids this suit is mutually exclusive with"
+        },
+        "tier": {
+          "enum": [
+            "featured",
+            "listed",
+            "candidate"
+          ]
+        },
+        "radar": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "suit-level six-axis, aggregated from members"
+        }
+      }
+    }
+  }
+}

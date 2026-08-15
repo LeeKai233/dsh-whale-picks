@@ -3,6 +3,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const registry = JSON.parse(await readFile(new URL('../data/plugins.json', import.meta.url), 'utf8'));
+const suitsRegistry = JSON.parse(await readFile(new URL('../data/suits.json', import.meta.url), 'utf8'));
 
 const CATEGORY_LABEL = {
   discovery: { en: 'Discovery & Management', zh: '发现与管理' },
@@ -137,6 +138,14 @@ function body(zh) {
     t('- [Contributing](CONTRIBUTING.md) · [Roadmap](docs/roadmap.md)', '- [参与](CONTRIBUTING.md) · [路线图](docs/roadmap.md)'),
     '',
     catalog(zh),
+    '',
+    '## 🐳 Suits · 套件',
+    '',
+    ...(suitsRegistry.suits.length
+      ? suitsRegistry.suits.map((s) => '- **' + s.name[zh ? 'zh' : 'en'] + '** — ' + s.description[zh ? 'zh' : 'en'] + '（' + s.plugins.join(' + ') + '）')
+      : [zh
+        ? '暂无套件——等已收录插件攒到可以组合的数量，套件会出现在这里（组合标准见 [docs/suits.md](docs/suits.md)）。宁缺毋滥，不造假。'
+        : 'No suits yet — once enough plugins are listed to compose, suits appear here (criteria in [docs/suits.md](docs/suits.md)). 宁缺毋滥, no fake data.']),
     '',
     '## Security · 安全与体检',
     '',

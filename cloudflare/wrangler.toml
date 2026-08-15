@@ -1,0 +1,7 @@
+name = "whale-picks-api"
+main = "src/index.js"
+compatibility_date = "2026-08-15"
+
+# Free workers.dev deployment:
+#   npm run cf:deploy
+# Custom domain / route: see docs/cloudflare.md

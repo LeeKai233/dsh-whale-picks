@@ -126,6 +126,10 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   ```
 
 
+## 🐳 Suits · 套件
+
+No suits yet — once enough plugins are listed to compose, suits appear here (criteria in [docs/suits.md](docs/suits.md)). 宁缺毋滥, no fake data.
+
 ## Security · 安全与体检
 
 Every entry — including candidates — gets a machine security pass before it appears here: license file, npm publication with an anti-squatting repository-pointer check, 6-month maintenance activity, and red-flag scanning. See the full method and its limits in the [security report](docs/security-report.md).

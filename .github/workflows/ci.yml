@@ -17,6 +17,8 @@ jobs:
         run: node scripts/validate.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: smoke-test cloudflare handler
+        run: node scripts/cf-smoke.mjs
       - name: render readmes
         run: node scripts/render-readme.mjs
       - name: fail if README out of sync

@@ -27,7 +27,7 @@ export function createExampleRowStore() {
 }
 
 export function ExampleRow(props: ExampleRowComponentProps): JSX.Element {
-  const t = props.locale
+  const t = props.t
   const settings = props.useStore((s) => s.settings)
   return (
     <label style={{ display: 'flex', alignItems: 'center', gap: 8 }}>

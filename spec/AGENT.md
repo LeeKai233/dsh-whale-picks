@@ -34,6 +34,7 @@
 - ✅ bundle 层 insert 只写一次，id 全店唯一；❌ 同一个 id 再写进用户 profile 补丁（duplicate loader entry id 直接拒绝启动）
 - ✅ 浏览器 bundle 只 import 平台模块（react / cordis / dsh-client-ui-*）；❌ 把 schemastery 或任意 npm 库拖进 client bundle（客户端 purity 规则）
 - ✅ 设置/文案走 locale zh+en；❌ 硬编码中文或英文
+- ✅ 组件 props 里框架注入的翻译函数座位叫 **t**（PropsLocale<N> 注入 t，解构 props.t）；❌ 用 props.locale（undefined，渲染即崩、设置区块空白——2026-08-15 鲸选商店实踩）
 - ✅ 单一职责：功能多了拆插件；❌ 一个插件「顺便」做三件事
 - ✅ manifest 声明与事实一致；❌ network 写 false 却在代码里 fetch 外部服务（机器体检交叉验证，抓到记红旗）
 - ✅ 分数/结论要证据；❌ 编造 verifiedAgainst 或体检日期

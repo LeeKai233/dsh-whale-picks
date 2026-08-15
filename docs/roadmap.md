@@ -1,12 +1,14 @@
 # 路线图 · Roadmap
 
-## 一期（本仓库，已完成）
+## 一期（基座，已完成）
 
-- ✅ 结构化 registry（data/plugins.json + schema.json）为唯一数据源，README 由脚本渲染。
-- ✅ 亲测转正制分级：编辑精选 / 已收录 / 候选池。
-- ✅ 机器安全体检 + 公开体检报告 + 公开决定流水。
-- ✅ 四维评分 rubric + 选品宪章。
-- ✅ App Store 式提交流程（issue 表单 / PR 模板 / CI 校验）+ 每晚新鲜度巡检。
+- ✅ 插件规范与模板：spec/SPEC.md + whalepicks.schema.json + spec/AGENT.md（agent 可执行）+ templates/plugin 脚手架 + scripts/check-plugin.mjs（门槛一票否决，含 --init 合规化）。
+- ✅ 六轴雷达：真人/安全/兼容/边界与冲突/成本/活跃；compute-scores.mjs 程序化打分 + render-radar.mjs 雷达 SVG；规范符合 = 上架门槛（不进雷达图）。
+- ✅ 结构化 registry（data/plugins.json v1.1）+ suits 数据模型（data/suits.json，空数组不造假）。
+- ✅ 机器安全体检 + 公开体检报告 + 公开决定流水 + 每晚新鲜度巡检。
+- ✅ Cloudflare Workers 数据托管（cloudflare/，零依赖，/plugins.json /suits.json /radar.json /health；部署教程 docs/cloudflare.md）。
+- ✅ DSH 内置鲸选入口：dsh-whale-picks-store（settings.section，「Agent 预设」正下方；套件/插件货架 + 雷达 + 复制安装命令；本地冒烟安装通过）。
+- ✅ 两个 dogfood 插件（dsh-ui-attention 改造 + store 新建）均过规范门槛。
 
 ## 二期：商店网站（VitePress + GitHub Pages）
 

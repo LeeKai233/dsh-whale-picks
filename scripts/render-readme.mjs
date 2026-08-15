@@ -47,6 +47,7 @@ function scoreLine(p, zh) {
 function candidateLine(p, zh) {
   const parts = [p.stars + '⭐', p.license];
   parts.push(zh ? '机器体检 ' + p.security.scannedAt : 'machine pass ' + p.security.scannedAt);
+  parts.push(p.manifestCompliant === true ? (zh ? '规范门槛 ✓' : 'spec gate ✓') : (zh ? '规范门槛 ✗（待补 whalepicks.json）' : 'spec gate ✗ (whalepicks.json pending)'));
   const flags = p.security.redFlags || [];
   if (flags.length) parts.push('⚠️ ' + flags.length + ' ' + (zh ? '项待复核' : 'flag(s) pending human review'));
   parts.push('[' + (zh ? '体检发现' : 'pass findings') + '](docs/security-report.md#' + p.id + ')');

@@ -1,0 +1,27 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: validate registry
+        run: node scripts/validate.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: render readmes
+        run: node scripts/render-readme.mjs
+      - name: fail if README out of sync
+        run: |
+          if ! git diff --exit-code -- README.md README.zh.md; then
+            echo 'README files are out of sync with data/plugins.json. Run: npm run render'
+            exit 1
+          fi

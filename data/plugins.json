@@ -1,0 +1,397 @@
+{
+  "schemaVersion": "1.0",
+  "dshVersion": "0.1.0-rc.6",
+  "updatedAt": "2026-08-15",
+  "plugins": [
+    {
+      "id": "dsh-ui-attention",
+      "name": "dsh-ui-attention",
+      "repo": "LeeKai233/dsh-ui-attention",
+      "npmName": "dsh-ui-attention",
+      "install": "dsh plugin --profile web add dsh-ui-attention",
+      "tier": "featured",
+      "category": "notifications",
+      "license": "MIT",
+      "stars": 1,
+      "pushedAt": "2026-08-14T18:26:14Z",
+      "archived": false,
+      "verifiedAgainst": "0.1.0-rc.6",
+      "lastVerified": "2026-08-15",
+      "score": {
+        "experience": 5,
+        "maintenance": 4,
+        "security": 4,
+        "compatibility": 5
+      },
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "reviewed",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": "纯本地实现：WebAudio 合成提示音 + 浏览器通知 + 标题闪烁，无任何网络请求；通知权限仅在用户手势中申请。"
+      },
+      "reviewNotes": {
+        "zh": "创始人自研的提醒插件，每天在用：页面在后台时，提问、审批、回合完成都靠它推送。纯本地实现，零网络请求；浏览器通知权限只在用户手势中申请。注意：bundle 安装与手工 patch 安装二选一，绝不能同时使用（会报 duplicate loader entry id）。",
+        "en": "The founder's own attention plugin, used daily: questions, approvals and finished turns all surface while the page is backgrounded. Fully local — WebAudio beeps, browser notifications, tab-title flash, zero network calls; the notification permission is requested only on a user gesture. Note: use either the bundle install or the manual patch, never both (duplicate loader entry id)."
+      },
+      "description": {
+        "zh": "DSH Web 操作提醒：页面不在前台时，用浏览器通知、提示音、标题闪烁提醒待处理交互与回合完成",
+        "en": "Web attention alerts: browser notification, beep and tab-title flash when the DSH page is not on top (questions, approvals, finished turns)"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": "2026-08-15",
+      "reviewedBy": "LeeKai233"
+    },
+    {
+      "id": "dsh-market",
+      "name": "dshmarket",
+      "repo": "dsh-market/dsh-market",
+      "npmName": "dshmarket",
+      "install": "dsh plugin --profile web add dshmarket",
+      "tier": "candidate",
+      "category": "discovery",
+      "license": "none",
+      "stars": 93,
+      "pushedAt": "2026-08-15T02:57:59Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": false,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [
+          "仓库无 LICENSE 文件（GitHub API 返回 none；转正前需作者补齐）"
+        ],
+        "notes": null
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "装在 DSH 里的插件市场：300+ 插件浏览、搜索、一键安装/更新/卸载、主题一键切换",
+        "en": "The plugin market inside DSH: browse and search 300+ plugins, one-click install/update/uninstall, one-click theme switching"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "dsh-plugin-workshop",
+      "name": "dsh-plugin-workshop",
+      "repo": "yyyyukari/dsh-plugin-workshop",
+      "npmName": null,
+      "install": "dsh plugin --profile web add \"github:yyyyukari/dsh-plugin-workshop\"",
+      "tier": "candidate",
+      "category": "discovery",
+      "license": "MIT",
+      "stars": 17,
+      "pushedAt": "2026-08-15T01:06:48Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": false,
+        "repoPointerMatch": null,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": "package.json 声明 @dsh-external/dsh-plugin-workshop 但未发布到 npm，仅 GitHub 安装；宪章要求 listed 档必须有 npm 发布。"
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "Steam 工坊式插件浏览器：搜索、热门/最新排序、一键安装卸载，零服务器（GitHub 直连）",
+        "en": "Steam Workshop-style plugin browser: search, hot/newest sorting, one-click install and uninstall, zero server (straight to GitHub)"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "dsh-find-plugin",
+      "name": "dsh-find-plugin",
+      "repo": "awesome-dsh-plugin/dsh-find-plugin",
+      "npmName": "dsh-find-plugin",
+      "install": "dsh plugin --profile web add dsh-find-plugin",
+      "tier": "candidate",
+      "category": "discovery",
+      "license": "MIT",
+      "stars": 19,
+      "pushedAt": "2026-08-14T13:17:47Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": null
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "在会话里让 agent 帮你找插件：实时搜索 GitHub dsh-plugin topic，按 star 排序，附安装命令",
+        "en": "Find plugins inside the agent: live GitHub dsh-plugin topic search, star-ranked, with ready install commands"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "dsh-web-ui",
+      "name": "dsh-web-ui",
+      "repo": "zhu1090093659/dsh-web-ui",
+      "npmName": "@linxin666/dsh-web-ui-all",
+      "install": "dsh plugin --profile web add @linxin666/dsh-web-ui-all",
+      "tier": "candidate",
+      "category": "ui",
+      "license": "Apache-2.0",
+      "stars": 2070,
+      "pushedAt": "2026-08-15T03:48:18Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": "monorepo；官方推荐聚合包 @linxin666/dsh-web-ui-all（npm 指针正确指向本仓库），只装皮肤用 dsh-skins。"
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装",
+        "en": "Plugin and skin collection for the Web UI: task board, git graph, side panels, mobile UI — one aggregate install"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "dsh-skin",
+      "name": "dsh-skin",
+      "repo": "KinGao294/dsh-skin",
+      "npmName": "dsh-skin",
+      "install": "dsh plugin --profile web add dsh-skin",
+      "tier": "candidate",
+      "category": "ui",
+      "license": "MIT",
+      "stars": 10,
+      "pushedAt": "2026-08-13T23:40:05Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": false,
+        "pushedRecent": true,
+        "redFlags": [
+          "npm 包 dsh-skin 的 repository 指针指向 Highjobop/dsh-gadgets，与本仓库 KinGao294/dsh-skin 不符——防冒名校验失败，需人工核实（作者双账号或同名包冲突）"
+        ],
+        "notes": null
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "皮肤切换器 + 自定义壁纸：多套精选调色板、半透明壁纸与透明度控制",
+        "en": "Skin switcher + custom wallpaper: curated palettes, translucent wallpapers with opacity control"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "dsh-tianshu-tui",
+      "name": "dsh-tianshu-tui",
+      "repo": "huiliyi37/dsh-tianshu-tui",
+      "npmName": "@huiliyi37/dsh-tianshu-tui",
+      "install": "dsh plugin --profile tui add @huiliyi37/dsh-tianshu-tui",
+      "tier": "candidate",
+      "category": "terminal-desktop",
+      "license": "Apache-2.0",
+      "stars": 139,
+      "pushedAt": "2026-08-15T03:36:16Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": "tui profile 插件；也可 github:huiliyi37/dsh-tianshu-tui 安装。"
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "DSH 终端 UI（TUI）：在终端里交互式使用 DeepSeek Harness，含 harness workflow 渲染",
+        "en": "A terminal UI (TUI) for DSH: interactive DeepSeek Harness in your terminal, with harness workflow rendering"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "deepseek-harness-tui",
+      "name": "deepseek-harness-tui",
+      "repo": "openma-ai/deepseek-harness-tui",
+      "npmName": "@openma/deepseek-harness-tui",
+      "install": "dsh plugin --profile tui add @openma/deepseek-harness-tui",
+      "tier": "candidate",
+      "category": "terminal-desktop",
+      "license": "MIT",
+      "stars": 20,
+      "pushedAt": "2026-08-14T17:17:20Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": null
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "Rust/ratatui 终端客户端：直连 DSH SDK JSON-RPC，可独立运行或作为 profile bundle",
+        "en": "Rust/ratatui terminal client speaking the DSH SDK JSON-RPC directly; standalone or as a profile bundle"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "deepseek-harness-desktop",
+      "name": "deepseek-harness-desktop",
+      "repo": "anywhere-labs/deepseek-harness-desktop",
+      "npmName": null,
+      "install": null,
+      "tier": "candidate",
+      "category": "terminal-desktop",
+      "license": "MIT",
+      "stars": 2667,
+      "pushedAt": "2026-08-15T03:51:50Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": null,
+        "repoPointerMatch": null,
+        "pushedRecent": true,
+        "redFlags": [
+          "非 dsh plugin 形态（桌面应用而非 bundle），安装方式见仓库 README；本店以插件为主，此件待创始人裁定是否保留"
+        ],
+        "notes": null
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "DSH 现代化桌面端：免 Node.js 与命令行；插件市场与移动端远程控制在路线图上",
+        "en": "Modern desktop client for DSH: no Node.js or CLI required; plugin marketplace and mobile remote control on its roadmap"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "dsh-agent-teams",
+      "name": "dsh-agent-teams",
+      "repo": "NanmiCoder/dsh-agent-teams",
+      "npmName": "@nanmicoder/dsh-agent-teams",
+      "install": "dsh plugin --profile web add @nanmicoder/dsh-agent-teams",
+      "tier": "candidate",
+      "category": "agents",
+      "license": "MIT",
+      "stars": 262,
+      "pushedAt": "2026-08-14T21:06:35Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": null
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "AgentTeams 插件：多 agent 团队协作编排（角色、任务分配与回合流转）",
+        "en": "AgentTeams plugin: multi-agent team orchestration (roles, task assignment, turn routing)"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    },
+    {
+      "id": "dsh-usage-stats",
+      "name": "dsh-usage-stats",
+      "repo": "Make0209/dsh-usage-stats",
+      "npmName": "dsh-usage-stats",
+      "install": "dsh plugin --profile web add dsh-usage-stats",
+      "tier": "candidate",
+      "category": "usage",
+      "license": "MIT",
+      "stars": 8,
+      "pushedAt": "2026-08-14T15:05:17Z",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-15",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": false,
+        "pushedRecent": true,
+        "redFlags": [
+          "npm 包 dsh-usage-stats 的 repository 指针指向 lanlandeli/dsh-usage-stats，与本仓库 Make0209/dsh-usage-stats 不符——防冒名校验失败，需人工核实（作者双账号或同名包冲突）"
+        ],
+        "notes": null
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "GitHub 风格用量热力图：Token / 缓存命中 / 账户余额看板 + 工作区别名管理",
+        "en": "GitHub-style usage heatmap: token, cache-hit and account-balance dashboards plus workspace aliases"
+      },
+      "submittedAt": "2026-08-15",
+      "listedAt": null,
+      "reviewedBy": null
+    }
+  ]
+}

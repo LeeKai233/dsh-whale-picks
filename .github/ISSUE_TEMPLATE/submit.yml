@@ -1,0 +1,43 @@
+name: 提交候选插件 · Submit a plugin
+description: 推荐一件你觉得「敢装、值得装」的 DSH 插件进鲸选候选池
+title: '[候选] '
+labels: [submission]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: GitHub 仓库地址
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: input
+    id: npm
+    attributes:
+      label: npm 包名（若有）
+      placeholder: 例如 dshmarket；未发布可留空
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分类
+      options:
+        - 发现与管理
+        - UI 与皮肤
+        - 终端与桌面
+        - 多 Agent 与工作流
+        - 用量与统计
+        - 通知与提醒
+        - 其他（请在下文说明）
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么值得进店？
+      description: 它解决什么问题？你用了多久？比同类好在哪里？有什么坑？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 亲测证据（加分项）
+      description: 安装方式、dsh 版本、实测截图或日志、踩坑记录。有亲测证据可加速转正。

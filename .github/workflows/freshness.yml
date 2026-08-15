@@ -1,0 +1,39 @@
+name: freshness
+on:
+  schedule:
+    - cron: '23 17 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: freshness pass
+        run: node scripts/freshness.mjs > /tmp/attention.txt
+      - name: re-render readmes
+        run: node scripts/render-readme.mjs
+      - name: commit refresh
+        run: |
+          if ! git diff --quiet; then
+            git config user.name 'whale-picks-bot'
+            git config user.email 'actions@users.noreply.github.com'
+            git add -A
+            git commit -m 'chore(freshness): refresh stars and maintenance flags'
+            git push
+          fi
+      - name: open attention issue
+        run: |
+          if [ -s /tmp/attention.txt ]; then
+            gh issue create --title '鲸选巡检提醒' --body-file /tmp/attention.txt
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

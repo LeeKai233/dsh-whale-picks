@@ -1,0 +1,31 @@
+name: 举报 / 下架请求 · Report a problem
+description: 安全问题、红旗、停更或质量问题
+title: '[举报] '
+labels: [report]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: 条目名称或仓库
+      placeholder: 例如 dsh-skin
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 安全问题（遥测/挖矿/恶意行为/漏洞）
+        - 兼容性问题（新版本 dsh 跑不起来）
+        - 停更 / archived
+        - 质量问题（体验差/误导描述）
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 证据
+      description: 复现步骤、日志、链接、截图。有证据的举报会被优先处理并公开结论。
+    validations:
+      required: true

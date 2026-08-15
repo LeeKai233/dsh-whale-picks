@@ -1,0 +1,16 @@
+{
+  "name": "dsh-whale-picks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "鲸选 dsh-whale-picks — 敢装，值得装：有品味的 DSH 精品商店（创始人亲测 + 安全体检 + 四维评分）",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "render": "node scripts/render-readme.mjs",
+    "freshness": "node scripts/freshness.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}

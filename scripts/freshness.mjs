@@ -33,7 +33,7 @@ for (const p of registry.plugins) {
   p.pushedAt = meta.pushed_at;
   p.archived = meta.archived;
   p.security.pushedRecent = now - new Date(meta.pushed_at) < sixMonthsMs;
-  if (changed) console.log(`updated ${p.id}: stars=${p.stars} pushed=${meta.pushed_at} archived=${meta.archived}`);
+  if (changed) console.error(`updated ${p.id}: stars=${p.stars} pushed=${meta.pushed_at} archived=${meta.archived}`);
 
   if (meta.archived) attention.push(`- ${p.id} (${p.repo}): repo archived — 建议下架或移出候选池`);
   if (p.tier === "candidate") {

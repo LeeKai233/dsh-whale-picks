@@ -50,7 +50,7 @@
 ### 发现与管理
 
 - [dshmarket](https://github.com/dsh-market/dsh-market) — 装在 DSH 里的插件市场：300+ 插件浏览、搜索、一键安装/更新/卸载、主题一键切换
-  <br><sub>93⭐ · none · 机器体检 2026-08-15 · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
+  <br><sub>96⭐ · none · 机器体检 2026-08-15 · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
 
   ```sh
   dsh plugin --profile web add dshmarket
@@ -73,7 +73,7 @@
 ### UI 与皮肤
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装
-  <br><sub>2070⭐ · Apache-2.0 · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>2080⭐ · Apache-2.0 · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
@@ -96,19 +96,19 @@
   ```
 
 - [deepseek-harness-tui](https://github.com/openma-ai/deepseek-harness-tui) — Rust/ratatui 终端客户端：直连 DSH SDK JSON-RPC，可独立运行或作为 profile bundle
-  <br><sub>20⭐ · MIT · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#deepseek-harness-tui)</sub>
+  <br><sub>21⭐ · MIT · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#deepseek-harness-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @openma/deepseek-harness-tui
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — DSH 现代化桌面端：免 Node.js 与命令行；插件市场与移动端远程控制在路线图上
-  <br><sub>2667⭐ · MIT · 机器体检 2026-08-15 · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>2711⭐ · MIT · 机器体检 2026-08-15 · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### 多 Agent 与工作流
 
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams 插件：多 agent 团队协作编排（角色、任务分配与回合流转）
-  <br><sub>262⭐ · MIT · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
+  <br><sub>265⭐ · MIT · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
 
   ```sh
   dsh plugin --profile web add @nanmicoder/dsh-agent-teams

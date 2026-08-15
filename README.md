@@ -73,7 +73,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
 ### UI & Themes
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Plugin and skin collection for the Web UI: task board, git graph, side panels, mobile UI — one aggregate install
-  <br><sub>2080⭐ · Apache-2.0 · machine pass 2026-08-15 · [pass findings](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>2081⭐ · Apache-2.0 · machine pass 2026-08-15 · [pass findings](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
@@ -103,7 +103,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — Modern desktop client for DSH: no Node.js or CLI required; plugin marketplace and mobile remote control on its roadmap
-  <br><sub>2711⭐ · MIT · machine pass 2026-08-15 · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>2714⭐ · MIT · machine pass 2026-08-15 · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### Agents & Workflow
 

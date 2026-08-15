@@ -73,7 +73,7 @@
 ### UI 与皮肤
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装
-  <br><sub>2080⭐ · Apache-2.0 · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>2081⭐ · Apache-2.0 · 机器体检 2026-08-15 · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
@@ -103,7 +103,7 @@
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — DSH 现代化桌面端：免 Node.js 与命令行；插件市场与移动端远程控制在路线图上
-  <br><sub>2711⭐ · MIT · 机器体检 2026-08-15 · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>2714⭐ · MIT · 机器体检 2026-08-15 · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### 多 Agent 与工作流
 

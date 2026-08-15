@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0",
+  "id": "{{PLUGIN_ID}}",
+  "name": "{{PLUGIN_NAME}}",
+  "version": "0.1.0",
+  "description": {
+    "zh": "{{DESCRIPTION_ZH}}",
+    "en": "{{DESCRIPTION_EN}}"
+  },
+  "category": "other",
+  "keywords": [
+    "dsh",
+    "{{PLUGIN_ID}}"
+  ],
+  "scope": {
+    "does": [
+      "{{ONE_THING}}"
+    ],
+    "doesNot": [
+      "{{NON_GOAL}}"
+    ]
+  },
+  "install": {
+    "profile": "web",
+    "spec": "{{PLUGIN_NAME}}"
+  },
+  "runtime": {
+    "platforms": [
+      "web"
+    ],
+    "dsh": ">=0.1.0-rc.6 <0.2.0"
+  },
+  "patches": {
+    "bundle": "cordis.patch.yml",
+    "insertIds": [
+      "{{INSERT_ID}}"
+    ],
+    "namespaces": [
+      "{{PLUGIN_ID}}"
+    ],
+    "slots": [
+      "settings.general.item"
+    ]
+  },
+  "capabilities": {
+    "network": false,
+    "telemetry": false,
+    "permissions": []
+  },
+  "cost": {
+    "license": "MIT",
+    "paid": false,
+    "paidTiers": []
+  },
+  "links": {
+    "repo": "{{REPO_URL}}",
+    "npm": "https://www.npmjs.com/package/{{PLUGIN_NAME}}"
+  },
+  "maintainers": [
+    {
+      "name": "{{AUTHOR}}",
+      "contact": "{{CONTACT}}"
+    }
+  ]
+}

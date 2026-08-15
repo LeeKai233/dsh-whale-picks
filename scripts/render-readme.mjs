@@ -59,6 +59,9 @@ function entryBlock(p, zh) {
   if (p.tier !== 'candidate' && p.reviewNotes) {
     out += '\n  > **' + (zh ? '创始人手记' : 'Founder’s notes') + '**: ' + p.reviewNotes[zh ? 'zh' : 'en'] + '\n';
   }
+  if (p.tier !== 'candidate' && p.radar) {
+    out += '\n  ![six-axis radar](assets/radar/' + p.id + '.svg "' + p.id + ' six-axis radar")\n';
+  }
   if (p.install) {
     out += '\n  ```sh\n  ' + p.install + '\n  ```\n';
   }

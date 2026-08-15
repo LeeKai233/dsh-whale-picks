@@ -75,12 +75,18 @@ for (const p of registry.plugins) {
     if (!p.reviewNotes) errors.push(`${p.id}: ${p.tier} requires reviewNotes`);
     if (!p.verifiedAgainst || !p.lastVerified) errors.push(`${p.id}: ${p.tier} requires verifiedAgainst and lastVerified`);
     if (!p.listedAt) errors.push(`${p.id}: ${p.tier} requires listedAt`);
-    if (p.score) {
-      const s = p.score;
-      const total = s.experience + s.maintenance + s.security + s.compatibility;
-      if (total < 16 || s.security < 4 || s.compatibility < 4) {
-        errors.push(`${p.id}: below rubric gate (total ${total}<16 or security ${s.security}<4 or compatibility ${s.compatibility}<4)`);
-      }
+    if (p.manifestCompliant !== true) errors.push(`${p.id}: ${p.tier} requires manifestCompliant=true (whale-picks spec gate — run scripts/check-plugin.mjs)`);
+    if (!p.specVersion) errors.push(`${p.id}: ${p.tier} requires specVersion`);
+    if (!p.radar) {
+      errors.push(`${p.id}: ${p.tier} requires radar`);
+    } else {
+      const r = p.radar;
+      const axes = [r.security, r.compatibility, r.scope, r.cost, r.activity, r.human];
+      const total = axes.reduce((sum, a) => sum + (a?.value ?? 0), 0);
+      if (r.security?.value == null || r.security.value < 4) errors.push(`${p.id}: radar security ${r.security?.value ?? 'null'} < 4`);
+      if (r.compatibility?.value == null || r.compatibility.value < 4) errors.push(`${p.id}: radar compatibility ${r.compatibility?.value ?? 'null'} < 4`);
+      if (r.human?.value == null) errors.push(`${p.id}: radar human rating required (founder test first)`);
+      if (total < 24) errors.push(`${p.id}: radar total ${total} < 24`);
     }
     if (p.security.hasLicense !== true) errors.push(`${p.id}: ${p.tier} requires an open-source license file`);
     if (p.security.npmPublished !== true) errors.push(`${p.id}: ${p.tier} requires npm publication (anti-squatting)`);

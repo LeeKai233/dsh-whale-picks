@@ -4,6 +4,8 @@ English below. 鲸选 dsh-whale-picks 只收「敢装、值得装」的插件。
 
 ## 硬门槛（Hard gates，一票否决）
 
+**第 0 条（规范门槛）**：仓库根目录携带符合 spec/SPEC.md 的 whalepicks.json，并通过 scripts/check-plugin.mjs（manifestCompliant=true）。不合规连候选池的评分资格都没有——这是模板的强制力。
+
 任何条目（包括候选池）必须全部满足：
 
 1. **开源许可证**：仓库必须有 LICENSE 文件且为 OSI 认可许可证。GitHub API 显示 `none` 的仓库不得进入候选池（除非作者补齐，见 decisions.md 记录）。

@@ -1,29 +1,45 @@
 # 评分标准 · Scoring Rubric
 
-English below. 四维评分（各 0–5 分）只用于「已收录 / 编辑精选」档；候选池不打分。打分人是创始人本人，标准公开，欢迎拿分挑战（Issue）。
+English below。鲸选对**已上架（listed/featured）**插件展示六轴雷达，每个轴 0–5 分。**规范符合（manifestCompliant）不是雷达轴，而是上架门槛**：whalepicks.json 过 schema 且与仓库事实一致，由 scripts/check-plugin.mjs 判定，一票否决。
 
-| 维度 | 0 | 3 | 5 |
-| --- | --- | --- | --- |
-| **体验 Experience** | 装不上/基本不可用 | 能用，但有明显摩擦 | 开箱即用，体验明显优于同类 |
-| **维护 Maintenance** | 已停更或半年无活动 | 有更新但节奏不稳定 | 近 3 个月活跃，issue/PR 有响应 |
-| **安全 Security** | 体检发现未解决的红旗 | 红旗已澄清，无已知问题 | 体检干净：本地优先、无遥测、权限面最小 |
-| **兼容 Compatibility** | 当前 dsh 版本跑不起来 | 可用但有小问题 | 在当前 dsh 版本完整实测通过 |
+## 六轴雷达
 
-**转正门槛：总分 ≥ 16 且 安全 ≥ 4 且 兼容 ≥ 4。** 任何一维低于门槛都不转正，打分与理由记入 decisions.md。
+| 轴 | 0 | 3 | 5 | 打分方式 |
+| --- | --- | --- | --- | --- |
+| **真人评分 Human** | 无人用过 / 差评居多 | 少数人用过，褒贬不一 | 创始人 + 社区一致好评 | 人工（创始人起步，二期接 GitHub Discussions） |
+| **机器安全 Security** | 有未解决红旗 | 红旗已澄清 | 本地优先、无遥测、权限面最小 | 机器：体检映射 + 能力声明 |
+| **兼容性 Compatibility** | 当前 dsh 跑不起来 | 可用但有小问题 | 当前 dsh 版本完整实测通过 | 机器：verifiedAgainst/lastVerified |
+| **边界与冲突 Scope** | 大而全 / 与别家 insert id 冲突 | 功能偏多或边界不清 | 单一职责 + 明确非目标 + 冲突面干净 | 机器：scope 声明 + insertIds 交叉检测 |
+| **成本 Cost** | 许可证不合规 / 核心功能付费墙 | 许可证合规但有付费档 | 开源许可 + 完全免费 | 机器：SPDX + paid 声明 |
+| **活跃度 Activity** | archived / 半年无推送 | 更新不规律 | 近 30 天活跃、issue 有响应 | 机器：pushed_at 映射 |
 
-打分不是终身制：每次 dsh 版本变化或每季度至少复核一次，复核日期写入 registry 的 lastVerified。
+## 转正门槛（candidate → listed/featured）
+
+1. **门槛 PASS**：check-plugin.mjs 通过（manifestCompliant=true）；
+2. **雷达底线**：安全 ≥ 4、兼容 ≥ 4、真人评分非空（创始人亲测），六轴总分 ≥ 24；
+3. 其余条件见 charter.md（亲测、手记、同类唯一、每分类上限 5）。
+
+分数与理由记入 decisions.md；机器轴每次 compute-scores 重算，人工轴带证据与日期。评分不是终身制：每次 dsh 版本变化或每季度复核，复核日期写入 lastVerified。
 
 ---
 
-Four dimensions, each 0–5. Scores apply only to Listed / Featured tiers; candidates are unscored. The founder scores, the rubric is public, and every score can be challenged (Issue).
+Whale-picks shows a six-axis radar for every **listed/featured** plugin, each axis 0–5. **Spec compliance is not an axis — it is the admission gate**: whalepicks.json schema-valid and matching repo facts, judged by scripts/check-plugin.mjs, one-vote veto.
 
-| Dimension | 0 | 3 | 5 |
-| --- | --- | --- | --- |
-| **Experience** | Won't install / basically unusable | Works, with real friction | Out-of-the-box, clearly better than peers |
-| **Maintenance** | Stalled / no activity in 6 months | Updates exist but irregular | Active within 3 months, issues/PRs answered |
-| **Security** | Unresolved red flags from the pass | Flags clarified, no known issues | Clean pass: local-first, no telemetry, minimal permission surface |
-| **Compatibility** | Does not run on the current dsh | Runs with minor issues | Fully verified against the current dsh version |
+## The six axes
 
-**Promotion gate: total ≥ 16 with security ≥ 4 and compatibility ≥ 4.** Below gate in any dimension → no promotion; scores and reasoning go to decisions.md.
+| Axis | 0 | 3 | 5 | Source |
+| --- | --- | --- | --- | --- |
+| **Human** | nobody uses it / mostly negative | few users, mixed | founder + community consistently positive | humans (founder first; GitHub Discussions in phase 2) |
+| **Security** | unresolved red flags | flags clarified | local-first, no telemetry, minimal permissions | machine: pass mapping + capability declarations |
+| **Compatibility** | does not run on current dsh | runs with issues | fully verified on the current dsh | machine: verifiedAgainst/lastVerified |
+| **Scope & conflict** | kitchen sink / insert-id clashes | feature-heavy or fuzzy boundary | single purpose + explicit non-goals + clean conflict surface | machine: scope declaration + insertIds cross-check |
+| **Cost** | non-compliant license / core features paywalled | compliant license, paid tiers | open-source + fully free | machine: SPDX + paid declaration |
+| **Activity** | archived / 6+ months silent | irregular updates | active within 30 days, issues answered | machine: pushed_at mapping |
 
-Scores expire: re-verified at least quarterly or on every dsh version change; the date lands in the registry's lastVerified.
+## Promotion gate (candidate → listed/featured)
+
+1. **Gate PASS**: check-plugin.mjs green (manifestCompliant=true);
+2. **Radar floor**: security ≥ 4, compatibility ≥ 4, human rating present (founder test), six-axis total ≥ 24;
+3. Everything else lives in charter.md (hands-on test, notes, one per niche, max 5 per category).
+
+Scores and reasoning go to decisions.md; machine axes recompute on every compute-scores run, human axes carry evidence and dates. Scores expire: re-verified per dsh release or quarterly, recorded in lastVerified.

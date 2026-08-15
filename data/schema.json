@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "dsh-whale-picks registry schema",
-  "description": "Schema for the whale-picks curated registry. data/plugins.json is the single source of truth; README files are rendered from it.",
+  "description": "Schema for the whale-picks curated registry (v1.1: adds spec compliance gate + six-axis radar). data/plugins.json is the single source of truth; README files are rendered from it.",
   "type": "object",
   "required": [
     "schemaVersion",
@@ -12,7 +12,7 @@
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "1.0"
+      "const": "1.1"
     },
     "dshVersion": {
       "type": "string"
@@ -129,6 +129,128 @@
             "string",
             "null"
           ]
+        }
+      }
+    },
+    "axis": {
+      "type": "object",
+      "required": [
+        "value",
+        "evidence",
+        "updatedAt"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 5
+        },
+        "evidence": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "humanAxis": {
+      "type": "object",
+      "required": [
+        "value",
+        "source",
+        "count",
+        "evidence",
+        "updatedAt"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 5
+        },
+        "source": {
+          "enum": [
+            "founder",
+            "community",
+            "both"
+          ]
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "radar": {
+      "type": "object",
+      "required": [
+        "human",
+        "security",
+        "compatibility",
+        "scope",
+        "cost",
+        "activity"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "human": {
+          "$ref": "#/definitions/humanAxis"
+        },
+        "security": {
+          "$ref": "#/definitions/axis"
+        },
+        "compatibility": {
+          "$ref": "#/definitions/axis"
+        },
+        "scope": {
+          "$ref": "#/definitions/axis"
+        },
+        "cost": {
+          "$ref": "#/definitions/axis"
+        },
+        "activity": {
+          "$ref": "#/definitions/axis"
+        }
+      }
+    },
+    "patches": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "insertIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "namespaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "slots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
         }
       }
     },
@@ -255,6 +377,31 @@
           "type": [
             "string",
             "null"
+          ]
+        },
+        "specVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "manifestCompliant": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "patches": {
+          "$ref": "#/definitions/patches"
+        },
+        "radar": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/radar"
+            }
           ]
         }
       }

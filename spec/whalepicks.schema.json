@@ -1,0 +1,280 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "whalepicks.json manifest v1.0",
+  "description": "The whale-picks plugin manifest. Lives at the root of a plugin repo. It is the listing contract: agents read it to build/refactor plugins, the store's check-plugin validates it, and compliance is the admission gate (one-vote veto).",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "version",
+    "description",
+    "category",
+    "scope",
+    "install",
+    "runtime",
+    "patches",
+    "capabilities",
+    "cost",
+    "links",
+    "maintainers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Stable slug, unique across the whale-picks store"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "npm package name (install id); must equal package.json name"
+    },
+    "version": {
+      "type": "string",
+      "description": "Must equal package.json version"
+    },
+    "description": {
+      "$ref": "#/definitions/bilingual"
+    },
+    "category": {
+      "enum": [
+        "discovery",
+        "ui",
+        "terminal-desktop",
+        "agents",
+        "usage",
+        "notifications",
+        "other"
+      ]
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "default": []
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "does",
+        "doesNot"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "does": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "description": "The ONE thing it does (Unix philosophy); keep it tight"
+        },
+        "doesNot": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Explicit non-goals — what it refuses to do"
+        }
+      }
+    },
+    "install": {
+      "type": "object",
+      "required": [
+        "profile",
+        "spec"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "profile": {
+          "enum": [
+            "web",
+            "tui",
+            "headless",
+            "any"
+          ]
+        },
+        "spec": {
+          "type": "string",
+          "description": "pnpm spec for 'dsh plugin add' (npm name, or github:owner/repo)"
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "required": [
+        "platforms",
+        "dsh"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "platforms": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "web",
+              "tui",
+              "headless"
+            ]
+          },
+          "minItems": 1
+        },
+        "dsh": {
+          "type": "string",
+          "description": "semver range, e.g. '>=0.1.0-rc.6 <0.2.0'"
+        }
+      }
+    },
+    "patches": {
+      "type": "object",
+      "required": [
+        "bundle",
+        "insertIds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "bundle": {
+          "type": "string",
+          "description": "Path to the cordis patch, usually cordis.patch.yml"
+        },
+        "insertIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Every insert id declared in the bundle patch — the conflict surface"
+        },
+        "namespaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "slots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "required": [
+        "network",
+        "telemetry"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "network": {
+          "type": "boolean"
+        },
+        "telemetry": {
+          "type": "boolean"
+        },
+        "permissions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "required": [
+        "license",
+        "paid"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "license": {
+          "type": "string",
+          "description": "SPDX id"
+        },
+        "paid": {
+          "type": "boolean"
+        },
+        "paidTiers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "required": [
+        "repo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "repo": {
+          "type": "string"
+        },
+        "npm": {
+          "type": "string"
+        },
+        "docs": {
+          "type": "string"
+        }
+      }
+    },
+    "maintainers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/maintainer"
+      }
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "zh",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "maintainer": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

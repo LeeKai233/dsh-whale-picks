@@ -38,6 +38,8 @@ Every entry carries its exact install command. Most plugins install with `dsh pl
 
   > **Founder’s notes**: The founder's own attention plugin, used daily: questions, approvals and finished turns all surface while the page is backgrounded. Fully local — WebAudio beeps, browser notifications, tab-title flash, zero network calls; the notification permission is requested only on a user gesture. Note: use either the bundle install or the manual patch, never both (duplicate loader entry id).
 
+  ![six-axis radar](assets/radar/dsh-ui-attention.svg "dsh-ui-attention six-axis radar")
+
   ```sh
   dsh plugin --profile web add dsh-ui-attention
   ```

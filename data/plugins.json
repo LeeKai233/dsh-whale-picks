@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "dshVersion": "0.1.0-rc.6",
   "updatedAt": "2026-08-15",
   "plugins": [
@@ -43,7 +43,54 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": "2026-08-15",
-      "reviewedBy": "LeeKai233"
+      "reviewedBy": "LeeKai233",
+      "specVersion": "1.0",
+      "manifestCompliant": true,
+      "patches": {
+        "insertIds": [
+          "ui-attention"
+        ],
+        "namespaces": [
+          "ui-attention"
+        ],
+        "slots": [
+          "settings.general.item"
+        ]
+      },
+      "radar": {
+        "human": {
+          "value": 5,
+          "source": "founder",
+          "count": 1,
+          "evidence": "创始人自研并每天使用（dsh-ui-attention 是其主力提醒插件）",
+          "updatedAt": "2026-08-15"
+        },
+        "security": {
+          "value": 5,
+          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
+          "updatedAt": "2026-08-15"
+        },
+        "scope": {
+          "value": 5,
+          "evidence": "scope.does/doesNot 单功能声明 + insert id 交叉冲突检测",
+          "updatedAt": "2026-08-15"
+        },
+        "cost": {
+          "value": 5,
+          "evidence": "许可证（SPDX）与付费墙声明",
+          "updatedAt": "2026-08-15"
+        },
+        "activity": {
+          "value": 5,
+          "evidence": "pushed_at 2026-08-15T04:39:30Z 映射",
+          "updatedAt": "2026-08-15"
+        },
+        "compatibility": {
+          "value": 5,
+          "evidence": "实测于 dsh 0.1.0-rc.6（2026-08-15）",
+          "updatedAt": "2026-08-15"
+        }
+      }
     },
     {
       "id": "dsh-market",
@@ -79,7 +126,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "dsh-plugin-workshop",
@@ -113,7 +168,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "dsh-find-plugin",
@@ -147,7 +210,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "dsh-web-ui",
@@ -181,7 +252,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "dsh-skin",
@@ -217,7 +296,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "dsh-tianshu-tui",
@@ -251,7 +338,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "deepseek-harness-tui",
@@ -285,7 +380,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "deepseek-harness-desktop",
@@ -321,7 +424,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "dsh-agent-teams",
@@ -355,7 +466,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     },
     {
       "id": "dsh-usage-stats",
@@ -391,7 +510,15 @@
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
-      "reviewedBy": null
+      "reviewedBy": null,
+      "specVersion": null,
+      "manifestCompliant": false,
+      "patches": {
+        "insertIds": [],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": null
     }
   ]
 }

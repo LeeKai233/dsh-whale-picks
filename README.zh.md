@@ -38,6 +38,8 @@
 
   > **创始人手记**: 创始人自研的提醒插件，每天在用：页面在后台时，提问、审批、回合完成都靠它推送。纯本地实现，零网络请求；浏览器通知权限只在用户手势中申请。注意：bundle 安装与手工 patch 安装二选一，绝不能同时使用（会报 duplicate loader entry id）。
 
+  ![six-axis radar](assets/radar/dsh-ui-attention.svg "dsh-ui-attention six-axis radar")
+
   ```sh
   dsh plugin --profile web add dsh-ui-attention
   ```

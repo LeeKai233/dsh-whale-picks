@@ -32,7 +32,7 @@ jobs:
           fi
       - name: open attention issue
         run: |
-          if [ -s /tmp/attention.txt ]; then
+          if [ -s /tmp/attention.txt ] && [ -z "$(gh issue list --search '鲸选巡检提醒 in:title' --state open --limit 1)" ]; then
             gh issue create --title '鲸选巡检提醒' --body-file /tmp/attention.txt
           fi
         env:

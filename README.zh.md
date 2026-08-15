@@ -52,21 +52,21 @@
 ### 发现与管理
 
 - [dshmarket](https://github.com/dsh-market/dsh-market) — 装在 DSH 里的插件市场：300+ 插件浏览、搜索、一键安装/更新/卸载、主题一键切换
-  <br><sub>96⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
+  <br><sub>270⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
 
   ```sh
   dsh plugin --profile web add dshmarket
   ```
 
 - [dsh-plugin-workshop](https://github.com/yyyyukari/dsh-plugin-workshop) — Steam 工坊式插件浏览器：搜索、热门/最新排序、一键安装卸载，零服务器（GitHub 直连）
-  <br><sub>17⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-plugin-workshop)</sub>
+  <br><sub>23⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-plugin-workshop)</sub>
 
   ```sh
   dsh plugin --profile web add "github:yyyyukari/dsh-plugin-workshop"
   ```
 
 - [dsh-find-plugin](https://github.com/awesome-dsh-plugin/dsh-find-plugin) — 在会话里让 agent 帮你找插件：实时搜索 GitHub dsh-plugin topic，按 star 排序，附安装命令
-  <br><sub>19⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-find-plugin)</sub>
+  <br><sub>26⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-find-plugin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-find-plugin
@@ -82,14 +82,14 @@
 ### UI 与皮肤
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装
-  <br><sub>2081⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>2637⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
   ```
 
 - [dsh-skin](https://github.com/KinGao294/dsh-skin) — 皮肤切换器 + 自定义壁纸：多套精选调色板、半透明壁纸与透明度控制
-  <br><sub>10⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-skin)</sub>
+  <br><sub>11⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-skin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-skin
@@ -98,26 +98,26 @@
 ### 终端与桌面
 
 - [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — DSH 终端 UI（TUI）：在终端里交互式使用 DeepSeek Harness，含 harness workflow 渲染
-  <br><sub>139⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-tianshu-tui)</sub>
+  <br><sub>165⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-tianshu-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @huiliyi37/dsh-tianshu-tui
   ```
 
 - [deepseek-harness-tui](https://github.com/openma-ai/deepseek-harness-tui) — Rust/ratatui 终端客户端：直连 DSH SDK JSON-RPC，可独立运行或作为 profile bundle
-  <br><sub>21⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#deepseek-harness-tui)</sub>
+  <br><sub>25⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#deepseek-harness-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @openma/deepseek-harness-tui
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — DSH 现代化桌面端：免 Node.js 与命令行；插件市场与移动端远程控制在路线图上
-  <br><sub>2714⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>5508⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### 多 Agent 与工作流
 
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams 插件：多 agent 团队协作编排（角色、任务分配与回合流转）
-  <br><sub>265⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
+  <br><sub>327⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
 
   ```sh
   dsh plugin --profile web add @nanmicoder/dsh-agent-teams
@@ -126,7 +126,7 @@
 ### 用量与统计
 
 - [dsh-usage-stats](https://github.com/Make0209/dsh-usage-stats) — GitHub 风格用量热力图：Token / 缓存命中 / 账户余额看板 + 工作区别名管理
-  <br><sub>8⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-usage-stats)</sub>
+  <br><sub>14⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-usage-stats)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-usage-stats

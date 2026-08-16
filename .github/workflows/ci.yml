@@ -19,11 +19,43 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: smoke-test cloudflare handler
         run: node scripts/cf-smoke.mjs
+      - name: scaffold smoke (paradigm self-test)
+        run: |
+          SMOKE_DIR="$(mktemp -d)/dsh-smoke-test"
+          node scripts/scaffold.mjs dsh-smoke-test \
+            --dest "$SMOKE_DIR" --id dsh-smoke-test \
+            --repo https://github.com/whale-picks-smoke/dsh-smoke-test \
+            --author smoke --contact smoke \
+            --description-zh "CI 冒烟测试插件" --description-en "CI smoke-test plugin"
+          if grep -rEl '\{\{[A-Z_]+\}\}' "$SMOKE_DIR" | grep .; then
+            echo 'scaffold 产物残留 {{占位符}}'
+            exit 1
+          fi
+          node scripts/check-plugin.mjs "$SMOKE_DIR"
+          node scripts/check-plugin.mjs "$SMOKE_DIR" --structure | tee /tmp/structure.txt
+          if grep -q '⚠️' /tmp/structure.txt; then
+            echo '--structure 报告存在 fail 项'
+            exit 1
+          fi
+          cd "$SMOKE_DIR"
+          npm install --no-audit --no-fund
+          npm run bundle
+          npm test
+          cd -
+          node scripts/check-plugin.mjs "$SMOKE_DIR" --strict
       - name: render readmes
         run: node scripts/render-readme.mjs
       - name: fail if README out of sync
         run: |
           if ! git diff --exit-code -- README.md README.zh.md; then
             echo 'README files are out of sync with data/plugins.json. Run: npm run render'
+            exit 1
+          fi
+      - name: render radar charts
+        run: node scripts/render-radar.mjs
+      - name: fail if radar out of sync
+        run: |
+          if ! git diff --exit-code -- assets/radar/; then
+            echo 'radar SVGs are out of sync with data/plugins.json. Run: npm run radar'
             exit 1
           fi

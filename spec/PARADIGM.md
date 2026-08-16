@@ -12,17 +12,19 @@ English below. 本文是鲸选对 DSH 插件的**范式**定义：一套适用�
 
 ## 1. 固定分区（七层，每节必有）
 
-每层都有机器断言（check-plugin 门槛 + --structure 对齐报告），断言不通过即有信号。
+机器断言分两档：**门槛断言**（check-plugin 门槛，一票否决；当前只覆盖合同层 / 装载层 /
+仓库规范层的部分断言，--strict 才把全部七层断言并入差距并追加构建冒烟与测试断言）与
+**报告断言**（--structure 对齐报告，覆盖全部七层，只报告，永远 exit 0）。
 
-| 分区 | 内容 | 机器断言 |
-| --- | --- | --- |
-| 合同层 | whalepicks.json：身份、scope 单功能合同、patches 冲突面、capabilities、成本 | schema + 与 package.json/patch 事实一致 |
-| 宿主半区 | src/index.ts + plugin-schema.ts / plugin-settings.ts 拆分 | 存在；schema 与 client 隔离（purity） |
-| 浏览器半区 | src/client/index.ts | 存在；仅 import 平台模块 |
-| 文案层 | locales zh/en + README.md/README.zh.md | zh+en 双词典；locales 之外无 UI 文案 |
-| 验证层 | tests/ + vitest | vitest 配置 + 测试存在 |
-| 装载层 | cordis.patch.yml | insert id 唯一、与 patches.insertIds 双向一致 |
-| 仓库规范层 | AGENTS.md / LICENSE / .gitignore / tsconfig / tsdown 双产物 | 文件齐全、lib 不跟踪 |
+| 分区 | 内容 | 门槛断言（check-plugin 门槛 / --strict） | 报告断言（--structure，只报告） |
+| --- | --- | --- | --- |
+| 合同层 | whalepicks.json：身份、scope 单功能合同、patches 冲突面、capabilities、成本 | 门槛：过 schema + 与 package.json 名称/版本/仓库一致 + OSI 许可证 | schemaVersion=1.1；files 含 whalepicks.json |
+| 宿主半区 | src/index.ts + plugin-schema.ts / plugin-settings.ts 拆分 | 仅 --strict：文件存在 | src/index.ts 存在 |
+| 浏览器半区 | src/client/index.ts | 仅 --strict：文件存在 + 仅 import 平台模块 | src/client/index.ts 存在；client purity |
+| 文案层 | locales zh/en + README.md/README.zh.md | 门槛：README.md 存在；仅 --strict：双语齐全 + 无 CJK 硬编码 | zh+en 双词典；README.zh.md；locales 之外无 UI 文案 |
+| 验证层 | tests/ + vitest | 仅 --strict：vitest 配置 + ≥1 条 spec + 禁 passWithNoTests:true | vitest 配置 + 测试文件存在 |
+| 装载层 | cordis.patch.yml | 门槛：patch 存在 + insert id 与 patches.insertIds 双向一致 + 与 registry 交叉无冲突 | insert id 无重复（双向一致复用门槛同一实现） |
+| 仓库规范层 | AGENTS.md / LICENSE / .gitignore / tsconfig / tsdown 双产物 | 门槛：LICENSE 存在；仅 --strict：全部报告断言 + 构建冒烟（npm run bundle、lib 双产物、client 含 __ModuleLoader__.load） | 文件齐全、lib 不跟踪、tsdown banner、dsh.client/exports/scripts 声明 |
 
 ## 2. 扩展点（插件在固定位置填自己的内容）
 
@@ -40,18 +42,31 @@ English below. 本文是鲸选对 DSH 插件的**范式**定义：一套适用�
 6. **宿主半区空实现**：browser-only 插件允许 apply 为 no-op——接口允许空实现，文件
    仍保留（可审查性不因功能少而打折）。
 
-## 3. 四目标如何兑现
+## 3. 九目标一原则：闭环如何兑现
 
-- **规范性（最低质量保证）**：门槛（whalepicks.json 过 schema + 与仓库事实一致）一票
-  否决；--structure 对七个分区逐项断言，任何分区缺失都有信号。
-- **可审查性**：固定阅读路径——合同 → 装载 → 宿主半区 → 浏览器半区 → 文案 → 验证。
-  审查者不看代码也能定位任何插件的关键事实；结构检查保证这张地图总是存在。
-- **依赖冲突可排查性**：冲突面（patches.insertIds / namespaces / slots / deps）在
-  whalepicks.json 单点声明；check-plugin 与 registry 做交叉检测，运行期通用体检
-  （dsh-appearance 的通用 checks）读同一份声明——声明一份、两处消费，不存在两套真相。
-- **agent 友好性**：spec/AGENT.md 给出可执行的提示词；scaffold 生成骨架；--structure
-  与 template-sync 给出机械的验证回路。agent 的工作回路固定为：生成/对齐骨架 → 填
-  扩展点 → npm test → check-plugin（门槛）→ --structure（对齐）。
+**横切原则：机械可执行性。** 每个目标必须能回答「机器断言是什么、在哪个工件上跑、
+不过会怎样」，否则降级为愿望，不列入本表。
+
+**生命周期环**：生产 → 迁移 → 准入 → 分发 → 组合 → 运行 → 持续 → 退出 → 回流
+（退出与复核结论回流 decisions.md 与模板，修正生产端，环闭合）。
+
+| # | 目标 | 环节 | 声明 | 机器断言 | 消费方 | 时效 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 可生产性 | 生产 | 模板 + scaffold + spec/AGENT.md | CI scaffold 冒烟（生成骨架 → 门槛 → --strict） | 作者与 agent | 模板漂移检查（template-sync） |
+| 2 | 可迁移性 | 迁移 | docs/adopt.md + check-plugin --init + migrate 文档 | --init 产物过 schema；双语完整性 | 第三方作者 | 文档与工具同步 |
+| 3 | 准入基线 | 准入 | whalepicks.json | check-plugin 门槛；转正（listed/featured）--strict | 商店评审 | 每次提交重跑（CI） |
+| 4 | 分发契约 | 分发 | install.spec、registry API | install.spec 格式校验、registry schema 校验；/v1 端点 + 完整性校验和为路线图项 | 商店前端与第三方消费方 | schema bump 必须带迁移路径 |
+| 5 | 组合契约 | 组合 | patches.*、deps | 与事实交叉比对（对方仓库实际 patch）、遮蔽合法共存规则 | check-plugin、appearance 体检、suits | freshness nightly 事实回写 |
+| 6 | 运行安全 | 运行 | capabilities、security（商店侧填写） | 静态信号对账（warning，非门槛、非审计）、redFlags 压安全轴 ≤2 | appearance 体检、雷达 | 发版重扫、红旗 30 天 SLA |
+| 7 | 运行成本 | 运行 | perf 申报 | 申报格式校验；bundle 体积实测为路线图项 | appearance 体检、用户 | 发版实测 |
+| 8 | 持续有效性 | 持续 | runtime.dsh、verifiedAgainst、radar | 范围格式校验 + 覆盖提示、分数衰减、freshness 后重算 | registry、雷达 | 90/180 天衰减、季度复核 |
+| 9 | 退出与救济 | 退出 | charter 下架政策、decisions.md | 红旗 30 天 SLA、申诉通道 | 作者、用户 | SLA 计时 |
+
+**四问自检法**：声明在哪？谁机器断言？谁消费？何时失效/复核？——缺一不成环。
+
+与原「四目标」的关系：规范性 → 目标 3；可审查性 → 横切原则 + 目标 3；依赖冲突可
+排查 → 目标 5；agent 友好 → 目标 1。安全与性能从准入表述中拆出，归入运行期
+（目标 6/7）。
 
 ## 4. 迁移与实例
 
@@ -61,8 +76,12 @@ English below. 本文是鲸选对 DSH 插件的**范式**定义：一套适用�
 2. dsh-appearance —— 服务提供者形态（settings.section + appearance.manager）；
 3. dsh-statusbar —— 服务消费者 + 内置槽位遮蔽 + 联网形态。
 
-普适性自测：脚手架生成的最小侧边栏示例（任意槽位）在不改模板任何文件的前提下通过
-全部断言——保证范式不会重新滑向按类型分化。
+普适性自测已机器化为 CI 步骤（.github/workflows/ci.yml 的 scaffold 冒烟）：每次提交
+都从模板生成全新骨架，依次过占位符清零检查 → check-plugin 门槛 → --structure（报告
+须全绿）→ npm install → npm run bundle → npm test → check-plugin --strict——骨架任何
+退化都会直接红 CI。模板默认形态是 settings.general.item 设置行；任意槽位的插件
+（侧边栏、dock、section……）在同样的扩展点上填内容即可，不需要新模板——保证范式
+不会重新滑向按类型分化。
 
 ---
 
@@ -84,18 +103,22 @@ the same points.
 
 ## 1. Fixed sections (seven, all mandatory)
 
-Every section carries a machine assertion (check-plugin gate +
---structure alignment report); a failed assertion is a signal.
+Every section carries machine assertions in two tiers: **gate assertions**
+(the check-plugin admission gate, one-vote veto; today it covers only parts
+of the contract / loading / repo-convention sections — --strict folds every
+section assertion into the gap list and adds build + test smoke) and
+**report assertions** (the --structure alignment report, covering all seven
+sections, report-only, always exits 0).
 
-| Section | Contents | Machine assertion |
-| --- | --- | --- |
-| Contract | whalepicks.json (identity, scope contract, patches surface, capabilities, cost) | schema + facts matching package.json/patch |
-| Host half | src/index.ts + plugin-schema.ts / plugin-settings.ts split | present; schema isolated from client (purity) |
-| Browser half | src/client/index.ts | present; platform modules only |
-| Copy | locales zh/en + README.md/README.zh.md | zh+en dictionaries; no UI copy outside locales |
-| Verification | tests/ + vitest | vitest config + tests present |
-| Loading | cordis.patch.yml | insert ids unique, bidirectionally listed in patches.insertIds |
-| Repo conventions | AGENTS.md / LICENSE / .gitignore / tsconfig / tsdown dual build | files present; lib/ untracked |
+| Section | Contents | Gate assertion (check-plugin gate / --strict) | Report assertion (--structure, report-only) |
+| --- | --- | --- | --- |
+| Contract | whalepicks.json (identity, scope contract, patches surface, capabilities, cost) | gate: schema-valid + name/version/repo matching package.json + OSI license | schemaVersion=1.1; files includes whalepicks.json |
+| Host half | src/index.ts + plugin-schema.ts / plugin-settings.ts split | --strict only: file present | src/index.ts present |
+| Browser half | src/client/index.ts | --strict only: file present + platform modules only | src/client/index.ts present; client purity |
+| Copy | locales zh/en + README.md/README.zh.md | gate: README.md present; --strict only: bilingual + no hardcoded CJK | zh+en dictionaries; README.zh.md; no UI copy outside locales |
+| Verification | tests/ + vitest | --strict only: vitest config + ≥1 spec + no passWithNoTests:true | vitest config + spec files present |
+| Loading | cordis.patch.yml | gate: patch present + insert ids bidirectionally matching patches.insertIds + no clash with the registry | no duplicate insert ids (bidirectional check shared with the gate) |
+| Repo conventions | AGENTS.md / LICENSE / .gitignore / tsconfig / tsdown dual build | gate: LICENSE present; --strict only: all report assertions + build smoke (npm run bundle, lib dual artifacts, client carries __ModuleLoader__.load) | files present; lib/ untracked; tsdown banner; dsh.client/exports/scripts declared |
 
 ## 2. Extension points (where the plugin fills in its own content)
 
@@ -117,21 +140,36 @@ Every section carries a machine assertion (check-plugin gate +
 6. **Empty host half**: browser-only plugins may leave apply a no-op — the
    interface permits an empty implementation, the files remain.
 
-## 3. How the four goals are delivered
+## 3. Nine goals, one principle: how the loop closes
 
-- **Baseline quality**: the gate (schema-valid whalepicks.json matching repo
-  facts) is a one-vote veto; --structure asserts every section.
-- **Reviewability**: a fixed reading path — contract → loading → host half →
-  browser half → copy → verification. A reviewer locates any plugin's key
-  facts without reading the code; the structure check guarantees the map.
-- **Conflict diagnosability**: the conflict surface (patches.insertIds /
-  namespaces / slots / deps) is declared once in whalepicks.json; check-plugin
-  cross-checks it against the registry and the runtime generic checks
-  (dsh-appearance) read the same declaration — one declaration, two consumers.
-- **Agent-friendliness**: spec/AGENT.md gives an executable prompt; scaffold
-  generates the skeleton; --structure and template-sync give a mechanical
-  verify loop. The agent loop is fixed: generate/align → fill extension points
-  → npm test → check-plugin (gate) → --structure (alignment).
+**Cross-cutting principle: mechanical executability.** Every goal must answer
+"what is the machine assertion, on which artifact does it run, what happens
+when it fails" — otherwise it degrades to a wish and stays off this table.
+
+**Lifecycle ring**: produce → migrate → admit → distribute → compose → run →
+sustain → exit → feed back (exit and review outcomes flow back into
+decisions.md and the template, fixing the production end — the ring closes).
+
+| # | Goal | Stage | Declared in | Machine assertion | Consumers | Expiry |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | Producibility | produce | template + scaffold + spec/AGENT.md | CI scaffold smoke (generate skeleton → gate → --strict) | authors & agents | template drift check (template-sync) |
+| 2 | Migratability | migrate | docs/adopt.md + check-plugin --init + migration guide | --init output passes schema; bilingual completeness | third-party authors | docs stay in sync with the tools |
+| 3 | Admission baseline | admit | whalepicks.json | check-plugin gate; --strict for promotion (listed/featured) | store review | re-run on every commit (CI) |
+| 4 | Distribution contract | distribute | install.spec, registry API | install.spec format check, registry schema validation; /v1 endpoints + integrity checksums are roadmap items | store frontend & third-party consumers | schema bumps must carry a migration path |
+| 5 | Composition contract | compose | patches.*, deps | cross-checked against facts (the other repo's actual patch); shadowing coexistence rules | check-plugin, appearance checks, suits | freshness nightly fact write-back |
+| 6 | Runtime safety | run | capabilities, security (filled store-side) | static signal reconciliation (warning — not a gate, not an audit); redFlags cap the security axis at ≤2 | appearance checks, radar | rescan on release; red-flag 30-day SLA |
+| 7 | Runtime cost | run | perf declarations | declaration format check; bundle-size measurement is a roadmap item | appearance checks, users | measured on release |
+| 8 | Sustained validity | sustain | runtime.dsh, verifiedAgainst, radar | range format check + coverage hint, score decay, recompute after freshness | registry, radar | 90/180-day decay, quarterly review |
+| 9 | Exit & remedy | exit | charter delisting policy, decisions.md | red-flag 30-day SLA, appeal channel | authors, users | SLA clock |
+
+**Four-question self-check**: where is it declared? who asserts it by machine?
+who consumes it? when does it expire / get re-reviewed? Missing any one breaks
+the ring.
+
+Mapping from the original four goals: baseline quality → goal 3; reviewability
+→ the cross-cutting principle + goal 3; conflict diagnosability → goal 5;
+agent-friendliness → goal 1. Security and performance are split out of the
+admission wording into the runtime stage (goals 6/7).
 
 ## 4. Migration and worked examples
 
@@ -144,6 +182,12 @@ examples:
    appearance.manager);
 3. dsh-statusbar — service-consumer + builtin-slot shadowing + network shape.
 
-Universality self-test: a minimal sidebar example generated by the scaffolder
-passes every assertion without changing any template file — keeping the
-paradigm from ever forking per plugin type.
+The universality self-test is mechanized as a CI step (the scaffold smoke in
+.github/workflows/ci.yml): every commit generates a fresh skeleton from the
+template and runs it through a placeholder-free check → check-plugin gate →
+--structure (the report must come back all-green) → npm install → npm run
+bundle → npm test → check-plugin --strict — any skeleton regression turns CI
+red. The template's default shape is a settings.general.item row; a plugin on
+any other slot (sidebar, dock, section …) fills the same extension points and
+needs no new template — keeping the paradigm from ever forking per plugin
+type.

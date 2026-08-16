@@ -62,12 +62,15 @@ const TOKENS = {
   '{{NON_GOAL}}': () => 'TODO: 明确它不做什么（拒绝 = 边界 = 可组合性）',
 }
 
+const SCAFFOLD_SKIP_DIRS = new Set(['node_modules', 'lib', '.git'])
+
 async function collectFiles(dir, base = '') {
   const files = []
   for (const entry of await readdir(dir)) {
     const rel = path.join(base, entry)
     const full = path.join(dir, entry)
     if ((await stat(full)).isDirectory()) {
+      if (SCAFFOLD_SKIP_DIRS.has(entry)) continue // 构建产物与依赖不进骨架
       files.push(...await collectFiles(full, rel))
     } else {
       files.push(rel)

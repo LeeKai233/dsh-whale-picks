@@ -11,11 +11,11 @@
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a four-dimension score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a six-axis radar score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**
 
 ## Tiers · 分级
 
-- 🏆 **Featured · 编辑精选** — founder-tested, security pass, four-dimension score above the gate
+- 🏆 **Featured · 编辑精选** — founder-tested, security pass, six-axis radar score above the gate
 - ✅ **Listed · 已收录** — same bar as Featured (candidates that passed)
 - 🧪 **Candidates · 候选池** — machine security pass done, awaiting the founder’s hands-on test
 
@@ -34,7 +34,7 @@ Every entry carries its exact install command. Most plugins install with `dsh pl
 ### Notifications & Alerts
 
 - [dsh-ui-attention](https://github.com/LeeKai233/dsh-ui-attention) — Web attention alerts: browser notification, beep and tab-title flash when the DSH page is not on top (questions, approvals, finished turns)
-  <br><sub>experience 5 · maintenance 4 · security 4 · compatibility 5 · 1⭐ · MIT · verified on dsh 0.1.0-rc.6 (2026-08-15)</sub>
+  <br><sub>1⭐ · MIT · verified on dsh 0.1.0-rc.6 (2026-08-15)</sub>
 
   > **Founder’s notes**: The founder's own attention plugin, used daily: questions, approvals and finished turns all surface while the page is backgrounded. Fully local — WebAudio beeps, browser notifications, tab-title flash, zero network calls; the notification permission is requested only on a user gesture. Note: use either the bundle install or the manual patch, never both (duplicate loader entry id).
 

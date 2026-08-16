@@ -13,6 +13,11 @@
  * gateway exposes only an allowlisted set of settings namespaces to the
  * browser. The node half still registers the namespace Host-side so the
  * durable scope lights up once the upstream limitation is lifted.
+ *
+ * Migration path once the upstream limitation is lifted (the web API
+ * gateway opens the settings namespace allowlist): DELETE this file and
+ * rewire the rowStore to the Host settings scope — the PLUGIN_SETTINGS_NAMESPACE
+ * registered by the host half is reserved exactly for that switch.
  */
 import { DEFAULT_PLUGIN_SETTINGS } from '../plugin-settings.ts'
 import type { PluginSettings } from '../plugin-settings.ts'

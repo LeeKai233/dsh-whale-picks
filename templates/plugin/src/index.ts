@@ -2,6 +2,11 @@
  * Host half of {{PLUGIN_ID}}: registers the plugin-owned settings namespace
  * when the optional settings service is composed (ui-theme's registration
  * precedent); absent settings (TUI, headless), registration is skipped.
+ *
+ * Note: the static `inject = []` below is INTENTIONAL — settings namespace
+ * registration goes through a runtime conditional inject inside `apply`
+ * (only when the settings service exists). An empty inject declaration does
+ * NOT mean the plugin has no dependency surface.
  */
 import { settingsNamespace } from '@deepseek-ai/dsh-settings'
 import { PLUGIN_SETTINGS_NAMESPACE } from './plugin-settings.ts'

@@ -22,3 +22,4 @@
 10. 测试：npm test 必须绿。
 11. 门槛校验：跑 whale-picks 仓库的 scripts/check-plugin.mjs（exit 0 才算合规）与
     --structure（模板对齐度报告）；结构漂移可用 scripts/template-sync.mjs 自查。
+    转正（listed/featured）需过 --strict（含构建冒烟与测试断言）。

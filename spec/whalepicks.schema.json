@@ -242,7 +242,8 @@
             "passed",
             "review",
             "unknown"
-          ]
+          ],
+          "description": "商店侧体检管道填写，作者自填无效（registry security 字段为准）"
         },
         "scanBy": {
           "type": "string",

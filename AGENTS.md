@@ -16,7 +16,8 @@
 
 ## 质量线
 
-- 脚本（scripts/）保持零运行时依赖，仅用 Node 内置 + ajv/js-yaml（devDependencies 已有）。
+- 脚本（scripts/）保持零运行时依赖，仅用 Node 内置 + ajv（devDependency 已有）。js-yaml 未安装也未使用：cordis patch 结构固定，check-plugin 手写 YAML 子集解析（extractInsertIds 状态机）。
+- listed/featured 转正必须过 `check-plugin --strict`（七分区结构断言 + 构建冒烟 + 测试断言全绿）。
 - 文档双语：README 与核心 docs（charter/rubric/spec）zh+en 双版；decisions/security-report 可中文为主。
 - 不造假：套件为空就显示空；分数缺失显示「待测」；体检结论只写机器可查项。
 

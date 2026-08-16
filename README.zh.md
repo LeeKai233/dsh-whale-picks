@@ -11,11 +11,11 @@
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有四维评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有六轴雷达评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**
 
 ## Tiers · 分级
 
-- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 四维评分通过门槛
+- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 六轴雷达评分通过门槛
 - ✅ **已收录 · Listed** — 与编辑精选同门槛（转正后的候选）
 - 🧪 **候选池 · Candidates** — 机器体检已完成，待创始人亲测转正
 
@@ -34,7 +34,7 @@
 ### 通知与提醒
 
 - [dsh-ui-attention](https://github.com/LeeKai233/dsh-ui-attention) — DSH Web 操作提醒：页面不在前台时，用浏览器通知、提示音、标题闪烁提醒待处理交互与回合完成
-  <br><sub>体验 5 · 维护 4 · 安全 4 · 兼容 5 · 1⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-15)</sub>
+  <br><sub>1⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-15)</sub>
 
   > **创始人手记**: 创始人自研的提醒插件，每天在用：页面在后台时，提问、审批、回合完成都靠它推送。纯本地实现，零网络请求；浏览器通知权限只在用户手势中申请。注意：bundle 安装与手工 patch 安装二选一，绝不能同时使用（会报 duplicate loader entry id）。
 

@@ -19,6 +19,14 @@ jobs:
       - run: npm install
       - name: freshness pass
         run: node scripts/freshness.mjs > /tmp/attention.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: recompute scores (chained re-scoring after fact write-back)
+        run: node scripts/compute-scores.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: re-render radar charts
+        run: node scripts/render-radar.mjs
       - name: re-render readmes
         run: node scripts/render-readme.mjs
       - name: commit refresh
@@ -27,7 +35,7 @@ jobs:
             git config user.name 'whale-picks-bot'
             git config user.email 'actions@users.noreply.github.com'
             git add -A
-            git commit -m 'chore(freshness): refresh stars and maintenance flags'
+            git commit -m 'chore(freshness): refresh facts, recompute scores, re-render radar/readmes'
             git push
           fi
       - name: open attention issue

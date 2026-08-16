@@ -36,12 +36,11 @@ function badges() {
   ].join(' ');
 }
 
-function scoreLine(p, zh) {
-  const s = p.score;
-  const dims = zh ? ['体验', '维护', '安全', '兼容'] : ['experience', 'maintenance', 'security', 'compatibility'];
-  const vals = [s.experience, s.maintenance, s.security, s.compatibility];
-  const score = vals.map((v, i) => dims[i] + ' ' + v).join(' · ');
-  return score + ' · ' + p.stars + '⭐ · ' + p.license + ' · ' + (zh ? '实测于 dsh ' : 'verified on dsh ') + p.verifiedAgainst + ' (' + p.lastVerified + ')';
+function listedLine(p, zh) {
+  // The legacy `score` field stays in the registry as history
+  // (decisions.md 2026-08-15) but is no longer rendered; the six-axis radar
+  // block below carries the promoted entry's scores.
+  return p.stars + '⭐ · ' + p.license + ' · ' + (zh ? '实测于 dsh ' : 'verified on dsh ') + p.verifiedAgainst + ' (' + p.lastVerified + ')';
 }
 
 function candidateLine(p, zh) {
@@ -57,7 +56,7 @@ function candidateLine(p, zh) {
 function entryBlock(p, zh) {
   const desc = p.description[zh ? 'zh' : 'en'];
   let out = '- [' + p.name + '](https://github.com/' + p.repo + ') — ' + desc + '\n';
-  out += '  <br><sub>' + (p.tier === 'candidate' ? candidateLine(p, zh) : scoreLine(p, zh)) + '</sub>\n';
+  out += '  <br><sub>' + (p.tier === 'candidate' ? candidateLine(p, zh) : listedLine(p, zh)) + '</sub>\n';
   if (p.tier !== 'candidate' && p.reviewNotes) {
     out += '\n  > **' + (zh ? '创始人手记' : 'Founder’s notes') + '**: ' + p.reviewNotes[zh ? 'zh' : 'en'] + '\n';
   }
@@ -112,14 +111,14 @@ function body(zh) {
       '> 大列表告诉你**有什么**。雷达告诉你**能不能跑**。\n> 鲸选告诉你**敢不敢装、值不值得装**。'),
     '',
     t(
-      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a four-dimension score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**',
-      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有四维评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**'
+      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a six-axis radar score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**',
+      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有六轴雷达评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**'
     ),
     '',
     '## Tiers · 分级',
     '',
-    t('- 🏆 **Featured · 编辑精选** — founder-tested, security pass, four-dimension score above the gate',
-      '- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 四维评分通过门槛'),
+    t('- 🏆 **Featured · 编辑精选** — founder-tested, security pass, six-axis radar score above the gate',
+      '- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 六轴雷达评分通过门槛'),
     t('- ✅ **Listed · 已收录** — same bar as Featured (candidates that passed)',
       '- ✅ **已收录 · Listed** — 与编辑精选同门槛（转正后的候选）'),
     t('- 🧪 **Candidates · 候选池** — machine security pass done, awaiting the founder’s hands-on test',

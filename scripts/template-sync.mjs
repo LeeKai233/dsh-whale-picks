@@ -1,10 +1,11 @@
-// template-sync.mjs — drift check between a plugin repo and the whale-picks
-// paradigm skeleton (templates/plugin). Report-only by default; --strict
-// exits 1 on any finding. Zero runtime dependencies (Node built-ins).
+// template-sync.mjs — 结构与不变量自查（非逐文件 diff）：检查插件仓库与
+// whale-picks 范式骨架（templates/plugin）的固定分区与关键不变量是否漂移。
+// Report-only by default; --strict exits 1 on any finding.
+// Zero runtime dependencies (Node built-ins).
 //
 // Usage:
 //   node scripts/template-sync.mjs <plugin-dir> [--strict]
-import { readFile, stat } from 'node:fs/promises'
+import { readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
 import path from 'node:path'
@@ -88,6 +89,6 @@ const args = process.argv.slice(2)
 const pluginDir = path.resolve(args.find((a) => !a.startsWith('--')) || '.')
 const strict = args.includes('--strict')
 const report = await syncReport(pluginDir)
-console.log(report.clean ? '✅ 与模板无漂移: ' + pluginDir : '⚠️ 模板漂移清单: ' + pluginDir)
+console.log(report.clean ? '✅ 结构与不变量自查（非逐文件 diff）— 无漂移: ' + pluginDir : '⚠️ 结构与不变量自查（非逐文件 diff）— 漂移清单: ' + pluginDir)
 for (const f of report.findings) console.log((f.ok ? '   ✅ ' : '   ⚠️ ') + f.name + (f.detail ? ' — ' + f.detail : ''))
 process.exit(strict && !report.clean ? 1 : 0)

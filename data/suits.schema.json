@@ -86,8 +86,7 @@
         "tier": {
           "enum": [
             "featured",
-            "listed",
-            "candidate"
+            "listed"
           ]
         },
         "radar": {

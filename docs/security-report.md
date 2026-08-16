@@ -1,17 +1,17 @@
 # 鲸选安全体检报告 · Security Pass Report
 
-> 体检日期：2026-08-15 · dsh 0.1.0-rc.6 · 范围：编辑精选 1 件 + 候选池 10 件
-> Pass date: 2026-08-15 · dsh 0.1.0-rc.6 · Scope: 1 Featured + 10 Candidates
+> 体检日期：2026-08-16 · dsh 0.1.0-rc.6 · 范围：编辑精选 1 件 + 候选池 13 件（registry 全量 14 件）
+> Pass date: 2026-08-16 · dsh 0.1.0-rc.6 · Scope: 1 Featured + 13 Candidates (14 registry entries)
 
 ## 方法学（Method）
 
 机器体检检查 5 项（每一项都可复现、可质疑）：
 
-1. **许可证**：GitHub API 的 license 字段（none = 红旗）。
+1. **许可证**：GitHub API 的 license 字段（none = 红旗；2026-08-16 起无 LICENSE 可入候选池但挂红旗展示、不得转正）。
 2. **npm 发布与防冒名**：包在 npm registry 存在；包的 repository 指针归一化后必须指向条目仓库（防同名/抢注包）。
 3. **维护活跃度**：pushed_at 在近 6 个月内；仓库未 archived。
-4. **文档**：仓库 README 存在且含安装命令。
-5. **红旗关键词扫描**：对仓库元数据与 README 扫描遥测端点、矿池、混淆代码等明显红旗。
+4. **文档与安装命令**：插件仓库 README 存在（check-plugin 门槛硬文件）；registry 条目的 install 命令以 `dsh plugin ` 开头（validate.mjs 强制）。
+5. **静态信号对账（scanSignals）**：check-plugin 递归扫描 src/** 的网络特征（fetch(/XMLHttpRequest/sendBeacon/WebSocket）与危险特征（eval(/new Function），与 capabilities.network 声明比对，不一致出 warning（非门槛、非审计，不影响 exit code）；红旗由人工复核确认后记入 registry security.redFlags，非空即压安全轴 ≤2（compute-scores）。
 
 **机器体检查不了的东西**（这些需要创始人转正时的深度人工复核）：运行时行为、依赖供应链、安装后实际联网去向、代码质量。**体检 ≠ 审计**，本报告不构成任何安全保证。
 
@@ -20,9 +20,12 @@
 | 条目 | 体检结果 | 红旗 |
 | --- | --- | --- |
 | dsh-ui-attention | ✅ 干净（深度复核通过） | 0 |
-| dshmarket | ⚠️ 待人工复核 | 1（无 LICENSE） |
+| dsh-market | ⚠️ 待人工复核 | 1（无 LICENSE） |
 | dsh-plugin-workshop | ✅ 机器项干净 | 0（npm 未发布，转正需发布） |
 | dsh-find-plugin | ✅ 机器项干净 | 0 |
+| dsh-whale-picks-store | ✅ 机器项干净 | 0（npm 未发布，转正需发布） |
+| dsh-appearance | ✅ 机器项干净 | 0（npm 未发布，转正需发布） |
+| dsh-statusbar | ✅ 机器项干净 | 0（npm 未发布，转正需发布） |
 | dsh-web-ui | ✅ 机器项干净 | 0 |
 | dsh-skin | ❌ 防冒名校验失败 | 1 |
 | dsh-tianshu-tui | ✅ 机器项干净 | 0 |
@@ -35,7 +38,7 @@
 
 ### dsh-ui-attention
 
-- 许可证 MIT ✅ · npm 发布 ✅ 且指针正确 ✅ · 活跃 ✅ · 文档 ✅ · 关键词扫描 ✅。
+- 许可证 MIT ✅ · npm 发布 ✅ 且指针正确 ✅ · 活跃 ✅ · 文档 ✅ · 信号对账无命中 ✅（2026-08-16 复跑：src/** 无网络/危险特征，与 network=false 声明一致）。
 - 深度复核（创始人自研，天天在用）：纯本地实现——WebAudio 合成提示音、浏览器通知、标题闪烁，**零网络请求**；通知权限仅在用户手势中申请；无遥测。
 - 结论：**深度复核通过（reviewed）**。
 
@@ -55,6 +58,27 @@
 
 - 机器项全 ✅（MIT、npm 0.3.6 且指针正确、活跃）。
 - 结论：机器项干净，无待复核项。
+
+### dsh-whale-picks-store
+
+- 许可证 MIT ✅ · 维护活跃 ✅（pushed_at 2026-08-15）· 规范门槛 ✅（manifestCompliant=true，2026-08-16 本地复跑 check-plugin 门槛 PASS）。
+- npm 未发布（registry npmName 为 null；目前 file: 安装可用，转正前需 npm publish）。
+- 信号对账（2026-08-16 实跑）：网络特征 fetch(（src/client/store-data.ts:72）与 capabilities.network=true 声明一致（info）；无危险特征命中。registry notes：只读远端 registry，无遥测。
+- 结论：机器项干净，无待复核项；待创始人亲测转正。
+
+### dsh-appearance
+
+- 许可证 MIT ✅ · 维护活跃 ✅（pushed_at 2026-08-16）· 规范门槛 ✅（manifestCompliant=true，2026-08-16 本地复跑 check-plugin 门槛 PASS）。
+- npm 未发布（转正前需 npm publish；目前 file: 安装可用）。
+- 信号对账（2026-08-16 实跑）：无任何网络/危险特征命中，与 registry notes「外观管理器：零网络请求」一致。
+- 结论：机器项干净，无待复核项；待创始人亲测转正。
+
+### dsh-statusbar
+
+- 许可证 MIT ✅ · 维护活跃 ✅（pushed_at 2026-08-16）· 规范门槛 ✅（manifestCompliant=true，2026-08-16 本地复跑 check-plugin 门槛 PASS）。
+- npm 未发布（转正前需 npm publish）。
+- 信号对账（2026-08-16 实跑）：3 处网络特征 fetch(（src/client/balance.ts:31、src/client/weather.ts:206/342）与 capabilities.network=true 声明一致（info）；无危险特征命中。registry notes：余额/天气浏览器直连官方接口。
+- 结论：机器项干净，无待复核项；待创始人亲测转正。
 
 ### dsh-web-ui
 

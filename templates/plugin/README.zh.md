@@ -1,5 +1,7 @@
 # {{PLUGIN_NAME}}
 
+[![鲸选模板](https://raw.githubusercontent.com/LeeKai233/dsh-whale-picks/main/assets/template-badge.svg)](https://github.com/LeeKai233/dsh-whale-picks/tree/main/templates/plugin)
+
 中文 | [English](README.md)
 
 {{DESCRIPTION_ZH}}

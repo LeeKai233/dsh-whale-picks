@@ -89,7 +89,7 @@
   dsh plugin --profile web add dsh-find-plugin
   ```
 
-- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — 鲸选商店入口：在 DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、九轴 Braille ASCII 雷达、创始人评分与体检结论，一键复制安装命令
+- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — 鲸选商店入口：在 DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、九轴 ASCII meter 柱状兑现度图、创始人评分与体检结论，一键复制安装命令
   <br><sub>0⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✓ · [体检发现](docs/security-report.md#dsh-whale-picks-store)</sub>
 
   ```sh

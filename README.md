@@ -89,7 +89,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   dsh plugin --profile web add dsh-find-plugin
   ```
 
-- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — The whale-picks store entry: a 鲸选 section right below Agent Presets in DSH settings, browsing suits and curated plugins with nine-axis Braille ASCII radars, founder scores and copyable install commands
+- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — The whale-picks store entry: a 鲸选 section right below Agent Presets in DSH settings, browsing suits and curated plugins with nine-axis ASCII meter charts, founder scores and copyable install commands
   <br><sub>0⭐ · MIT · machine pass 2026-08-15 · spec gate ✓ · [pass findings](docs/security-report.md#dsh-whale-picks-store)</sub>
 
   ```sh

@@ -14,7 +14,7 @@
 
 ## 构建新插件的检查清单
 
-- [ ] 用 templates/plugin/ 脚手架起步（或对齐其结构：tsdown 双产物、dsh.client 声明、cordis.patch.yml）
+- [ ] 用 templates/plugin/ 脚手架起步（或对齐其结构：tsdown 双产物、dsh.client 声明、cordis.patch.yml；host-only 插件无浏览器半区：无 dsh.client 块、单产物 lib/index.js，结构断言自动记豁免）
 - [ ] whalepicks.json 齐全且过 schema；id 全店唯一（先查 whale-picks registry 无重复）
 - [ ] scope.does 一句话、scope.doesNot 至少一条——Unix 单功能合同
 - [ ] package.json name/version 与 manifest 同步；repository 指向本仓库

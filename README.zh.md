@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-2-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -42,6 +42,19 @@
 
   ```sh
   dsh plugin --profile web add dsh-ui-attention
+  ```
+
+### 其他
+
+- [dsh-session-search-warmup](https://github.com/LeeKai233/dsh-session-search-warmup) — DSH 会话搜索预热：进程启动的安静窗口内静默构建官方 SQLite FTS5 索引，让官方搜索第一次查询即毫秒级响应
+  <br><sub>0⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-16)</sub>
+
+  > **创始人手记**: 大语料下官方搜索首次查询要几十秒、语料不静默时甚至永远建不成索引——这个插件在启动安静窗口替你建好索引，之后每次搜索都是毫秒级。纯宿主态、零网络、只调官方服务，Unix 单功能的教科书形态；它还逼范式补上了纯宿主态豁免，是范式覆盖面的第一次真实扩张。2026-08-16 实测（dsh 0.1.0-rc.6）：预热后首次查询 9–29ms，索引覆盖全部 22 条会话共 12702 段文档。
+
+  ![six-axis radar](assets/radar/dsh-session-search-warmup.svg "dsh-session-search-warmup six-axis radar")
+
+  ```sh
+  dsh plugin --profile web add dsh-session-search-warmup
   ```
 
 

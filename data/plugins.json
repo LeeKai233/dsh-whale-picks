@@ -93,6 +93,86 @@
       }
     },
     {
+      "id": "dsh-session-search-warmup",
+      "name": "dsh-session-search-warmup",
+      "repo": "LeeKai233/dsh-session-search-warmup",
+      "npmName": "dsh-session-search-warmup",
+      "install": "dsh plugin --profile web add dsh-session-search-warmup",
+      "tier": "featured",
+      "category": "other",
+      "license": "MIT",
+      "stars": 0,
+      "pushedAt": "2026-08-16T15:15:32Z",
+      "archived": false,
+      "verifiedAgainst": "0.1.0-rc.6",
+      "lastVerified": "2026-08-16",
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-16",
+        "reviewStatus": "reviewed",
+        "hasLicense": true,
+        "npmPublished": true,
+        "repoPointerMatch": true,
+        "pushedRecent": true,
+        "redFlags": [],
+        "notes": "纯宿主态插件（范式对称豁免首个实例）：零网络请求，仅在启动安静窗口调用官方 sessionQuery 服务触发索引构建（15s×20 有界重试）；check-plugin --strict 全绿、信号对账零命中。实测 2026-08-16（dsh 0.1.0-rc.6）：预热后官方搜索首次查询 9–29ms，索引 12702 段文档、覆盖全部 22 条会话。"
+      },
+      "reviewNotes": {
+        "zh": "大语料下官方搜索首次查询要几十秒、语料不静默时甚至永远建不成索引——这个插件在启动安静窗口替你建好索引，之后每次搜索都是毫秒级。纯宿主态、零网络、只调官方服务，Unix 单功能的教科书形态；它还逼范式补上了纯宿主态豁免，是范式覆盖面的第一次真实扩张。2026-08-16 实测（dsh 0.1.0-rc.6）：预热后首次查询 9–29ms，索引覆盖全部 22 条会话共 12702 段文档。",
+        "en": "On a large corpus the official search needs tens of seconds for its first query — or never finishes indexing while sessions stay live. This plugin builds the index during the quiet boot window; every later search answers in milliseconds. Host-only, zero network, official services only — a textbook Unix single-purpose plugin, and the case that pushed the paradigm to add its symmetric host-only exemption. Measured 2026-08-16 on dsh 0.1.0-rc.6: first query 9–29ms, index covering all 22 sessions (12,702 document segments)."
+      },
+      "description": {
+        "zh": "DSH 会话搜索预热：进程启动的安静窗口内静默构建官方 SQLite FTS5 索引，让官方搜索第一次查询即毫秒级响应",
+        "en": "Warms the official DSH session-search index during the quiet boot window, so the official search answers in milliseconds on its very first query"
+      },
+      "submittedAt": "2026-08-16",
+      "listedAt": "2026-08-16",
+      "reviewedBy": "LeeKai233",
+      "specVersion": "1.1",
+      "manifestCompliant": true,
+      "patches": {
+        "insertIds": [
+          "session-search-warmup"
+        ],
+        "namespaces": [],
+        "slots": []
+      },
+      "radar": {
+        "human": {
+          "value": 5,
+          "source": "founder",
+          "count": 1,
+          "evidence": "创始人自研并日常使用；2026-08-16 实测：预热后官方搜索首次查询 9–29ms（dsh 0.1.0-rc.6），索引覆盖全部 22 条会话共 12702 段文档",
+          "updatedAt": "2026-08-16"
+        },
+        "security": {
+          "value": 5,
+          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
+          "updatedAt": "2026-08-16"
+        },
+        "scope": {
+          "value": 5,
+          "evidence": "scope.does/doesNot 单功能声明 + insert id 交叉冲突检测",
+          "updatedAt": "2026-08-16"
+        },
+        "cost": {
+          "value": 5,
+          "evidence": "许可证（SPDX）与付费墙声明",
+          "updatedAt": "2026-08-16"
+        },
+        "activity": {
+          "value": 5,
+          "evidence": "pushed_at 2026-08-16T15:15:32Z 映射",
+          "updatedAt": "2026-08-16"
+        },
+        "compatibility": {
+          "value": 5,
+          "evidence": "实测于 dsh 0.1.0-rc.6（2026-08-16）",
+          "updatedAt": "2026-08-16"
+        }
+      }
+    },
+    {
       "id": "dsh-appearance",
       "name": "dsh-appearance",
       "repo": "LeeKai233/dsh-appearance",

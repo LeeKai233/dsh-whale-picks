@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-2-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -42,6 +42,19 @@ Every entry carries its exact install command. Most plugins install with `dsh pl
 
   ```sh
   dsh plugin --profile web add dsh-ui-attention
+  ```
+
+### Other
+
+- [dsh-session-search-warmup](https://github.com/LeeKai233/dsh-session-search-warmup) — Warms the official DSH session-search index during the quiet boot window, so the official search answers in milliseconds on its very first query
+  <br><sub>0⭐ · MIT · verified on dsh 0.1.0-rc.6 (2026-08-16)</sub>
+
+  > **Founder’s notes**: On a large corpus the official search needs tens of seconds for its first query — or never finishes indexing while sessions stay live. This plugin builds the index during the quiet boot window; every later search answers in milliseconds. Host-only, zero network, official services only — a textbook Unix single-purpose plugin, and the case that pushed the paradigm to add its symmetric host-only exemption. Measured 2026-08-16 on dsh 0.1.0-rc.6: first query 9–29ms, index covering all 22 sessions (12,702 document segments).
+
+  ![six-axis radar](assets/radar/dsh-session-search-warmup.svg "dsh-session-search-warmup six-axis radar")
+
+  ```sh
+  dsh plugin --profile web add dsh-session-search-warmup
   ```
 
 

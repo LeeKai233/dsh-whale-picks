@@ -377,18 +377,28 @@ export async function structureReport(dir) {
   }
 
   // -- package facts
+  let hostOnly = false
   if (!existsSync(path.join(dir, 'package.json'))) {
     warn('package.json', '缺失')
   } else {
     const pkg = JSON.parse(await read('package.json'))
     const dsh = pkg.dsh ?? {}
-    if (dsh.client?.platform === 'web' && Array.isArray(dsh.client.inject) && dsh.client.inject.length > 0 && dsh.bundle?.patch) {
+    // Host-only shape: no dsh.client block and no src/client — the browser-half
+    // assertions below become documented exemptions (paradigm symmetric exemption).
+    hostOnly = !dsh.client && !existsSync(path.join(dir, 'src/client'))
+    if (hostOnly) {
+      if (dsh.bundle?.patch) ok('dsh 块', '宿主态插件：bundle.patch 已声明（无 dsh.client，浏览器半区豁免）')
+      else warn('dsh 块', '缺少 bundle.patch 路径')
+      ok('exports "./client"', '宿主态插件豁免（无浏览器半区）')
+    } else if (dsh.client?.platform === 'web' && Array.isArray(dsh.client.inject) && dsh.client.inject.length > 0 && dsh.bundle?.patch) {
       ok('dsh.client 块', 'platform=web、inject 已声明、bundle.patch 已声明')
     } else {
       warn('dsh.client 块', '需声明 platform=web、inject 服务列表与 bundle.patch 路径')
     }
-    if (pkg.exports?.['./client']) ok('exports "./client"', pkg.exports['./client'])
-    else warn('exports "./client"', '客户端半区必须通过 ./client 暴露')
+    if (!hostOnly) {
+      if (pkg.exports?.['./client']) ok('exports "./client"', pkg.exports['./client'])
+      else warn('exports "./client"', '客户端半区必须通过 ./client 暴露')
+    }
     if (typeof pkg.scripts?.bundle === 'string' && pkg.scripts.bundle.includes('tsdown')) ok('build 脚本', 'bundle = tsdown')
     else warn('build 脚本', '缺少 tsdown 构建脚本')
     if (typeof pkg.scripts?.test === 'string' && pkg.scripts.test.includes('vitest')) ok('test 脚本', 'test = vitest')
@@ -418,12 +428,14 @@ export async function structureReport(dir) {
   else warn('宿主半区 src/index.ts', '缺失')
 
   // -- browser half
-  if (existsSync(path.join(dir, 'src/client/index.ts'))) ok('浏览器半区 src/client/index.ts', '存在')
+  if (hostOnly) ok('浏览器半区 src/client/index.ts', '宿主态插件豁免（无 dsh.client 块）')
+  else if (existsSync(path.join(dir, 'src/client/index.ts'))) ok('浏览器半区 src/client/index.ts', '存在')
   else warn('浏览器半区 src/client/index.ts', '缺失')
 
   // -- copy layer
   const localesText = await read('src/client/locales.ts')
-  if (localesText.includes('zh') && localesText.includes('en')) ok('locale zh/en 双词典', 'src/client/locales.ts')
+  if (hostOnly) ok('locale zh/en 双词典', '宿主态插件豁免（无浏览器文案）')
+  else if (localesText.includes('zh') && localesText.includes('en')) ok('locale zh/en 双词典', 'src/client/locales.ts')
   else warn('locale zh/en 双词典', 'src/client/locales.ts 需导出 zh 与 en')
   if (existsSync(path.join(dir, 'README.zh.md'))) ok('README 双语', 'README.md + README.zh.md')
   else warn('README 双语', '缺少 README.zh.md')
@@ -446,7 +458,8 @@ export async function structureReport(dir) {
 
   // -- build config
   const tsdown = await read('tsdown.config.ts')
-  if (tsdown.includes('window.__ModuleLoader__')) ok('tsdown 双产物包装', 'window.__ModuleLoader__ banner 存在')
+  if (hostOnly) ok('tsdown 双产物包装', '宿主态插件豁免（单产物 lib/index.js）')
+  else if (tsdown.includes('window.__ModuleLoader__')) ok('tsdown 双产物包装', 'window.__ModuleLoader__ banner 存在')
   else warn('tsdown 双产物包装', '缺少 __ModuleLoader__ banner（浏览器半区无法装载）')
 
   // -- client bundle purity (recursive over src/client)
@@ -552,9 +565,15 @@ async function buildSmokeGaps(dir) {
     gaps.push('构建冒烟失败: npm run bundle ' + (run.error ? run.error.message : 'exit ' + run.status) + (tail ? ' — ' + tail.slice(0, 400) : ''))
     return gaps
   }
-  for (const f of ['lib/index.js', 'lib/client.js']) {
-    if (!existsSync(path.join(dir, f))) gaps.push('构建冒烟: 缺少产物 ' + f)
-  }
+  // Host-only plugins (no dsh.client block, no src/client) build a single artifact.
+  let hostOnly = false
+  try {
+    const pkg = JSON.parse(await readFile(path.join(dir, 'package.json'), 'utf8'))
+    hostOnly = !pkg.dsh?.client && !existsSync(path.join(dir, 'src/client'))
+  } catch { /* unreadable package.json — treat as dual-artifact */ }
+  if (!existsSync(path.join(dir, 'lib/index.js'))) gaps.push('构建冒烟: 缺少产物 lib/index.js')
+  if (hostOnly) return gaps
+  if (!existsSync(path.join(dir, 'lib/client.js'))) gaps.push('构建冒烟: 缺少产物 lib/client.js')
   const clientPath = path.join(dir, 'lib/client.js')
   if (existsSync(clientPath)) {
     const client = await readFile(clientPath, 'utf8')

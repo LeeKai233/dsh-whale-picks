@@ -1,7 +1,7 @@
 # 鲸选安全体检报告 · Security Pass Report
 
-> 体检日期：2026-08-16 · dsh 0.1.0-rc.6 · 范围：编辑精选 1 件 + 候选池 13 件（registry 全量 14 件）
-> Pass date: 2026-08-16 · dsh 0.1.0-rc.6 · Scope: 1 Featured + 13 Candidates (14 registry entries)
+> 体检日期：2026-08-16 · dsh 0.1.0-rc.6 · 范围：编辑精选 2 件 + 候选池 13 件（registry 全量 15 件）
+> Pass date: 2026-08-16 · dsh 0.1.0-rc.6 · Scope: 2 Featured + 13 Candidates (15 registry entries)
 
 ## 方法学（Method）
 
@@ -20,6 +20,7 @@
 | 条目 | 体检结果 | 红旗 |
 | --- | --- | --- |
 | dsh-ui-attention | ✅ 干净（深度复核通过） | 0 |
+| dsh-session-search-warmup | ✅ 干净（深度复核通过） | 0 |
 | dsh-market | ⚠️ 待人工复核 | 1（无 LICENSE） |
 | dsh-plugin-workshop | ✅ 机器项干净 | 0（npm 未发布，转正需发布） |
 | dsh-find-plugin | ✅ 机器项干净 | 0 |
@@ -40,6 +41,13 @@
 
 - 许可证 MIT ✅ · npm 发布 ✅ 且指针正确 ✅ · 活跃 ✅ · 文档 ✅ · 信号对账无命中 ✅（2026-08-16 复跑：src/** 无网络/危险特征，与 network=false 声明一致）。
 - 深度复核（创始人自研，天天在用）：纯本地实现——WebAudio 合成提示音、浏览器通知、标题闪烁，**零网络请求**；通知权限仅在用户手势中申请；无遥测。
+- 结论：**深度复核通过（reviewed）**。
+
+### dsh-session-search-warmup
+
+- 许可证 MIT ✅ · npm 0.3.1 发布 ✅ 且 repository 指针正确 ✅ · 活跃 ✅ · 文档 ✅ · 信号对账无命中 ✅（2026-08-16 实跑：src/** 无网络/危险特征，与 network=false 声明一致）。
+- 深度复核（创始人自研，日常在用）：纯宿主态插件——无 dsh.client 块、无 src/client/，零网络请求；仅在启动安静窗口调用官方 sessionQuery 触发 FTS5 索引构建，15s×20 有界重试后放弃，无长驻轮询。check-plugin --strict 全绿（含宿主态豁免判定、构建冒烟、测试断言）。
+- 实测（2026-08-16，dsh 0.1.0-rc.6）：预热后官方搜索首次查询 9–29ms（三种典型 MATCH），索引 12702 段文档、覆盖磁盘全部 22 条会话；索引库 mtime 与当日 harness 启动时刻（19:36）一致，预热按设计在启动窗口生效。
 - 结论：**深度复核通过（reviewed）**。
 
 ### dsh-market

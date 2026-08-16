@@ -314,7 +314,8 @@
             "terminal-desktop",
             "agents",
             "usage",
-            "notifications"
+            "notifications",
+            "other"
           ]
         },
         "license": {

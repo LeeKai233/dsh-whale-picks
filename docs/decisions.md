@@ -23,6 +23,11 @@
 | ⏳ 红旗处置 SLA 启动 | dsh-market（无 LICENSE）、dsh-skin（防冒名失败）、dsh-usage-stats（防冒名失败） | 三件悬置红旗处置期限 2026-09-15（30 天 SLA 自 2026-08-16 起）：修复并验证、转为下架或裁定保留；逾期自动升级创始人亲裁 |
 | ⏳ 待裁定 SLA | [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) | 非 dsh plugin 形态的待裁定项同期限（2026-09-15） |
 | 🏆 转正复核（维持 featured） | [dsh-ui-attention](https://github.com/LeeKai233/dsh-ui-attention) | 按新标复核通过：check-plugin --strict 全绿（七分区 + 构建冒烟 + 93 测试）、信号对账零命中、作者预填 security 块随插件仓库 6235471 移除；机器轴分值不变故 evidence/updatedAt 保持原值（mergeAxis 语义），human 轴与 lastVerified 仍为 2026-08-15 创始人实测；同次重算为 dsh-appearance / dsh-statusbar 两件合规候选补上机器五轴 |
+| 📐 范式补对称豁免（host-only 形态） | spec/PARADIGM.md 扩展点 6 + scripts/check-plugin.mjs | 豁免原只覆盖 browser-only（宿主半区可空实现）；dsh-session-search-warmup 是首个纯宿主态插件，逼出反向缺口：package.json 无 dsh.client 块且无 src/client/ 即 host-only，浏览器半区断言（src/client、locale、tsdown banner、exports ./client、构建冒烟 client 产物）机械判定为豁免而非缺失。schemaVersion 不动（无 manifest 字段变更） |
+| 🏆 收录（编辑精选） | [dsh-session-search-warmup](https://github.com/LeeKai233/dsh-session-search-warmup) | 创始人自研并日常使用；2026-08-16 实测（dsh 0.1.0-rc.6）：预热后官方搜索首次查询 9–29ms，索引 12702 段文档覆盖全部 22 条会话。机器五轴 5/5/5/5/5 + 真人 5 = 30 ≥ 24；check-plugin --strict 全绿、信号对账零命中；npm 0.3.1 发布且 repository 指针正确；深度复核见 security-report.md。范式纯宿主态对称豁免的首个实例 |
+| 🐛 registry schema 对齐 manifest | data/schema.json | category 枚举漏了 manifest 合法的 "other"（此前无条目使用该值而未暴露）；已补齐，validate 通过 |
+| 🐛 转正合同去掉旧四维 score 硬要求 | scripts/validate.mjs | featured/listed 仍要求 legacy score 字段——四维→六轴迁移的残留（score 已声明仅历史、README 已撤下展示）；现以六轴雷达合同为准，attention 条目的旧 score 字段保留为历史 |
+| 🐛 README 渲染吞掉 other 分类 | scripts/render-readme.mjs | CATEGORY_ORDER/CATEGORY_LABEL 无 "other"，featured 条目渲染时静默消失；已补分类并加兜底——未知分类按原始 key 渲染而非丢弃 |
 
 ## 2026-08-15
 

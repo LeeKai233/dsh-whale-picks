@@ -11,9 +11,10 @@ const CATEGORY_LABEL = {
   'terminal-desktop': { en: 'Terminal & Desktop', zh: '终端与桌面' },
   agents: { en: 'Agents & Workflow', zh: '多 Agent 与工作流' },
   usage: { en: 'Usage & Stats', zh: '用量与统计' },
-  notifications: { en: 'Notifications & Alerts', zh: '通知与提醒' }
+  notifications: { en: 'Notifications & Alerts', zh: '通知与提醒' },
+  other: { en: 'Other', zh: '其他' }
 };
-const CATEGORY_ORDER = ['discovery', 'ui', 'terminal-desktop', 'agents', 'usage', 'notifications'];
+const CATEGORY_ORDER = ['discovery', 'ui', 'terminal-desktop', 'agents', 'usage', 'notifications', 'other'];
 const TIER_LABEL = {
   featured: { en: '🏆 Featured · 编辑精选', zh: '🏆 编辑精选 · Featured' },
   listed: { en: '✅ Listed · 已收录', zh: '✅ 已收录 · Listed' },
@@ -82,10 +83,14 @@ function catalog(zh) {
         : 'Machine pass done; awaiting the founder’s hands-on test before promotion. Your trial notes and issues speed that up.');
       parts.push('');
     }
-    for (const cat of CATEGORY_ORDER) {
+    // categories beyond CATEGORY_ORDER still render (label falls back to the
+    // raw key) — an entry must never silently vanish from the catalog
+    const cats = [...CATEGORY_ORDER, ...[...new Set(pool.map(p => p.category))].filter(c => !CATEGORY_ORDER.includes(c)).sort()];
+    for (const cat of cats) {
       const items = pool.filter(p => p.category === cat);
       if (!items.length) continue;
-      parts.push('### ' + CATEGORY_LABEL[cat][zh ? 'zh' : 'en'], '');
+      const label = CATEGORY_LABEL[cat] ?? { en: cat, zh: cat };
+      parts.push('### ' + label[zh ? 'zh' : 'en'], '');
       for (const p of items) parts.push(entryBlock(p, zh));
     }
     sections.push(parts.join('\n'));

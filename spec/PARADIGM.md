@@ -37,10 +37,15 @@ English below. 本文是鲸选对 DSH 插件的**范式**定义：一套适用�
 4. **设置持久化**：三选一——宿主命名空间注册 / localStorage（或 runtime 快照引擎）/
    不持久化。
 5. **模块自述描述符**（范式级契约）：{ id, name, whalepicks 嵌入, settingsSchema,
-   getState, setState }。任何希望把参数交给宿主面板渲染、并参与通用冲突/危险/性能
-   体检的插件都实现它；dsh-appearance 是第一个消费者。
-6. **宿主半区空实现**：browser-only 插件允许 apply 为 no-op——接口允许空实现，文件
-   仍保留（可审查性不因功能少而打折）。
+   getState, setState, roots? }。任何希望把参数交给宿主面板渲染、并参与通用冲突/危险/性能
+   体检的插件都实现它；dsh-appearance 是第一个消费者。可选的 roots() 返回模块当前
+   挂载的根元素，供管理页统计实时 DOM 节点占用（每插件精确的实时指标；分插件 JS 堆
+   在同 realm 页面里不可测量）。
+6. **半区豁免（对称）**：browser-only 插件允许宿主半区 apply 为 no-op——接口允许空实现，
+   文件仍保留（可审查性不因功能少而打折）；反过来，host-only 插件（package.json 无
+   dsh.client 块且无 src/client/）允许无浏览器半区——结构报告与 --strict 的浏览器半区
+   断言（src/client、locale 词典、tsdown banner、exports ./client、构建冒烟的 client
+   产物）记为豁免而非缺失，判定是纯机械的。
 
 ## 3. 九目标一原则：闭环如何兑现
 
@@ -134,11 +139,21 @@ sections, report-only, always exits 0).
 4. **Settings persistence**: pick one — host namespace registration /
    localStorage (or the runtime snapshot engine) / none.
 5. **Module self-descriptor** (paradigm-level contract): { id, name, embedded
-   whalepicks, settingsSchema, getState, setState }. Any plugin that wants its
-   parameters rendered by a host panel and to join generic conflict/danger/
-   performance checks implements it; dsh-appearance is its first consumer.
-6. **Empty host half**: browser-only plugins may leave apply a no-op — the
-   interface permits an empty implementation, the files remain.
+   whalepicks, settingsSchema, getState, setState, roots? }. Any plugin that
+   wants its parameters rendered by a host panel and to join generic
+   conflict/danger/performance checks implements it; dsh-appearance is its
+   first consumer. The optional roots() returns the module's currently-mounted
+   root elements so the manager page can count its live DOM footprint (the
+   exact per-plugin real-time metric — per-plugin JS heap is not measurable
+   inside a shared-realm page).
+6. **Half exemption (symmetric)**: browser-only plugins may leave the host-side
+   apply a no-op — the interface permits an empty implementation, the files
+   remain. Conversely, host-only plugins (no dsh.client block in package.json
+   and no src/client/) may have no browser half at all — the structure report
+   and --strict then record the browser-half assertions (src/client, locale
+   dictionaries, tsdown banner, exports ./client, the client artifact in the
+   build smoke) as exempt rather than missing; the detection is purely
+   mechanical.
 
 ## 3. Nine goals, one principle: how the loop closes
 

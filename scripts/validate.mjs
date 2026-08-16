@@ -85,7 +85,8 @@ for (const p of registry.plugins) {
   }
 
   if (p.tier === "featured" || p.tier === "listed") {
-    if (!p.score) errors.push(`${p.id}: ${p.tier} requires score`);
+    // legacy four-dimension score is history-only (decisions 2026-08-15); the live
+    // promotion contract is the six-axis radar below — no score requirement here.
     if (p.security.reviewStatus !== "reviewed") errors.push(`${p.id}: ${p.tier} requires security.reviewStatus=reviewed`);
     if (!p.reviewNotes) errors.push(`${p.id}: ${p.tier} requires reviewNotes`);
     if (!p.verifiedAgainst || !p.lastVerified) errors.push(`${p.id}: ${p.tier} requires verifiedAgainst and lastVerified`);

@@ -278,7 +278,7 @@
         },
         "distribution": {
           "value": 5,
-          "evidence": "npm 已发布且 repository 指针正确（0.1.1 含 manifest，待 OTP 发布）",
+          "evidence": "npm 0.1.2 已发布（含 whalepicks.json）且 repository 指针正确",
           "updatedAt": "2026-08-17"
         },
         "composition": {

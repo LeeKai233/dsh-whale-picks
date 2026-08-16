@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -166,7 +166,7 @@
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — 机器可读数据（1028 条）
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — DSH 内置安装市场
 
-按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-08-15。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
+按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-08-16。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
 
 ## License
 

@@ -22,6 +22,7 @@
 | 📐 宪章修订 | docs/charter.md | 转正线改六轴雷达（总分 ≥ 24 且安全 ≥ 4 且兼容 ≥ 4 且真人轴非空，与 rubric/validate 一致）；无 LICENSE 可入候选池但挂红旗展示、不得转正（listed/featured 必须 OSI 许可证）；新增「退出与救济」（申诉 14 天复核、红旗 30 天 SLA） |
 | ⏳ 红旗处置 SLA 启动 | dsh-market（无 LICENSE）、dsh-skin（防冒名失败）、dsh-usage-stats（防冒名失败） | 三件悬置红旗处置期限 2026-09-15（30 天 SLA 自 2026-08-16 起）：修复并验证、转为下架或裁定保留；逾期自动升级创始人亲裁 |
 | ⏳ 待裁定 SLA | [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) | 非 dsh plugin 形态的待裁定项同期限（2026-09-15） |
+| 🏆 转正复核（维持 featured） | [dsh-ui-attention](https://github.com/LeeKai233/dsh-ui-attention) | 按新标复核通过：check-plugin --strict 全绿（七分区 + 构建冒烟 + 93 测试）、信号对账零命中、作者预填 security 块随插件仓库 6235471 移除；机器轴分值不变故 evidence/updatedAt 保持原值（mergeAxis 语义），human 轴与 lastVerified 仍为 2026-08-15 创始人实测；同次重算为 dsh-appearance / dsh-statusbar 两件合规候选补上机器五轴 |
 
 ## 2026-08-15
 

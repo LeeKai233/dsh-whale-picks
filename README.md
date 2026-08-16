@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -166,7 +166,7 @@ We deliberately do not compete on quantity. The wide lanes are covered by:
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — machine-readable registry (1028 entries)
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — the in-DSH install market
 
-Maintained against dsh **0.1.0-rc.6** · registry updated 2026-08-15. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
+Maintained against dsh **0.1.0-rc.6** · registry updated 2026-08-16. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
 
 ## License
 

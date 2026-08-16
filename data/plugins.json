@@ -13,7 +13,7 @@
       "category": "notifications",
       "license": "MIT",
       "stars": 1,
-      "pushedAt": "2026-08-15T10:36:08Z",
+      "pushedAt": "2026-08-16T12:53:02Z",
       "archived": false,
       "verifiedAgainst": "0.1.0-rc.6",
       "lastVerified": "2026-08-15",
@@ -222,7 +222,7 @@
       "category": "ui",
       "license": "MIT",
       "stars": 0,
-      "pushedAt": "2026-08-16T14:28:52+08:00",
+      "pushedAt": "2026-08-16T17:29:53Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -233,7 +233,7 @@
         "hasLicense": true,
         "npmPublished": false,
         "repoPointerMatch": null,
-        "pushedRecent": null,
+        "pushedRecent": true,
         "redFlags": [],
         "notes": "外观管理器：零网络请求；npm 尚未发布（转正前需 npm publish；目前 file: 安装可用）。"
       },
@@ -321,7 +321,7 @@
       "category": "ui",
       "license": "MIT",
       "stars": 0,
-      "pushedAt": "2026-08-16T14:32:28+08:00",
+      "pushedAt": "2026-08-16T17:28:43Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -332,7 +332,7 @@
         "hasLicense": true,
         "npmPublished": false,
         "repoPointerMatch": null,
-        "pushedRecent": null,
+        "pushedRecent": true,
         "redFlags": [],
         "notes": "状态栏：余额/天气浏览器直连官方接口（capabilities.network=true）；npm 尚未发布（转正前需 npm publish）。"
       },
@@ -421,8 +421,8 @@
       "tier": "candidate",
       "category": "discovery",
       "license": "none",
-      "stars": 270,
-      "pushedAt": "2026-08-15T15:45:47Z",
+      "stars": 546,
+      "pushedAt": "2026-08-16T17:22:29Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -450,7 +450,9 @@
       "specVersion": null,
       "manifestCompliant": false,
       "patches": {
-        "insertIds": [],
+        "insertIds": [
+          "dsh-market"
+        ],
         "namespaces": [],
         "slots": []
       },
@@ -465,8 +467,8 @@
       "tier": "candidate",
       "category": "discovery",
       "license": "MIT",
-      "stars": 23,
-      "pushedAt": "2026-08-15T09:40:39Z",
+      "stars": 25,
+      "pushedAt": "2026-08-16T01:28:46Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -492,7 +494,9 @@
       "specVersion": null,
       "manifestCompliant": false,
       "patches": {
-        "insertIds": [],
+        "insertIds": [
+          "plugin-workshop"
+        ],
         "namespaces": [],
         "slots": []
       },
@@ -507,7 +511,7 @@
       "tier": "candidate",
       "category": "discovery",
       "license": "MIT",
-      "stars": 26,
+      "stars": 36,
       "pushedAt": "2026-08-14T13:17:47Z",
       "archived": false,
       "verifiedAgainst": null,
@@ -534,7 +538,9 @@
       "specVersion": null,
       "manifestCompliant": false,
       "patches": {
-        "insertIds": [],
+        "insertIds": [
+          "find-dsh-plugin"
+        ],
         "namespaces": [],
         "slots": []
       },
@@ -549,8 +555,8 @@
       "tier": "candidate",
       "category": "ui",
       "license": "Apache-2.0",
-      "stars": 2637,
-      "pushedAt": "2026-08-15T15:36:41Z",
+      "stars": 3363,
+      "pushedAt": "2026-08-16T16:54:12Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -591,8 +597,8 @@
       "tier": "candidate",
       "category": "ui",
       "license": "MIT",
-      "stars": 11,
-      "pushedAt": "2026-08-13T23:40:05Z",
+      "stars": 16,
+      "pushedAt": "2026-08-15T19:55:57Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -620,7 +626,9 @@
       "specVersion": null,
       "manifestCompliant": false,
       "patches": {
-        "insertIds": [],
+        "insertIds": [
+          "skin"
+        ],
         "namespaces": [],
         "slots": []
       },
@@ -635,8 +643,8 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "Apache-2.0",
-      "stars": 165,
-      "pushedAt": "2026-08-15T17:27:42Z",
+      "stars": 190,
+      "pushedAt": "2026-08-16T09:34:18Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -662,7 +670,9 @@
       "specVersion": null,
       "manifestCompliant": false,
       "patches": {
-        "insertIds": [],
+        "insertIds": [
+          "tui-runner"
+        ],
         "namespaces": [],
         "slots": []
       },
@@ -677,7 +687,7 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "MIT",
-      "stars": 25,
+      "stars": 31,
       "pushedAt": "2026-08-15T16:29:09Z",
       "archived": false,
       "verifiedAgainst": null,
@@ -719,8 +729,8 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "MIT",
-      "stars": 5508,
-      "pushedAt": "2026-08-15T16:41:18Z",
+      "stars": 8719,
+      "pushedAt": "2026-08-16T17:13:37Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -763,8 +773,8 @@
       "tier": "candidate",
       "category": "agents",
       "license": "MIT",
-      "stars": 327,
-      "pushedAt": "2026-08-15T15:05:18Z",
+      "stars": 411,
+      "pushedAt": "2026-08-16T14:28:07Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -790,7 +800,9 @@
       "specVersion": null,
       "manifestCompliant": false,
       "patches": {
-        "insertIds": [],
+        "insertIds": [
+          "agent-teams"
+        ],
         "namespaces": [],
         "slots": []
       },
@@ -805,7 +817,7 @@
       "tier": "candidate",
       "category": "usage",
       "license": "MIT",
-      "stars": 14,
+      "stars": 16,
       "pushedAt": "2026-08-14T15:05:17Z",
       "archived": false,
       "verifiedAgainst": null,
@@ -834,7 +846,9 @@
       "specVersion": null,
       "manifestCompliant": false,
       "patches": {
-        "insertIds": [],
+        "insertIds": [
+          "usage-stats"
+        ],
         "namespaces": [],
         "slots": []
       },
@@ -850,7 +864,7 @@
       "category": "discovery",
       "license": "MIT",
       "stars": 0,
-      "pushedAt": "2026-08-15T13:30:19Z",
+      "pushedAt": "2026-08-16T17:17:42Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -873,7 +887,7 @@
       "submittedAt": "2026-08-15",
       "listedAt": null,
       "reviewedBy": null,
-      "specVersion": "1.0",
+      "specVersion": "1.1",
       "manifestCompliant": true,
       "patches": {
         "insertIds": [
@@ -886,8 +900,8 @@
       },
       "radar": {
         "producibility": {
-          "value": 4,
-          "evidence": "范式对齐缺口：manifest schemaVersion=1.0（≠1.1）",
+          "value": 5,
+          "evidence": "范式对齐：manifest 1.1 + files 含合同 + dsh 块完整",
           "updatedAt": "2026-08-16"
         },
         "adoptability": {

@@ -7,6 +7,7 @@
 | 决定 | 条目 | 理由 |
 | --- | --- | --- |
 | 🧪 进入候选池 | [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) | 创始人自研：侧栏搜索就地增强（内存索引毫秒检索 + 过滤 + 多命中下拉 + seq 锚点跳转高亮）。check-plugin 门槛 2026-08-17 PASS；npm 0.1.0 已发布且 repository 指针正确（含 manifest 的 0.1.1 待 OTP 发布）。当日 Playwright 实测（dsh 0.1.0-rc.6）：锚点跳转、折叠 context 自动展开、填充高亮+框选全通。signals 一条 fetch( 警告已人工复核为本机同源路由。未做范式结构迁移、--strict 未过 + 创始人亲测记录未补——维持候选，转正时再补。compute-scores 因 raw.githubusercontent.com 超时未跑通，机器轴为人工按门槛口径填写，待网络恢复后复跑校准 |
+| 🏆 转正（编辑精选） | [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) | 同日补齐：范式结构迁移完成（词典入 src/client/locales.ts、浏览器入口 src/client/index.ts、CJK 清零），check-plugin --strict 全绿（七分区 + 构建冒烟 + 45 测试）；迁移后线上 Playwright 冒烟通过（搜索出结果、过滤按钮在位、无页面错误）。十轴 47 ≥ 40（safety 5、freshness 5、human 4 带实测 evidence）；安全深度复核见 security-report.md |
 
 ## 2026-08-16
 

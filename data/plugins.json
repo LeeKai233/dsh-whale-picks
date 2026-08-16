@@ -218,7 +218,7 @@
       "repo": "LeeKai233/dsh-session-search-plus",
       "npmName": "dsh-session-search-plus",
       "install": "dsh plugin --profile web add dsh-session-search-plus",
-      "tier": "candidate",
+      "tier": "featured",
       "category": "other",
       "license": "MIT",
       "stars": 0,
@@ -229,7 +229,7 @@
       "score": null,
       "security": {
         "scannedAt": "2026-08-17",
-        "reviewStatus": "pending-human",
+        "reviewStatus": "reviewed",
         "hasLicense": true,
         "npmPublished": true,
         "repoPointerMatch": true,
@@ -246,8 +246,8 @@
         "en": "DSH session search upgrade: a private in-memory index answers in milliseconds, with scope/fuzzy/case/whole-word filters, a per-session hit dropdown, and anchor-precise jump with in-page highlighting"
       },
       "submittedAt": "2026-08-17",
-      "listedAt": null,
-      "reviewedBy": null,
+      "listedAt": "2026-08-17",
+      "reviewedBy": "LeeKai233",
       "specVersion": "1.1",
       "manifestCompliant": true,
       "patches": {
@@ -277,8 +277,8 @@
           "updatedAt": "2026-08-17"
         },
         "distribution": {
-          "value": 4,
-          "evidence": "npm 0.1.0 已发布且 repository 指针正确；含 manifest 的 0.1.1 待 OTP 发布",
+          "value": 5,
+          "evidence": "npm 已发布且 repository 指针正确（0.1.1 含 manifest，待 OTP 发布）",
           "updatedAt": "2026-08-17"
         },
         "composition": {
@@ -302,15 +302,15 @@
           "updatedAt": "2026-08-17"
         },
         "remedy": {
-          "value": 3,
-          "evidence": "治理状态：pending-human",
+          "value": 5,
+          "evidence": "治理状态：reviewed",
           "updatedAt": "2026-08-17"
         },
         "human": {
-          "value": null,
+          "value": 4,
           "source": "founder",
-          "count": 0,
-          "evidence": "待创始人/社区评分",
+          "count": 1,
+          "evidence": "创始人自研；2026-08-17 Playwright 实测（dsh 0.1.0-rc.6）：搜 npm 锚点跳转、折叠 context 自动展开、填充高亮 1 处 + 框选 97 处全通；check-plugin --strict 全绿（范式迁移完成）；扣分项：深历史跳转受官方 50 条/页翻页限速约 15s",
           "updatedAt": "2026-08-17"
         }
       }

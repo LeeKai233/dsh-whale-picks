@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-2-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-14-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-17-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-17-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -59,6 +59,19 @@ Every entry carries its exact install command. Most plugins install with `dsh pl
 
   ```sh
   dsh plugin --profile web add dsh-session-search-warmup
+  ```
+
+- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH session search upgrade: a private in-memory index answers in milliseconds, with scope/fuzzy/case/whole-word filters, a per-session hit dropdown, and anchor-precise jump with in-page highlighting
+  <br><sub>0⭐ · MIT · verified on dsh 0.1.0-rc.6 (2026-08-17)</sub>
+
+  > **Founder’s notes**: Content search is barely usable on a large corpus with the official engine alone; this plugin answers in milliseconds from an in-memory index of user/assistant text, adding scope/fuzzy/case/whole-word filters, a per-session hit dropdown, and seq-anchored jumps — located via the runtime chat snapshot's anchorSeq, auto-expanding collapsed context rows before marking. Measured 2026-08-17 (Playwright, dsh 0.1.0-rc.6): one filled highlight + 97 in-page boxes after jumping to an npm hit; a deep-history hit (seq 12) located precisely after ~15s of paging. Known costs: deep jumps are bound by the official 50-messages-per-page paging; fuzzy defaults off (scattered subsequence hits have no contiguous string to mark). Complements dsh-session-search-warmup.
+
+  <sub>创始人评分 4/5 · Founder score 4/5</sub>
+
+  ![nine-goal radar](assets/radar/dsh-session-search-plus.svg "dsh-session-search-plus nine-goal radar")
+
+  ```sh
+  dsh plugin --profile web add dsh-session-search-plus
   ```
 
 
@@ -161,15 +174,6 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
 
   ```sh
   dsh plugin --profile web add dsh-usage-stats
-  ```
-
-### Other
-
-- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH session search upgrade: a private in-memory index answers in milliseconds, with scope/fuzzy/case/whole-word filters, a per-session hit dropdown, and anchor-precise jump with in-page highlighting
-  <br><sub>0⭐ · MIT · machine pass 2026-08-17 · spec gate ✓ · [pass findings](docs/security-report.md#dsh-session-search-plus)</sub>
-
-  ```sh
-  dsh plugin --profile web add dsh-session-search-plus
   ```
 
 

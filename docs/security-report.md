@@ -21,7 +21,7 @@
 | --- | --- | --- |
 | dsh-ui-attention | ✅ 干净（深度复核通过） | 0 |
 | dsh-session-search-warmup | ✅ 干净（深度复核通过） | 0 |
-| dsh-session-search-plus | ✅ 机器项干净 | 0 |
+| dsh-session-search-plus | ✅ 干净（深度复核通过） | 0 |
 | dsh-market | ⚠️ 待人工复核 | 1（无 LICENSE） |
 | dsh-plugin-workshop | ✅ 机器项干净 | 0（npm 未发布，转正需发布） |
 | dsh-find-plugin | ✅ 机器项干净 | 0 |
@@ -55,9 +55,9 @@
 
 - 许可证 MIT ✅ · npm 0.1.0 发布 ✅ 且 repository 指针正确 ✅（含 manifest 的 0.1.1 待 OTP 发布）· 活跃 ✅（2026-08-17 推送）· 文档 ✅（双语 README + 仓内 AGENTS.md）· 规范门槛 ✅（2026-08-17 本地复跑 check-plugin 门槛 PASS）。
 - 信号对账（2026-08-17 实跑）：1 处网络特征 fetch(（src/client/workspace-browser.js:2716）——人工复核为**本机同源** `/api/search-plus/query`（自身宿主半区提供，非外部请求），与 network=false 声明的语义一致；无危险特征命中。
-- 功能复核（创始人代理实测记录，非转正签字）：宿主半区内存索引只存 user/assistant 消息文本，不碰工具参数/结果/推理；浏览器半区为官方 WorkspaceBrowser 逐字节 fork（改动带 [search-plus] 标记），页内高亮是纯 DOM 操作；跳转定位走运行时 chat 快照 anchorSeq，不做文本猜测。
-- 实测（2026-08-17，Playwright + dsh 0.1.0-rc.6）：搜 npm 点命中后折叠 context 注入行自动展开、填充高亮 1 处 + 页内框选 97 处；深历史命中（seq 12）约 15s 翻页后精确定位。
-- 结论：机器项干净，无待复核项；候选池，待创始人亲测转正（转正另需 --strict 结构迁移）。
+- 功能复核（深度复核）：宿主半区内存索引只存 user/assistant 消息文本，不碰工具参数/结果/推理；浏览器半区为官方 WorkspaceBrowser 逐字节 fork（改动带 [search-plus] 标记），页内高亮是纯 DOM 操作；跳转定位走运行时 chat 快照 anchorSeq，不做文本猜测。
+- 实测（2026-08-17，Playwright + dsh 0.1.0-rc.6）：搜 npm 点命中后折叠 context 注入行自动展开、填充高亮 1 处 + 页内框选 97 处；深历史命中（seq 12）约 15s 翻页后精确定位；范式迁移后冒烟（搜索出结果、过滤按钮在位、无页面错误）。
+- 结论：**深度复核通过（reviewed）**；同日完成范式结构迁移，check-plugin --strict 全绿。
 
 ### dsh-market
 

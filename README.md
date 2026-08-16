@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-2-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-2-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-14-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-17-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -163,6 +163,15 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   dsh plugin --profile web add dsh-usage-stats
   ```
 
+### Other
+
+- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH session search upgrade: a private in-memory index answers in milliseconds, with scope/fuzzy/case/whole-word filters, a per-session hit dropdown, and anchor-precise jump with in-page highlighting
+  <br><sub>0⭐ · MIT · machine pass 2026-08-17 · spec gate ✓ · [pass findings](docs/security-report.md#dsh-session-search-plus)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-session-search-plus
+  ```
+
 
 ## 🐳 Suits · 套件
 
@@ -183,7 +192,7 @@ We deliberately do not compete on quantity. The wide lanes are covered by:
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — machine-readable registry (1028 entries)
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — the in-DSH install market
 
-Maintained against dsh **0.1.0-rc.6** · registry updated 2026-08-16. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
+Maintained against dsh **0.1.0-rc.6** · registry updated 2026-08-17. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
 
 ## License
 

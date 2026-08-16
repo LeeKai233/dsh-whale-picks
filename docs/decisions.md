@@ -2,6 +2,12 @@
 
 鲸选的信用来自公开的决定。收录、转正、拒收、下架，每一条都在这里，附日期与理由。规则见 charter.md。
 
+## 2026-08-17
+
+| 决定 | 条目 | 理由 |
+| --- | --- | --- |
+| 🧪 进入候选池 | [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) | 创始人自研：侧栏搜索就地增强（内存索引毫秒检索 + 过滤 + 多命中下拉 + seq 锚点跳转高亮）。check-plugin 门槛 2026-08-17 PASS；npm 0.1.0 已发布且 repository 指针正确（含 manifest 的 0.1.1 待 OTP 发布）。当日 Playwright 实测（dsh 0.1.0-rc.6）：锚点跳转、折叠 context 自动展开、填充高亮+框选全通。signals 一条 fetch( 警告已人工复核为本机同源路由。未做范式结构迁移、--strict 未过 + 创始人亲测记录未补——维持候选，转正时再补。compute-scores 因 raw.githubusercontent.com 超时未跑通，机器轴为人工按门槛口径填写，待网络恢复后复跑校准 |
+
 ## 2026-08-16
 
 | 决定 | 条目 | 理由 |

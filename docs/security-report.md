@@ -21,6 +21,7 @@
 | --- | --- | --- |
 | dsh-ui-attention | ✅ 干净（深度复核通过） | 0 |
 | dsh-session-search-warmup | ✅ 干净（深度复核通过） | 0 |
+| dsh-session-search-plus | ✅ 机器项干净 | 0 |
 | dsh-market | ⚠️ 待人工复核 | 1（无 LICENSE） |
 | dsh-plugin-workshop | ✅ 机器项干净 | 0（npm 未发布，转正需发布） |
 | dsh-find-plugin | ✅ 机器项干净 | 0 |
@@ -49,6 +50,14 @@
 - 深度复核（创始人自研，日常在用）：纯宿主态插件——无 dsh.client 块、无 src/client/，零网络请求；仅在启动安静窗口调用官方 sessionQuery 触发 FTS5 索引构建，15s×20 有界重试后放弃，无长驻轮询。check-plugin --strict 全绿（含宿主态豁免判定、构建冒烟、测试断言）。
 - 实测（2026-08-16，dsh 0.1.0-rc.6）：预热后官方搜索首次查询 9–29ms（三种典型 MATCH），索引 12702 段文档、覆盖磁盘全部 22 条会话；索引库 mtime 与当日 harness 启动时刻（19:36）一致，预热按设计在启动窗口生效。
 - 结论：**深度复核通过（reviewed）**。
+
+### dsh-session-search-plus
+
+- 许可证 MIT ✅ · npm 0.1.0 发布 ✅ 且 repository 指针正确 ✅（含 manifest 的 0.1.1 待 OTP 发布）· 活跃 ✅（2026-08-17 推送）· 文档 ✅（双语 README + 仓内 AGENTS.md）· 规范门槛 ✅（2026-08-17 本地复跑 check-plugin 门槛 PASS）。
+- 信号对账（2026-08-17 实跑）：1 处网络特征 fetch(（src/client/workspace-browser.js:2716）——人工复核为**本机同源** `/api/search-plus/query`（自身宿主半区提供，非外部请求），与 network=false 声明的语义一致；无危险特征命中。
+- 功能复核（创始人代理实测记录，非转正签字）：宿主半区内存索引只存 user/assistant 消息文本，不碰工具参数/结果/推理；浏览器半区为官方 WorkspaceBrowser 逐字节 fork（改动带 [search-plus] 标记），页内高亮是纯 DOM 操作；跳转定位走运行时 chat 快照 anchorSeq，不做文本猜测。
+- 实测（2026-08-17，Playwright + dsh 0.1.0-rc.6）：搜 npm 点命中后折叠 context 注入行自动展开、填充高亮 1 处 + 页内框选 97 处；深历史命中（seq 12）约 15s 翻页后精确定位。
+- 结论：机器项干净，无待复核项；候选池，待创始人亲测转正（转正另需 --strict 结构迁移）。
 
 ### dsh-market
 

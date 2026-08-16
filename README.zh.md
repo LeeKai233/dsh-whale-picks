@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-2-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-16-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-2-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-14-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-17-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -163,6 +163,15 @@
   dsh plugin --profile web add dsh-usage-stats
   ```
 
+### 其他
+
+- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH 会话搜索框增强：自建内存索引毫秒检索，范围/模糊/大小写/全词过滤，每会话多命中下拉，锚点精确跳转并页内高亮框选
+  <br><sub>0⭐ · MIT · 机器体检 2026-08-17 · 规范门槛 ✓ · [体检发现](docs/security-report.md#dsh-session-search-plus)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-session-search-plus
+  ```
+
 
 ## 🐳 Suits · 套件
 
@@ -183,7 +192,7 @@
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — 机器可读数据（1028 条）
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — DSH 内置安装市场
 
-按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-08-16。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
+按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-08-17。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
 
 ## License
 

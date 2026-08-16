@@ -86,7 +86,8 @@ for (const p of registry.plugins) {
 
   if (p.tier === "featured" || p.tier === "listed") {
     // legacy four-dimension score is history-only (decisions 2026-08-15); the live
-    // promotion contract is the six-axis radar below — no score requirement here.
+    // promotion contract is the ten-axis radar below (nine paradigm machine axes +
+    // human) — no score requirement here.
     if (p.security.reviewStatus !== "reviewed") errors.push(`${p.id}: ${p.tier} requires security.reviewStatus=reviewed`);
     if (!p.reviewNotes) errors.push(`${p.id}: ${p.tier} requires reviewNotes`);
     if (!p.verifiedAgainst || !p.lastVerified) errors.push(`${p.id}: ${p.tier} requires verifiedAgainst and lastVerified`);
@@ -97,16 +98,16 @@ for (const p of registry.plugins) {
       errors.push(`${p.id}: ${p.tier} requires radar`);
     } else {
       const r = p.radar;
-      const axes = [r.security, r.compatibility, r.scope, r.cost, r.activity, r.human];
+      const axes = [r.producibility, r.adoptability, r.baseline, r.distribution, r.composition, r.safety, r.footprint, r.freshness, r.remedy, r.human];
       const total = axes.reduce((sum, a) => sum + (a?.value ?? 0), 0);
-      if (r.security?.value == null || r.security.value < 4) errors.push(`${p.id}: radar security ${r.security?.value ?? 'null'} < 4`);
-      if (r.compatibility?.value == null || r.compatibility.value < 4) errors.push(`${p.id}: radar compatibility ${r.compatibility?.value ?? 'null'} < 4`);
+      if (r.safety?.value == null || r.safety.value < 4) errors.push(`${p.id}: radar safety ${r.safety?.value ?? 'null'} < 4`);
+      if (r.freshness?.value == null || r.freshness.value < 4) errors.push(`${p.id}: radar freshness ${r.freshness?.value ?? 'null'} 须非 null 且 ≥ 4`);
       if (r.human?.value == null) errors.push(`${p.id}: radar human rating required (founder test first)`);
       // evidence 闭环：listed/featured 的 human 轴不得是占位串
       if ((r.human?.evidence || "").trim() === "" || (r.human?.evidence || "").includes("待创始人/社区评分")) {
         errors.push(`${p.id}: ${p.tier} requires real human-axis evidence (占位串「待创始人/社区评分」不计)`);
       }
-      if (total < 24) errors.push(`${p.id}: radar total ${total} < 24`);
+      if (total < 40) errors.push(`${p.id}: radar total ${total} < 40 (十轴)`);
     }
     if (p.security.hasLicense !== true) errors.push(`${p.id}: ${p.tier} requires an open-source license file`);
     if (p.security.npmPublished !== true) errors.push(`${p.id}: ${p.tier} requires npm publication (anti-squatting)`);

@@ -39,7 +39,7 @@ function badges() {
 
 function listedLine(p, zh) {
   // The legacy `score` field stays in the registry as history
-  // (decisions.md 2026-08-15) but is no longer rendered; the six-axis radar
+  // (decisions.md 2026-08-15) but is no longer rendered; the nine-goal radar
   // block below carries the promoted entry's scores.
   return p.stars + '⭐ · ' + p.license + ' · ' + (zh ? '实测于 dsh ' : 'verified on dsh ') + p.verifiedAgainst + ' (' + p.lastVerified + ')';
 }
@@ -62,7 +62,12 @@ function entryBlock(p, zh) {
     out += '\n  > **' + (zh ? '创始人手记' : 'Founder’s notes') + '**: ' + p.reviewNotes[zh ? 'zh' : 'en'] + '\n';
   }
   if (p.tier !== 'candidate' && p.radar) {
-    out += '\n  ![six-axis radar](assets/radar/' + p.id + '.svg "' + p.id + ' six-axis radar")\n';
+    // 真人轴不进雷达图，单列一行（human.value 为 null 时不显示）
+    const hv = p.radar.human?.value;
+    if (hv != null) {
+      out += '\n  <sub>创始人评分 ' + hv + '/5 · Founder score ' + hv + '/5</sub>\n';
+    }
+    out += '\n  ![nine-goal radar](assets/radar/' + p.id + '.svg "' + p.id + ' nine-goal radar")\n';
   }
   if (p.install) {
     out += '\n  ```sh\n  ' + p.install + '\n  ```\n';
@@ -116,14 +121,14 @@ function body(zh) {
       '> 大列表告诉你**有什么**。雷达告诉你**能不能跑**。\n> 鲸选告诉你**敢不敢装、值不值得装**。'),
     '',
     t(
-      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a six-axis radar score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**',
-      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有六轴雷达评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**'
+      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a nine-goal radar score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**',
+      '[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有九维兑现度雷达评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**'
     ),
     '',
     '## Tiers · 分级',
     '',
-    t('- 🏆 **Featured · 编辑精选** — founder-tested, security pass, six-axis radar score above the gate',
-      '- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 六轴雷达评分通过门槛'),
+    t('- 🏆 **Featured · 编辑精选** — founder-tested, security pass, nine-goal radar score above the gate',
+      '- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 九维兑现度雷达评分通过门槛'),
     t('- ✅ **Listed · 已收录** — same bar as Featured (candidates that passed)',
       '- ✅ **已收录 · Listed** — 与编辑精选同门槛（转正后的候选）'),
     t('- 🧪 **Candidates · 候选池** — machine security pass done, awaiting the founder’s hands-on test',

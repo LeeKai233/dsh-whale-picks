@@ -20,7 +20,7 @@ English below. 鲸选 dsh-whale-picks 只收「敢装、值得装」的插件。
 
 1. **创始人亲测**：创始人在真实 profile 中安装并至少完成一个完整会话的使用。
 2. **手记**：创始人写下使用手记（为什么入选、使用感受、注意事项、不适合谁），写入 registry 的 reviewNotes。
-3. **六轴雷达评分过线**：按 rubric.md 打分，总分 ≥ 24 且安全 ≥ 4 且兼容 ≥ 4 且真人轴非空。
+3. **十轴雷达评分过线**：按 rubric.md 打分（九范式机器轴 + 真人轴），十轴总分 ≥ 40 且安全 ≥ 4 且保鲜 ≥ 4 且真人轴非空。
 4. **同类唯一**：同一功能场景只收最好的一件。若两件难分高下，收先亲测的一件，另一件记录在 decisions.md 并说明理由。
 5. **每分类上限 5 件**：满员后新插件必须挤掉现有条目（下架记录进 decisions.md）。宁缺毋滥不是口号，是上限写死。
 
@@ -57,7 +57,7 @@ To become Listed / Featured:
 
 1. **Founder-tested**: installed by the founder in a real profile and used through at least one full session.
 2. **Notes**: the founder writes review notes (why it got in, how it feels, gotchas, who it is not for) into the registry's reviewNotes.
-3. **Six-axis radar above the gate**: per rubric.md — total ≥ 24 with security ≥ 4, compatibility ≥ 4, and a non-empty human axis.
+3. **Ten-axis radar above the gate**: per rubric.md (nine paradigm machine axes + the human axis) — total ≥ 40 with safety ≥ 4, freshness ≥ 4, and a non-empty human axis.
 4. **One per niche**: only the single best plugin per use case. Ties go to the one tested first; the runner-up is recorded in decisions.md with the reasoning.
 5. **Max 5 per category**: when a category is full, a new admission must displace an existing one (delisting goes to decisions.md). 宁缺毋滥 is enforced by hard caps, not slogans.
 

@@ -3,7 +3,7 @@
 ## 一期（基座，已完成）
 
 - ✅ 插件规范与模板：spec/SPEC.md + whalepicks.schema.json + spec/AGENT.md（agent 可执行）+ templates/plugin 脚手架 + scripts/check-plugin.mjs（门槛一票否决，含 --init 合规化）。
-- ✅ 六轴雷达：真人/安全/兼容/边界与冲突/成本/活跃；compute-scores.mjs 程序化打分 + render-radar.mjs 雷达 SVG；规范符合 = 上架门槛（不进雷达图）。
+- ✅ 九维兑现度雷达：范式九目标机器轴（生产/迁移/准入/分发/组合/安全/开销/保鲜/救济）+ 真人轴单列；compute-scores.mjs 程序化打分 + render-radar.mjs 雷达 SVG；规范符合 = 上架门槛（不进雷达图）。
 - ✅ 结构化 registry（data/plugins.json v1.1）+ suits 数据模型（data/suits.json，空数组不造假）。
 - ✅ 机器安全体检 + 公开体检报告 + 公开决定流水 + 每晚新鲜度巡检。
 - ✅ Cloudflare Workers 数据托管（cloudflare/，零依赖，/plugins.json /suits.json /radar.json /health；部署教程 docs/cloudflare.md）。

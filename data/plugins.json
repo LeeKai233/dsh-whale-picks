@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1",
+  "schemaVersion": "1.2",
   "dshVersion": "0.1.0-rc.6",
   "updatedAt": "2026-08-16",
   "plugins": [
@@ -58,36 +58,56 @@
         ]
       },
       "radar": {
+        "producibility": {
+          "value": 5,
+          "evidence": "范式对齐：manifest 1.1 + files 含合同 + dsh 块完整",
+          "updatedAt": "2026-08-16"
+        },
+        "adoptability": {
+          "value": 5,
+          "evidence": "双语 README + 双语描述 + install/links 齐全",
+          "updatedAt": "2026-08-16"
+        },
+        "baseline": {
+          "value": 5,
+          "evidence": "check-plugin 门槛通过",
+          "updatedAt": "2026-08-16"
+        },
+        "distribution": {
+          "value": 5,
+          "evidence": "npm 已发布且 repository 指针正确",
+          "updatedAt": "2026-08-16"
+        },
+        "composition": {
+          "value": 5,
+          "evidence": "冲突面申报：insertIds 1 个 + slots/namespaces/deps 已声明",
+          "updatedAt": "2026-08-16"
+        },
+        "safety": {
+          "value": 5,
+          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
+          "updatedAt": "2026-08-16"
+        },
+        "footprint": {
+          "value": 5,
+          "evidence": "perf 申报（polls/timers/memory/gpu）",
+          "updatedAt": "2026-08-16"
+        },
+        "freshness": {
+          "value": 5,
+          "evidence": "pushed_at 2026-08-15T10:36:08Z 映射 + 实测于 dsh 0.1.0-rc.6（2026-08-15） 合成",
+          "updatedAt": "2026-08-16"
+        },
+        "remedy": {
+          "value": 5,
+          "evidence": "治理状态：reviewed",
+          "updatedAt": "2026-08-16"
+        },
         "human": {
           "value": 5,
           "source": "founder",
           "count": 1,
           "evidence": "创始人自研并每天使用（dsh-ui-attention 是其主力提醒插件）",
-          "updatedAt": "2026-08-15"
-        },
-        "security": {
-          "value": 5,
-          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
-          "updatedAt": "2026-08-15"
-        },
-        "scope": {
-          "value": 5,
-          "evidence": "scope.does/doesNot 单功能声明 + insert id 交叉冲突检测",
-          "updatedAt": "2026-08-15"
-        },
-        "cost": {
-          "value": 5,
-          "evidence": "许可证（SPDX）与付费墙声明",
-          "updatedAt": "2026-08-15"
-        },
-        "activity": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-15T04:39:30Z 映射",
-          "updatedAt": "2026-08-15"
-        },
-        "compatibility": {
-          "value": 5,
-          "evidence": "实测于 dsh 0.1.0-rc.6（2026-08-15）",
           "updatedAt": "2026-08-15"
         }
       }
@@ -138,36 +158,56 @@
         "slots": []
       },
       "radar": {
+        "producibility": {
+          "value": 5,
+          "evidence": "范式对齐：manifest 1.1 + files 含合同 + dsh 块完整",
+          "updatedAt": "2026-08-16"
+        },
+        "adoptability": {
+          "value": 5,
+          "evidence": "双语 README + 双语描述 + install/links 齐全",
+          "updatedAt": "2026-08-16"
+        },
+        "baseline": {
+          "value": 5,
+          "evidence": "check-plugin 门槛通过",
+          "updatedAt": "2026-08-16"
+        },
+        "distribution": {
+          "value": 5,
+          "evidence": "npm 已发布且 repository 指针正确",
+          "updatedAt": "2026-08-16"
+        },
+        "composition": {
+          "value": 5,
+          "evidence": "冲突面申报：insertIds 1 个 + slots/namespaces/deps 已声明",
+          "updatedAt": "2026-08-16"
+        },
+        "safety": {
+          "value": 5,
+          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
+          "updatedAt": "2026-08-16"
+        },
+        "footprint": {
+          "value": 5,
+          "evidence": "perf 申报（polls/timers/memory/gpu）",
+          "updatedAt": "2026-08-16"
+        },
+        "freshness": {
+          "value": 5,
+          "evidence": "pushed_at 2026-08-16T15:15:32Z 映射 + 实测于 dsh 0.1.0-rc.6（2026-08-16） 合成",
+          "updatedAt": "2026-08-16"
+        },
+        "remedy": {
+          "value": 5,
+          "evidence": "治理状态：reviewed",
+          "updatedAt": "2026-08-16"
+        },
         "human": {
           "value": 5,
           "source": "founder",
           "count": 1,
           "evidence": "创始人自研并日常使用；2026-08-16 实测：预热后官方搜索首次查询 9–29ms（dsh 0.1.0-rc.6），索引覆盖全部 22 条会话共 12702 段文档",
-          "updatedAt": "2026-08-16"
-        },
-        "security": {
-          "value": 5,
-          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
-          "updatedAt": "2026-08-16"
-        },
-        "scope": {
-          "value": 5,
-          "evidence": "scope.does/doesNot 单功能声明 + insert id 交叉冲突检测",
-          "updatedAt": "2026-08-16"
-        },
-        "cost": {
-          "value": 5,
-          "evidence": "许可证（SPDX）与付费墙声明",
-          "updatedAt": "2026-08-16"
-        },
-        "activity": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-16T15:15:32Z 映射",
-          "updatedAt": "2026-08-16"
-        },
-        "compatibility": {
-          "value": 5,
-          "evidence": "实测于 dsh 0.1.0-rc.6（2026-08-16）",
           "updatedAt": "2026-08-16"
         }
       }
@@ -217,36 +257,56 @@
         ]
       },
       "radar": {
+        "producibility": {
+          "value": 5,
+          "evidence": "范式对齐：manifest 1.1 + files 含合同 + dsh 块完整",
+          "updatedAt": "2026-08-16"
+        },
+        "adoptability": {
+          "value": 5,
+          "evidence": "双语 README + 双语描述 + install/links 齐全",
+          "updatedAt": "2026-08-16"
+        },
+        "baseline": {
+          "value": 5,
+          "evidence": "check-plugin 门槛通过",
+          "updatedAt": "2026-08-16"
+        },
+        "distribution": {
+          "value": 1,
+          "evidence": "npm 未发布（file:/github 安装）",
+          "updatedAt": "2026-08-16"
+        },
+        "composition": {
+          "value": 5,
+          "evidence": "冲突面申报：insertIds 1 个 + slots/namespaces/deps 已声明",
+          "updatedAt": "2026-08-16"
+        },
+        "safety": {
+          "value": 5,
+          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
+          "updatedAt": "2026-08-16"
+        },
+        "footprint": {
+          "value": 5,
+          "evidence": "perf 申报（polls/timers/memory/gpu）",
+          "updatedAt": "2026-08-16"
+        },
+        "freshness": {
+          "value": 5,
+          "evidence": "pushed_at 2026-08-16T14:28:52+08:00 映射 合成",
+          "updatedAt": "2026-08-16"
+        },
+        "remedy": {
+          "value": 3,
+          "evidence": "治理状态：pending-human",
+          "updatedAt": "2026-08-16"
+        },
         "human": {
           "value": null,
           "source": "founder",
           "count": 0,
           "evidence": "待创始人/社区评分",
-          "updatedAt": "2026-08-16"
-        },
-        "security": {
-          "value": 5,
-          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
-          "updatedAt": "2026-08-16"
-        },
-        "scope": {
-          "value": 5,
-          "evidence": "scope.does/doesNot 单功能声明 + insert id 交叉冲突检测",
-          "updatedAt": "2026-08-16"
-        },
-        "cost": {
-          "value": 5,
-          "evidence": "许可证（SPDX）与付费墙声明",
-          "updatedAt": "2026-08-16"
-        },
-        "activity": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-16T14:28:52+08:00 映射",
-          "updatedAt": "2026-08-16"
-        },
-        "compatibility": {
-          "value": null,
-          "evidence": "创始人尚未实测当前 dsh 版本（待测）",
           "updatedAt": "2026-08-16"
         }
       }
@@ -298,36 +358,56 @@
         ]
       },
       "radar": {
+        "producibility": {
+          "value": 5,
+          "evidence": "范式对齐：manifest 1.1 + files 含合同 + dsh 块完整",
+          "updatedAt": "2026-08-16"
+        },
+        "adoptability": {
+          "value": 5,
+          "evidence": "双语 README + 双语描述 + install/links 齐全",
+          "updatedAt": "2026-08-16"
+        },
+        "baseline": {
+          "value": 5,
+          "evidence": "check-plugin 门槛通过",
+          "updatedAt": "2026-08-16"
+        },
+        "distribution": {
+          "value": 1,
+          "evidence": "npm 未发布（file:/github 安装）",
+          "updatedAt": "2026-08-16"
+        },
+        "composition": {
+          "value": 5,
+          "evidence": "冲突面申报：insertIds 1 个 + slots/namespaces/deps 已声明",
+          "updatedAt": "2026-08-16"
+        },
+        "safety": {
+          "value": 4,
+          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
+          "updatedAt": "2026-08-16"
+        },
+        "footprint": {
+          "value": 5,
+          "evidence": "perf 申报（polls/timers/memory/gpu）",
+          "updatedAt": "2026-08-16"
+        },
+        "freshness": {
+          "value": 5,
+          "evidence": "pushed_at 2026-08-16T14:32:28+08:00 映射 合成",
+          "updatedAt": "2026-08-16"
+        },
+        "remedy": {
+          "value": 3,
+          "evidence": "治理状态：pending-human",
+          "updatedAt": "2026-08-16"
+        },
         "human": {
           "value": null,
           "source": "founder",
           "count": 0,
           "evidence": "待创始人/社区评分",
-          "updatedAt": "2026-08-16"
-        },
-        "security": {
-          "value": 4,
-          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
-          "updatedAt": "2026-08-16"
-        },
-        "scope": {
-          "value": 5,
-          "evidence": "scope.does/doesNot 单功能声明 + insert id 交叉冲突检测",
-          "updatedAt": "2026-08-16"
-        },
-        "cost": {
-          "value": 5,
-          "evidence": "许可证（SPDX）与付费墙声明",
-          "updatedAt": "2026-08-16"
-        },
-        "activity": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-16T14:32:28+08:00 映射",
-          "updatedAt": "2026-08-16"
-        },
-        "compatibility": {
-          "value": null,
-          "evidence": "创始人尚未实测当前 dsh 版本（待测）",
           "updatedAt": "2026-08-16"
         }
       }
@@ -787,8 +867,8 @@
       },
       "reviewNotes": null,
       "description": {
-        "zh": "鲸选商店入口：DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、六轴雷达与体检结论，一键复制安装命令",
-        "en": "The whale-picks store entry: a 鲸选 section below Agent Presets in DSH settings, browsing suits and curated plugins with radars and copyable install commands"
+        "zh": "鲸选商店入口：在 DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、九轴 Braille ASCII 雷达、创始人评分与体检结论，一键复制安装命令",
+        "en": "The whale-picks store entry: a 鲸选 section right below Agent Presets in DSH settings, browsing suits and curated plugins with nine-axis Braille ASCII radars, founder scores and copyable install commands"
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,
@@ -805,36 +885,56 @@
         ]
       },
       "radar": {
+        "producibility": {
+          "value": 4,
+          "evidence": "范式对齐缺口：manifest schemaVersion=1.0（≠1.1）",
+          "updatedAt": "2026-08-16"
+        },
+        "adoptability": {
+          "value": 5,
+          "evidence": "双语 README + 双语描述 + install/links 齐全",
+          "updatedAt": "2026-08-16"
+        },
+        "baseline": {
+          "value": 5,
+          "evidence": "check-plugin 门槛通过",
+          "updatedAt": "2026-08-16"
+        },
+        "distribution": {
+          "value": 1,
+          "evidence": "npm 未发布（file:/github 安装）",
+          "updatedAt": "2026-08-16"
+        },
+        "composition": {
+          "value": 4,
+          "evidence": "冲突面申报不全：insertIds 1 个；deps 字段缺失",
+          "updatedAt": "2026-08-16"
+        },
+        "safety": {
+          "value": 4,
+          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
+          "updatedAt": "2026-08-16"
+        },
+        "footprint": {
+          "value": 2,
+          "evidence": "未申报（v1.0 清单）",
+          "updatedAt": "2026-08-16"
+        },
+        "freshness": {
+          "value": 5,
+          "evidence": "pushed_at 2026-08-15T13:30:19Z 映射 合成",
+          "updatedAt": "2026-08-16"
+        },
+        "remedy": {
+          "value": 3,
+          "evidence": "治理状态：pending-human",
+          "updatedAt": "2026-08-16"
+        },
         "human": {
           "value": null,
           "source": "founder",
           "count": 0,
           "evidence": "待创始人/社区评分",
-          "updatedAt": "2026-08-15"
-        },
-        "security": {
-          "value": 4,
-          "evidence": "机器体检映射：网络/遥测声明 + 许可证（详见 security-report.md）",
-          "updatedAt": "2026-08-15"
-        },
-        "scope": {
-          "value": 5,
-          "evidence": "scope.does/doesNot 单功能声明 + insert id 交叉冲突检测",
-          "updatedAt": "2026-08-15"
-        },
-        "cost": {
-          "value": 5,
-          "evidence": "许可证（SPDX）与付费墙声明",
-          "updatedAt": "2026-08-15"
-        },
-        "activity": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-15T10:50:02.640Z 映射",
-          "updatedAt": "2026-08-15"
-        },
-        "compatibility": {
-          "value": null,
-          "evidence": "创始人尚未实测当前 dsh 版本（待测）",
           "updatedAt": "2026-08-15"
         }
       }

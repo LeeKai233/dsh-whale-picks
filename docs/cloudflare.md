@@ -8,7 +8,7 @@
 - 端点（cloudflare/src/handler.js，零依赖，本地可用 scripts/cf-smoke.mjs 验证）：
   - GET /plugins.json — 全量插件 registry
   - GET /suits.json — 套件 registry
-  - GET /radar.json — 六轴雷达聚合（{ plugins: { id: radar } }）
+  - GET /radar.json — 九轴雷达聚合（{ plugins: { id: radar } }）
   - GET /health — 健康检查
   - 全部带 CORS *、ETag、Cache-Control: public, max-age=600
 

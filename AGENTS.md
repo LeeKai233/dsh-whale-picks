@@ -10,7 +10,7 @@
 
 ## 评分与决定
 
-- 六轴雷达分（radar 字段）由 scripts/compute-scores.mjs 计算；人工轴（真人评分）必须带 evidence 与 updatedAt，禁止无证据打分。
+- 十键雷达分（radar 字段：九范式机器轴 + 真人轴）由 scripts/compute-scores.mjs 计算；人工轴（真人评分）必须带 evidence 与 updatedAt，禁止无证据打分。
 - 任何收录/转正/拒收/下架决定必须记入 docs/decisions.md（日期 + 理由），并保持 docs/security-report.md 与 registry 的 security 字段一致。
 - 规范门槛（manifestCompliant）由 check-plugin 判定；listed/featured 条目必须为 true。
 

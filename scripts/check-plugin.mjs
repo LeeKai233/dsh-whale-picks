@@ -653,7 +653,7 @@ if (isMain) {
     for (const g of report.gaps) console.log('   - ' + g)
     for (const i of report.info) console.log('   ℹ ' + i)
     if (report.scores) {
-      console.log('六轴机器分: ' + JSON.stringify(report.scores))
+      console.log('机器分信号（gate 内部口径，compute-scores 消费）: ' + JSON.stringify(report.scores))
     }
     console.log('signals（静态信号扫描，不影响门槛）:')
     if (signals.length === 0) console.log('   (无网络/危险特征命中)')

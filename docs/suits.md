@@ -11,7 +11,7 @@ Unix 哲学的另一半：**单功能插件单独看是零件，组合起来才�
 1. **成员全部 listed 以上**：套件不装候选池的东西（成员必须先亲测转正；schema 直接禁止 candidate 成员）。
 2. **冲突面干净**：成员 patches.insertIds / namespaces / slots 的并集无重复；有冲突的插件只能互相排斥（写进 suit.conflicts）。注意：同槽位不同 priority 的合法遮蔽（平台遮蔽语义，最低 priority 渲染）不算冲突。
 3. **synergy 必须说清**：为什么是 1+1>2 而不是 1+1=2——场景、工作流或数据的化学反应，双语写进 synergy 字段。
-4. **套件级六轴雷达**：由成员分聚合（最小值保底 + 均值），同样展示雷达图；套件 tier 与插件同一分级。
+4. **套件级九轴雷达**：由成员分聚合（最小值保底 + 均值），同样展示雷达图；套件 tier 与插件同一分级。
 5. **宁缺毋滥**：当前已收录插件只有 1 件，因此 data/suits.json 是空数组——**不造假**。第一个真实套件会在转正插件足够时出现（预期：鲸选商店插件转正后，与某个互补插件组成第一套）。
 
 ## 未来套件方向（示例，不作承诺）
@@ -35,7 +35,7 @@ The other half of the Unix philosophy: **a single-purpose plugin alone is a part
 1. **All members listed or above**: suits carry nothing from the candidate pool (members must pass the founder's hands-on test first; the schema flatly rejects candidate members).
 2. **Clean conflict surface**: the union of members' patches.insertIds / namespaces / slots has no duplicates; clashing plugins can only be mutually exclusive (recorded in suit.conflicts). Note: legitimate shadowing of the same slot with different priorities (the platform shadowing semantics — lowest priority renders) is NOT a conflict.
 3. **synergy must be spelled out**: why it is 1+1>2 and not 1+1=2 — the chemistry of scenarios, workflows or data, written bilingually into the synergy field.
-4. **Suit-level six-axis radar**: aggregated from member scores (floor = minimum, plus the mean), rendered as a radar chart like plugins; suits share the plugins' tier scale.
+4. **Suit-level nine-axis radar**: aggregated from member scores (floor = minimum, plus the mean), rendered as a radar chart like plugins; suits share the plugins' tier scale.
 5. **宁缺毋滥 (no filler)**: only one plugin is currently listed, so data/suits.json is an empty array — **no fake data**. The first real suit appears once enough plugins are promoted (expected: the whale-picks store plugin, once promoted, composed with a complementary plugin).
 
 ## Future suit directions (examples, no promises)

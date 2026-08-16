@@ -1,6 +1,8 @@
-// render-radar.mjs — renders the six-axis radar chart as a static SVG per plugin.
+// render-radar.mjs — renders the nine-goal radar chart as a static SVG per plugin.
 // Zero-dependency polygon math. Null axes render as '—' (待测) and do not
 // contribute to the value polygon. Output: assets/radar/<id>.svg
+// The nine paradigm machine axes only — the human axis is a separate line in
+// the README block, never part of the radar polygon.
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -10,21 +12,25 @@ const OUT = path.resolve(HERE, '../assets/radar')
 const registry = JSON.parse(await readFile(new URL('../data/plugins.json', import.meta.url), 'utf8'))
 
 const AXES = [
-  { key: 'human', zh: '真人', en: 'Human' },
-  { key: 'security', zh: '安全', en: 'Security' },
-  { key: 'compatibility', zh: '兼容', en: 'Compat' },
-  { key: 'scope', zh: '边界', en: 'Scope' },
-  { key: 'cost', zh: '成本', en: 'Cost' },
-  { key: 'activity', zh: '活跃', en: 'Active' },
+  { key: 'producibility', zh: '生产', en: 'Producibility' },
+  { key: 'adoptability', zh: '迁移', en: 'Adoptability' },
+  { key: 'baseline', zh: '准入', en: 'Baseline' },
+  { key: 'distribution', zh: '分发', en: 'Distribution' },
+  { key: 'composition', zh: '组合', en: 'Composition' },
+  { key: 'safety', zh: '安全', en: 'Safety' },
+  { key: 'footprint', zh: '开销', en: 'Footprint' },
+  { key: 'freshness', zh: '保鲜', en: 'Freshness' },
+  { key: 'remedy', zh: '救济', en: 'Remedy' },
 ]
 const CX = 170, CY = 150, R = 104, LABEL_R = 128
 
 function point(i, radius) {
-  const angle = (-90 + i * 60) * Math.PI / 180
+  // 九轴：40° 步进，首轴正上
+  const angle = (-90 + i * 40) * Math.PI / 180
   return [CX + radius * Math.cos(angle), CY + radius * Math.sin(angle)]
 }
 
-function hexagonPoints(radius) {
+function ringPoints(radius) {
   return AXES.map((_, i) => {
     const [x, y] = point(i, radius)
     return x.toFixed(1) + ',' + y.toFixed(1)
@@ -37,7 +43,7 @@ export function radarSvg(radar, id) {
   if (!hasAny) return null
   let grid = ''
   for (let step = 1; step <= 5; step++) {
-    grid += `<polygon points="${hexagonPoints(R * step / 5)}" fill="none" stroke="#2a3142" stroke-width="1"/>`
+    grid += `<polygon points="${ringPoints(R * step / 5)}" fill="none" stroke="#2a3142" stroke-width="1"/>`
   }
   let spokes = ''
   AXES.forEach((_, i) => {
@@ -65,7 +71,7 @@ export function radarSvg(radar, id) {
     labels += `<text x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}" fill="#aeb6c6" font-family="Verdana,DejaVu Sans,sans-serif" font-size="10" text-anchor="${anchor}">${a.zh} ${shown}</text>`
   })
   return [
-    `<svg xmlns="http://www.w3.org/2000/svg" width="340" height="300" viewBox="0 0 340 300" role="img" aria-label="${id} six-axis radar">`,
+    `<svg xmlns="http://www.w3.org/2000/svg" width="340" height="300" viewBox="0 0 340 300" role="img" aria-label="${id} nine-goal radar">`,
     `<rect width="340" height="300" fill="#161b26"/>`,
     grid, spokes,
     `<polygon points="${polyPoints}" fill="rgba(77,107,254,0.32)" stroke="#4D6BFE" stroke-width="2"/>`,

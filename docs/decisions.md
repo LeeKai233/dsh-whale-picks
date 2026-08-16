@@ -28,6 +28,8 @@
 | 🐛 registry schema 对齐 manifest | data/schema.json | category 枚举漏了 manifest 合法的 "other"（此前无条目使用该值而未暴露）；已补齐，validate 通过 |
 | 🐛 转正合同去掉旧四维 score 硬要求 | scripts/validate.mjs | featured/listed 仍要求 legacy score 字段——四维→六轴迁移的残留（score 已声明仅历史、README 已撤下展示）；现以六轴雷达合同为准，attention 条目的旧 score 字段保留为历史 |
 | 🐛 README 渲染吞掉 other 分类 | scripts/render-readme.mjs | CATEGORY_ORDER/CATEGORY_LABEL 无 "other"，featured 条目渲染时静默消失；已补分类并加兜底——未知分类按原始 key 渲染而非丢弃 |
+| 📐 registry schemaVersion 1.1 → 1.2 | data/schema.json + data/plugins.json + scripts/compute-scores.mjs | radar 轴重定义为九范式机器轴（producibility/adoptability/baseline/distribution/composition/safety/footprint/freshness/remedy）+ human 真人轴保留；旧 security/compatibility/scope/cost/activity 五键移除（activity/compatibility 内部逻辑改作 freshness 输入）；迁移 = 机器轴全部重算（compute-scores 全量重跑，mergeAxis 语义不变） |
+| 📐 转正合同重定义 | scripts/validate.mjs + docs/rubric.md + docs/charter.md | 十轴总分 ≥ 40 且 safety ≥ 4 且 freshness 非空 ≥ 4 且 human 非空（evidence 非占位串）；旧 security/compatibility 轴检查随轴重定义退役 |
 
 ## 2026-08-15
 

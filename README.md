@@ -11,11 +11,11 @@
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a six-axis radar score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is DeepSeek’s open-source agent harness where everything is a plugin. The ecosystem has thousands of candidate repos; this store carries only plugins the founder has personally installed and vetted. Every shelf item gets a machine security pass; every promoted item gets a nine-goal radar score, the founder’s notes, and a published decision. **宁缺毋滥 — few shelves, no filler.**
 
 ## Tiers · 分级
 
-- 🏆 **Featured · 编辑精选** — founder-tested, security pass, six-axis radar score above the gate
+- 🏆 **Featured · 编辑精选** — founder-tested, security pass, nine-goal radar score above the gate
 - ✅ **Listed · 已收录** — same bar as Featured (candidates that passed)
 - 🧪 **Candidates · 候选池** — machine security pass done, awaiting the founder’s hands-on test
 
@@ -38,7 +38,9 @@ Every entry carries its exact install command. Most plugins install with `dsh pl
 
   > **Founder’s notes**: The founder's own attention plugin, used daily: questions, approvals and finished turns all surface while the page is backgrounded. Fully local — WebAudio beeps, browser notifications, tab-title flash, zero network calls; the notification permission is requested only on a user gesture. Note: use either the bundle install or the manual patch, never both (duplicate loader entry id).
 
-  ![six-axis radar](assets/radar/dsh-ui-attention.svg "dsh-ui-attention six-axis radar")
+  <sub>创始人评分 5/5 · Founder score 5/5</sub>
+
+  ![nine-goal radar](assets/radar/dsh-ui-attention.svg "dsh-ui-attention nine-goal radar")
 
   ```sh
   dsh plugin --profile web add dsh-ui-attention
@@ -51,7 +53,9 @@ Every entry carries its exact install command. Most plugins install with `dsh pl
 
   > **Founder’s notes**: On a large corpus the official search needs tens of seconds for its first query — or never finishes indexing while sessions stay live. This plugin builds the index during the quiet boot window; every later search answers in milliseconds. Host-only, zero network, official services only — a textbook Unix single-purpose plugin, and the case that pushed the paradigm to add its symmetric host-only exemption. Measured 2026-08-16 on dsh 0.1.0-rc.6: first query 9–29ms, index covering all 22 sessions (12,702 document segments).
 
-  ![six-axis radar](assets/radar/dsh-session-search-warmup.svg "dsh-session-search-warmup six-axis radar")
+  <sub>创始人评分 5/5 · Founder score 5/5</sub>
+
+  ![nine-goal radar](assets/radar/dsh-session-search-warmup.svg "dsh-session-search-warmup nine-goal radar")
 
   ```sh
   dsh plugin --profile web add dsh-session-search-warmup
@@ -85,7 +89,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   dsh plugin --profile web add dsh-find-plugin
   ```
 
-- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — The whale-picks store entry: a 鲸选 section below Agent Presets in DSH settings, browsing suits and curated plugins with radars and copyable install commands
+- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — The whale-picks store entry: a 鲸选 section right below Agent Presets in DSH settings, browsing suits and curated plugins with nine-axis Braille ASCII radars, founder scores and copyable install commands
   <br><sub>0⭐ · MIT · machine pass 2026-08-15 · spec gate ✓ · [pass findings](docs/security-report.md#dsh-whale-picks-store)</sub>
 
   ```sh

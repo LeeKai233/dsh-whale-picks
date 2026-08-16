@@ -74,7 +74,7 @@
 
 ## 6. 上架流程
 
-1. 提交（PR / issue 表单）→ 2. check-plugin 门槛（一票否决；candidate 过门槛即可，转 listed/featured 须过 --strict）→ 3. 机器轴打分（安全/边界/成本/活跃/兼容——无实测时兼容为 null）→ 4. 创始人亲测 + 真人评分 + 手记 → 5. 转正 listed/featured（雷达图渲染展示）。
+1. 提交（PR / issue 表单）→ 2. check-plugin 门槛（一票否决；candidate 过门槛即可，转 listed/featured 须过 --strict）→ 3. 机器九轴打分（生产/迁移/准入/分发/组合/安全/开销/保鲜/救济——无实测与活跃数据时保鲜可为 null）→ 4. 创始人亲测 + 真人评分 + 手记 → 5. 转正 listed/featured（雷达图渲染展示）。
 
 任何拒收、下架决定公开记入 docs/decisions.md。
 
@@ -159,7 +159,7 @@ Migrating an existing plugin to the paradigm: docs/migrate-to-paradigm.md (compl
 
 ## 6. Listing flow
 
-1. submission (PR / issue form) → 2. check-plugin gate (one-vote veto; candidate needs only the gate, promotion to listed/featured requires --strict) → 3. machine-axis scoring (security/scope/cost/activity/compatibility — compatibility is null without a verification) → 4. founder hands-on test + human rating + notes → 5. promotion to listed/featured (radar rendered).
+1. submission (PR / issue form) → 2. check-plugin gate (one-vote veto; candidate needs only the gate, promotion to listed/featured requires --strict) → 3. machine nine-axis scoring (producibility/adoptability/baseline/distribution/composition/safety/footprint/freshness/remedy — freshness is null without activity or verification data) → 4. founder hands-on test + human rating + notes → 5. promotion to listed/featured (radar rendered).
 
 Every rejection or delisting is published in docs/decisions.md.
 

@@ -10,7 +10,7 @@
 
 ## 直接 PR（Preferred for listed entries）
 
-1. 在 data/plugins.json 添加条目，tier 为 candidate（除非你附上了亲测记录与六轴自评，可申请直接 listed，由创始人复核）。
+1. 在 data/plugins.json 添加条目，tier 为 candidate（除非你附上了亲测记录与九轴自评，可申请直接 listed，由创始人复核）。
 2. 运行 npm run validate 与 npm run render；README 由 registry 渲染，禁止手改。
 3. 提交 PR。CI 会校验 schema、仓库/npm 存在性、链接可达性与 README 同步。
 4. 创始人审核并公布决定（docs/decisions.md）。

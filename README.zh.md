@@ -11,11 +11,11 @@
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有六轴雷达评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) 是 DeepSeek 的开源 agent harness，万物皆插件。生态里躺着几千个候选仓库；本店只收创始人**亲手装过、亲手验过**的插件。每件上架都经过机器安全体检；每件正式收录都有九维兑现度雷达评分、创始人手记和公开的审核决定。**宁缺毋滥——货架少，但件件有出处。**
 
 ## Tiers · 分级
 
-- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 六轴雷达评分通过门槛
+- 🏆 **编辑精选 · Featured** — 创始人亲测 + 安全体检 + 九维兑现度雷达评分通过门槛
 - ✅ **已收录 · Listed** — 与编辑精选同门槛（转正后的候选）
 - 🧪 **候选池 · Candidates** — 机器体检已完成，待创始人亲测转正
 
@@ -38,7 +38,9 @@
 
   > **创始人手记**: 创始人自研的提醒插件，每天在用：页面在后台时，提问、审批、回合完成都靠它推送。纯本地实现，零网络请求；浏览器通知权限只在用户手势中申请。注意：bundle 安装与手工 patch 安装二选一，绝不能同时使用（会报 duplicate loader entry id）。
 
-  ![six-axis radar](assets/radar/dsh-ui-attention.svg "dsh-ui-attention six-axis radar")
+  <sub>创始人评分 5/5 · Founder score 5/5</sub>
+
+  ![nine-goal radar](assets/radar/dsh-ui-attention.svg "dsh-ui-attention nine-goal radar")
 
   ```sh
   dsh plugin --profile web add dsh-ui-attention
@@ -51,7 +53,9 @@
 
   > **创始人手记**: 大语料下官方搜索首次查询要几十秒、语料不静默时甚至永远建不成索引——这个插件在启动安静窗口替你建好索引，之后每次搜索都是毫秒级。纯宿主态、零网络、只调官方服务，Unix 单功能的教科书形态；它还逼范式补上了纯宿主态豁免，是范式覆盖面的第一次真实扩张。2026-08-16 实测（dsh 0.1.0-rc.6）：预热后首次查询 9–29ms，索引覆盖全部 22 条会话共 12702 段文档。
 
-  ![six-axis radar](assets/radar/dsh-session-search-warmup.svg "dsh-session-search-warmup six-axis radar")
+  <sub>创始人评分 5/5 · Founder score 5/5</sub>
+
+  ![nine-goal radar](assets/radar/dsh-session-search-warmup.svg "dsh-session-search-warmup nine-goal radar")
 
   ```sh
   dsh plugin --profile web add dsh-session-search-warmup
@@ -85,7 +89,7 @@
   dsh plugin --profile web add dsh-find-plugin
   ```
 
-- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — 鲸选商店入口：DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、六轴雷达与体检结论，一键复制安装命令
+- [dsh-whale-picks-store](https://github.com/LeeKai233/dsh-whale-picks-store) — 鲸选商店入口：在 DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、九轴 Braille ASCII 雷达、创始人评分与体检结论，一键复制安装命令
   <br><sub>0⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✓ · [体检发现](docs/security-report.md#dsh-whale-picks-store)</sub>
 
   ```sh

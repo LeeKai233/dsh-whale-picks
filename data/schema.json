@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "dsh-whale-picks registry schema",
-  "description": "Schema for the whale-picks curated registry (v1.1: adds spec compliance gate + six-axis radar). data/plugins.json is the single source of truth; README files are rendered from it.",
+  "description": "Schema for the whale-picks curated registry (v1.2: spec compliance gate + radar 轴重定义为九范式机器轴 + human 真人轴). data/plugins.json is the single source of truth; README files are rendered from it.",
   "type": "object",
   "required": [
     "schemaVersion",
@@ -12,7 +12,7 @@
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "1.1"
+      "const": "1.2"
     },
     "dshVersion": {
       "type": "string"
@@ -202,32 +202,48 @@
     "radar": {
       "type": "object",
       "required": [
-        "human",
-        "security",
-        "compatibility",
-        "scope",
-        "cost",
-        "activity"
+        "producibility",
+        "adoptability",
+        "baseline",
+        "distribution",
+        "composition",
+        "safety",
+        "footprint",
+        "freshness",
+        "remedy",
+        "human"
       ],
       "additionalProperties": false,
       "properties": {
+        "producibility": {
+          "$ref": "#/definitions/axis"
+        },
+        "adoptability": {
+          "$ref": "#/definitions/axis"
+        },
+        "baseline": {
+          "$ref": "#/definitions/axis"
+        },
+        "distribution": {
+          "$ref": "#/definitions/axis"
+        },
+        "composition": {
+          "$ref": "#/definitions/axis"
+        },
+        "safety": {
+          "$ref": "#/definitions/axis"
+        },
+        "footprint": {
+          "$ref": "#/definitions/axis"
+        },
+        "freshness": {
+          "$ref": "#/definitions/axis"
+        },
+        "remedy": {
+          "$ref": "#/definitions/axis"
+        },
         "human": {
           "$ref": "#/definitions/humanAxis"
-        },
-        "security": {
-          "$ref": "#/definitions/axis"
-        },
-        "compatibility": {
-          "$ref": "#/definitions/axis"
-        },
-        "scope": {
-          "$ref": "#/definitions/axis"
-        },
-        "cost": {
-          "$ref": "#/definitions/axis"
-        },
-        "activity": {
-          "$ref": "#/definitions/axis"
         }
       }
     },

@@ -9,6 +9,9 @@
 - ✅ Cloudflare Workers 数据托管（cloudflare/，零依赖，/plugins.json /suits.json /radar.json /health；部署教程 docs/cloudflare.md）。
 - ✅ DSH 内置鲸选入口：dsh-whale-picks-store（settings.section，「Agent 预设」正下方；套件/插件货架 + 雷达 + 复制安装命令；本地冒烟安装通过）。
 - ✅ 两个 dogfood 插件（dsh-ui-attention 改造 + store 新建）均过规范门槛。
+- ✅ 插件范式成文（spec/PARADIGM.md）：固定分区 + 扩展点，对任何 DSH 插件成立、不按类型分化。
+- ✅ 迁移工具链：scripts/scaffold.mjs（范式骨架生成）+ check-plugin --init 1.1 / --structure（对齐报告）+ scripts/template-sync.mjs（漂移自查）。
+- ✅ 三个范式范例：dsh-ui-attention（试验品，存档标记）、dsh-appearance（服务提供者）、dsh-statusbar（服务消费者 + 槽位遮蔽 + 联网）。
 
 ## 二期：商店网站（VitePress + GitHub Pages）
 

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "id": "{{PLUGIN_ID}}",
   "name": "{{PLUGIN_NAME}}",
   "version": "0.1.0",
@@ -46,6 +46,17 @@
     "network": false,
     "telemetry": false,
     "permissions": []
+  },
+  "deps": [],
+  "perf": {
+    "polls": {},
+    "memoryEstimateMB": 2,
+    "gpu": false,
+    "timers": 0
+  },
+  "security": {
+    "verdict": "unknown",
+    "scanBy": "TODO: whalepicks check-plugin"
   },
   "cost": {
     "license": "MIT",

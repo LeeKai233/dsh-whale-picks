@@ -2,6 +2,15 @@
 
 鲸选的信用来自公开的决定。收录、转正、拒收、下架，每一条都在这里，附日期与理由。规则见 charter.md。
 
+## 2026-08-16
+
+| 决定 | 条目 | 理由 |
+| --- | --- | --- |
+| 🧪 试验品（存档标记，开始） | [dsh-ui-attention](https://github.com/LeeKai233/dsh-ui-attention) | 鲸选插件范式（spec/PARADIGM.md）的第一个试验品：先行通过模板 v2 对齐与工具链验证（scaffold/--structure/template-sync），确立 canonical reference 后再迁移 appearance/statusbar。迁移前存档：git tag v0.1.2-pre-paradigm。试验结论待闭环补写 |
+| 🧪 试验品（存档标记，闭环） | dsh-ui-attention | 试验结论：删除残留 TEMPORARY PROBE 调试代码；files 补 whalepicks.json；whalepicks.json bump 1.1（deps/perf/security 按事实填写）；AGENTS/README 标记试验品身份。验收全绿：npm test 93/93、check-plugin 门槛 PASS、--structure 全绿、template-sync 零漂移。有意豁免 4 项归档于其 docs/DEVELOPMENT（runtime 快照引擎、2 个额外平台模块、3 个额外 devDeps、shims 已回流模板）。试验品状态：已归档，确立为 canonical reference |
+| 📐 模板 v2 + 范式成文 | templates/plugin 全体 + spec/PARADIGM.md | 模板 whalepicks.json bump 1.1（deps/perf/security）；补齐全量平台模块表、测试 shims、DEVELOPMENT 骨架、扩展点注释；新增 PARADIGM.md 把「统一范式、不按类型分化」正式成文；SPEC 第 3 节同步 |
+| 🛠 迁移工具链上线 | scripts/scaffold.mjs + check-plugin --init 1.1 / --structure + scripts/template-sync.mjs | 第三方迁移能力：scaffold 生成范式骨架；--structure 输出对齐报告（只报告不进门槛，门槛仍以 whalepicks.json 事实一致性为准）；template-sync 做骨架漂移自查。全部零运行时依赖 |
+
 ## 2026-08-15
 
 | 决定 | 条目 | 理由 |

@@ -9,7 +9,7 @@
 // Six-axis scores produced here: security, scope (边界与冲突), cost, activity,
 // compatibility (only when the store registry knows a verified state), and human
 // (always null — humans only). The store's compute-scores.mjs consumes these.
-import { readFile, writeFile, access } from 'node:fs/promises'
+import { readFile, writeFile, access, readdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import path from 'node:path'
 import { pathToFileURL, fileURLToPath } from 'node:url'
@@ -177,7 +177,7 @@ export async function initManifest(dir) {
   const insertIds = extractInsertIds(patchText)
   const profile = pkg.dsh?.client?.platform === 'web' ? 'web' : 'any'
   const manifest = {
-    schemaVersion: '1.0',
+    schemaVersion: '1.1',
     id: pkg.name || 'TODO-plugin-id',
     name: pkg.name || 'TODO-plugin-name',
     version: pkg.version || '0.0.0',
@@ -197,6 +197,9 @@ export async function initManifest(dir) {
       slots: [],
     },
     capabilities: { network: false, telemetry: false, permissions: [] },
+    deps: [],
+    perf: { polls: {}, memoryEstimateMB: 2, gpu: false, timers: 0 },
+    security: { verdict: 'unknown', scanBy: 'TODO: whalepicks check-plugin' },
     cost: { license: pkg.license || 'TODO', paid: false, paidTiers: [] },
     links: { repo: repoUrl || 'TODO', npm: pkg.name ? 'https://www.npmjs.com/package/' + pkg.name : undefined },
     maintainers: [{ name: 'TODO: your name', contact: 'TODO: github/email' }],
@@ -215,6 +218,120 @@ export async function initManifest(dir) {
   }
 }
 
+/**
+ * Template-alignment report (whale-picks plugin paradigm, --structure mode).
+ * REPORT ONLY — never a gate: the admission gate stays manifest-fact-based.
+ * Each check asserts one fixed section of the paradigm skeleton.
+ */
+export async function structureReport(dir) {
+  const checks = []
+  const ok = (name, detail = '') => checks.push({ name, ok: true, detail })
+  const warn = (name, detail) => checks.push({ name, ok: false, detail })
+  const read = (rel) => existsSync(path.join(dir, rel))
+    ? readFile(path.join(dir, rel), 'utf8')
+    : Promise.resolve('')
+  const list = async (rel) => {
+    if (!existsSync(path.join(dir, rel))) return []
+    return await readdir(path.join(dir, rel))
+  }
+
+  // -- contract layer
+  if (existsSync(path.join(dir, 'whalepicks.json'))) {
+    const manifest = JSON.parse(await read('whalepicks.json'))
+    if (manifest.schemaVersion === '1.1') ok('清单 schemaVersion', '1.1（含 deps/perf/security）')
+    else warn('清单 schemaVersion', '建议 1.1（deps/perf/security 供通用体检读取），当前 ' + (manifest.schemaVersion ?? '缺失'))
+  }
+
+  // -- package facts
+  if (!existsSync(path.join(dir, 'package.json'))) {
+    warn('package.json', '缺失')
+  } else {
+    const pkg = JSON.parse(await read('package.json'))
+    const dsh = pkg.dsh ?? {}
+    if (dsh.client?.platform === 'web' && Array.isArray(dsh.client.inject) && dsh.client.inject.length > 0 && dsh.bundle?.patch) {
+      ok('dsh.client 块', 'platform=web、inject 已声明、bundle.patch 已声明')
+    } else {
+      warn('dsh.client 块', '需声明 platform=web、inject 服务列表与 bundle.patch 路径')
+    }
+    if (pkg.exports?.['./client']) ok('exports "./client"', pkg.exports['./client'])
+    else warn('exports "./client"', '客户端半区必须通过 ./client 暴露')
+    if (typeof pkg.scripts?.bundle === 'string' && pkg.scripts.bundle.includes('tsdown')) ok('build 脚本', 'bundle = tsdown')
+    else warn('build 脚本', '缺少 tsdown 构建脚本')
+    if (typeof pkg.scripts?.test === 'string' && pkg.scripts.test.includes('vitest')) ok('test 脚本', 'test = vitest')
+    else warn('test 脚本', '缺少 vitest 测试脚本')
+    if (Array.isArray(pkg.files) && pkg.files.includes('whalepicks.json')) ok('files 含 whalepicks.json', '合同随包分发')
+    else warn('files 含 whalepicks.json', '发布包应带上 whalepicks.json（上架合同）')
+  }
+
+  // -- loading layer
+  if (existsSync(path.join(dir, 'cordis.patch.yml'))) ok('cordis.patch.yml', '存在')
+  else warn('cordis.patch.yml', '缺失（装载层）')
+
+  // -- host half
+  if (existsSync(path.join(dir, 'src/index.ts'))) ok('宿主半区 src/index.ts', '存在')
+  else warn('宿主半区 src/index.ts', '缺失')
+
+  // -- browser half
+  if (existsSync(path.join(dir, 'src/client/index.ts'))) ok('浏览器半区 src/client/index.ts', '存在')
+  else warn('浏览器半区 src/client/index.ts', '缺失')
+
+  // -- copy layer
+  const localesText = await read('src/client/locales.ts')
+  if (localesText.includes('zh') && localesText.includes('en')) ok('locale zh/en 双词典', 'src/client/locales.ts')
+  else warn('locale zh/en 双词典', 'src/client/locales.ts 需导出 zh 与 en')
+  if (existsSync(path.join(dir, 'README.zh.md'))) ok('README 双语', 'README.md + README.zh.md')
+  else warn('README 双语', '缺少 README.zh.md')
+
+  // -- verification layer
+  if (existsSync(path.join(dir, 'vitest.config.ts'))) ok('vitest 配置', '存在')
+  else warn('vitest 配置', '缺失（验证层）')
+  const testFiles = (await list('tests')).filter((f) => f.endsWith('.spec.ts') || f.endsWith('.spec.tsx'))
+  if (testFiles.length > 0) ok('测试文件', testFiles.length + ' 个 spec')
+  else warn('测试文件', 'tests/ 下暂无 spec（passWithNoTests 只是开发期豁免）')
+
+  // -- repo-convention layer
+  for (const f of ['AGENTS.md', 'tsconfig.json', 'LICENSE']) {
+    if (existsSync(path.join(dir, f))) ok(f, '存在')
+    else warn(f, '缺失（仓库规范层）')
+  }
+  const gitignore = await read('.gitignore')
+  if (/^lib\/$/m.test(gitignore)) ok('.gitignore 忽略 lib/', '构建产物不入库')
+  else warn('.gitignore 忽略 lib/', '模板约定 lib/ 不入库')
+
+  // -- build config
+  const tsdown = await read('tsdown.config.ts')
+  if (tsdown.includes('window.__ModuleLoader__')) ok('tsdown 双产物包装', 'window.__ModuleLoader__ banner 存在')
+  else warn('tsdown 双产物包装', '缺少 __ModuleLoader__ banner（浏览器半区无法装载）')
+
+  // -- client bundle purity
+  const PLATFORM_RE = /^(react(\/.*)?|react-dom(\/.*)?|@deepseek-ai\/cordis|@deepseek-ai\/dsh-client-runtime\/client|@deepseek-ai\/dsh-client-[a-z-]+(\/.*)?)$/
+  const clientFiles = (await list('src/client')).filter((f) => /\.(ts|tsx)$/.test(f))
+  const nonPlatform = new Set()
+  for (const f of clientFiles) {
+    const text = await read('src/client/' + f)
+    for (const m of text.matchAll(/from\s+['"]([^'"]+)['"]|import\s*['"]([^'"]+)['"]/g)) {
+      const spec = m[1] ?? m[2]
+      if (spec === undefined || spec.startsWith('.')) continue
+      if (!PLATFORM_RE.test(spec)) nonPlatform.add(spec)
+    }
+  }
+  if (nonPlatform.size === 0) ok('client bundle purity', 'src/client 仅 import 平台模块')
+  else warn('client bundle purity', '非平台 import: ' + [...nonPlatform].join(', '))
+
+  // -- copy leak: CJK literals outside locales/comments
+  const cjkLeaks = []
+  for (const f of clientFiles) {
+    if (f === 'locales.ts') continue
+    let text = await read('src/client/' + f)
+    text = text.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '').replace(/^\s*\*.*$/gm, '')
+    if (/[\u4e00-\u9fff]/.test(text)) cjkLeaks.push(f)
+  }
+  if (cjkLeaks.length === 0) ok('文案无硬编码中文', 'locales.ts 之外无 CJK 字面量')
+  else warn('文案无硬编码中文', '发现硬编码中文: ' + cjkLeaks.join(', ') + '（应进 locales.ts zh/en 词典）')
+
+  return { checks, clean: checks.every((c) => c.ok) }
+}
+
 // CLI
 const args = process.argv.slice(2)
 const asJson = args.includes('--json')
@@ -227,6 +344,12 @@ if (args.includes('--init')) {
 }
 if (import.meta.url === pathToFileURL(process.argv[1]).href && args.length) {
   const dir = path.resolve(args.find(a => !a.startsWith('--')) || '.')
+  if (args.includes('--structure')) {
+    const report = await structureReport(dir)
+    console.log(report.clean ? '✅ 模板对齐 — 范式结构齐全' : '⚠️ 模板对齐报告（只报告，不进门槛）:')
+    for (const c of report.checks) console.log((c.ok ? '   ✅ ' : '   ⚠️ ') + c.name + (c.detail ? ' — ' + c.detail : ''))
+    process.exit(0)
+  }
   let registry = null
   const registryPath = path.join(REPO, 'data', 'plugins.json')
   if (existsSync(registryPath)) registry = JSON.parse(await readFile(registryPath, 'utf8'))

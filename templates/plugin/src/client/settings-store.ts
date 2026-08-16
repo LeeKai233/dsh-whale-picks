@@ -1,8 +1,18 @@
 /**
  * localStorage-backed settings store for the browser half.
+ *
+ * Extension point: settings persistence (pick ONE idiom):
+ * 1. This plain localStorage store (simplest; used by the template default).
+ * 2. The runtime snapshot-store engine: `defineStore({ init, persist, actions })`
+ *    from '@deepseek-ai/dsh-client-runtime/client' (attention's idiom — see its
+ *    docs/DEVELOPMENT.md; needs the runtime store exemption in tsdown).
+ * 3. No persistence at all for stateless plugins.
+ *
  * localStorage (not the Host settings scope) is used so the row keeps
- * working before/without the host settings round-trip; see the store
- * interface for the persisted shape.
+ * working before/without the host settings round-trip: the rc.6 web API
+ * gateway exposes only an allowlisted set of settings namespaces to the
+ * browser. The node half still registers the namespace Host-side so the
+ * durable scope lights up once the upstream limitation is lifted.
  */
 import { DEFAULT_PLUGIN_SETTINGS } from '../plugin-settings.ts'
 import type { PluginSettings } from '../plugin-settings.ts'

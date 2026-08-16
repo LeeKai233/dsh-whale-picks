@@ -8,6 +8,8 @@
 
 鲸选合规 DSH 插件——见 [whalepicks.json](./whalepicks.json) 与[鲸选插件规范](https://github.com/LeeKai233/dsh-whale-picks/blob/main/spec/SPEC.md)。
 
+本仓库遵循[鲸选插件范式](https://github.com/LeeKai233/dsh-whale-picks/blob/main/spec/PARADIGM.md)：固定分区保持不变，插件自己的「唯一一件事」填进扩展点。开发者文档：[docs/DEVELOPMENT.zh.md](docs/DEVELOPMENT.zh.md)。
+
 ## 安装
 
 ```sh

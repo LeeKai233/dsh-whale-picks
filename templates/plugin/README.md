@@ -8,6 +8,8 @@
 
 A whale-picks compliant DSH plugin — see [whalepicks.json](./whalepicks.json) and the [whale-picks SPEC](https://github.com/LeeKai233/dsh-whale-picks/blob/main/spec/SPEC.md).
 
+This repo follows the [whale-picks plugin paradigm](https://github.com/LeeKai233/dsh-whale-picks/blob/main/spec/PARADIGM.md): the fixed sections stay, and the plugin's ONE thing fills the extension points. Developer docs: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+
 ## Install
 
 ```sh

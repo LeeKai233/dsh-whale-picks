@@ -56,6 +56,14 @@ exit 0 即合规。它同时给出六轴机器分（安全/边界/成本/活跃�
 - 仓库已 archived / 半年无推送（硬门槛）；
 - 许可证不是 OSI 认可项。
 
+## 阶段二：迁移为范式结构（可选但推荐）
+
+上面三步只补声明、不改行为。若插件要长期演进、接受机器审查、或想成为鲸选范式范例，
+还可以做完整结构迁移：把代码装进 templates/plugin 骨架、文案进 locale、测试进验证层。
+完整指南见 [docs/migrate-to-paradigm.md](./migrate-to-paradigm.md)，
+范式定义见 [spec/PARADIGM.md](../spec/PARADIGM.md)。三个范例：dsh-ui-attention
+（试验品）、dsh-appearance、dsh-statusbar。
+
 ## 之后
 
 把仓库链接投给鲸选（issue 表单 / PR），进候选池 → 机器打分 → 创始人亲测 → 转正。合规只是门票，评分与手记才决定你在货架上的位置。

@@ -8,18 +8,30 @@ import { defineConfig } from 'tsdown'
 
 const PLUGIN_ID = '{{PLUGIN_ID}}'
 
-/** The module specifiers the web shell shares into the frozen module table. */
+/**
+ * The module specifiers the web shell shares into the frozen module table.
+ * Full inventory of the dsh-client-ui-* family; trim to what the plugin's
+ * client half actually imports (smaller surface, cleaner --structure report).
+ */
 const PLATFORM_MODULES = [
   'react', 'react/jsx-runtime', 'react-dom', 'react-dom/client', '@deepseek-ai/cordis',
   '@deepseek-ai/dsh-client-ui-slots',
   '@deepseek-ai/dsh-client-web-react',
   '@deepseek-ai/dsh-client-ui-primitives',
+  '@deepseek-ai/dsh-client-ui-attachment',
+  '@deepseek-ai/dsh-client-schema-form',
+  '@deepseek-ai/dsh-client-ui-settings',
 ] as const
 
 /** Documented exemption: snapshot-store engine answered by the lazy runtime table. */
 const RUNTIME_STORE_EXEMPTION = '@deepseek-ai/dsh-client-runtime/client'
 
-/** Host node-half dependencies resolved through the profile flat fallback. */
+/**
+ * Host node-half dependencies resolved through the profile flat fallback.
+ * Browser-only plugins (no host settings namespace) may drop dsh-settings and
+ * schemastery from here AND from package.json peer/devDependencies; the
+ * node half then stays a no-op (extension point: host half may be empty).
+ */
 const NODE_EXTERNALS = ['@deepseek-ai/cordis', '@deepseek-ai/dsh-settings', '@deepseek-ai/schemastery']
 
 export default defineConfig([

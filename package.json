@@ -8,6 +8,8 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "render": "node scripts/render-readme.mjs",
+    "scaffold": "node scripts/scaffold.mjs",
+    "template:check": "node scripts/template-sync.mjs",
     "freshness": "node scripts/freshness.mjs",
     "cf:dev": "wrangler dev -c cloudflare/wrangler.toml",
     "cf:deploy": "wrangler deploy -c cloudflare/wrangler.toml",

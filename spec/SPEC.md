@@ -42,12 +42,24 @@ This file is the **listing contract** of the whale-picks store. To be listed, a 
 
 ## 3. 工程结构要求
 
-以 templates/plugin/ 为基准：
+以 templates/plugin/ 为基准——它是[鲸选插件范式](./PARADIGM.md)的唯一规范骨架：固定
+分区（合同/宿主半区/浏览器半区/文案/验证/装载/仓库规范）一个不少，插件自己的「唯一
+一件事」填进扩展点（inject、槽位注册、服务提供/消费、设置持久化、模块自述描述符、
+宿主半区空实现）。范式适用于任何 DSH 插件，不按插件类型分化。
+
 - **打包**：tsdown 双产物——node 侧 ESM lib/index.js + 浏览器侧 CJS bundle（window.__ModuleLoader__ 包装）；浏览器 bundle 只允许 import 平台模块（react/cordis/dsh-client-ui-* 等），禁止拖入非平台库（见模板 tsdown.config.ts 的 external 列表与注释）。
 - **声明**：package.json 的 dsh.client 块声明平台与 inject 的服务（web profile）；cordis.patch.yml 提供 bundle 插槽（insert 行 id 全店唯一）。
 - **双语文案**：README.md（英文）+ README.zh.md（中文）；客户端 locale zh/en 双词典。
 - **测试**：vitest 覆盖核心逻辑（状态机/纯函数/组件），passWithNoTests 只是开发期豁免。
 - **许可证**：LICENSE 文件，OSI 认可许可证（硬门槛）。
+
+工具链（全部零运行时依赖）：
+- scripts/scaffold.mjs <name>：从模板生成范式骨架并替换全部占位符；
+- scripts/check-plugin.mjs <dir> --init：从现有 package.json 生成 whalepicks.json（v1.1）骨架；
+- scripts/check-plugin.mjs <dir> --structure：范式对齐度报告（只报告，不进门槛）；
+- scripts/template-sync.mjs <dir>：与模板的逐文件漂移自查。
+
+已有插件迁移范式见 docs/migrate-to-paradigm.md（与 docs/adopt.md 的「只补声明」路径互补）。
 
 ## 4. cordis.patch.yml 约定
 

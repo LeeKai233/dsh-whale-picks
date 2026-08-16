@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-11-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -80,6 +80,20 @@
   ```
 
 ### UI 与皮肤
+
+- [dsh-appearance](https://github.com/LeeKai233/dsh-appearance) — 外观协调器：在 DSH 设置中新增「外观」页，统一注册、开关与体检外观类插件（冲突/危险/性能检查，基于各插件声明的鲸选清单）
+  <br><sub>0⭐ · MIT · 机器体检 2026-08-16 · 规范门槛 ✓ · [体检发现](docs/security-report.md#dsh-appearance)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-appearance
+  ```
+
+- [dsh-statusbar](https://github.com/LeeKai233/dsh-statusbar) — tmux 风格状态栏：替换输入框下方统计行，左为统计信息与 DeepSeek 余额（三色阈值提醒），右为地点/温度/逐小时预报/日出日落
+  <br><sub>0⭐ · MIT · 机器体检 2026-08-16 · 规范门槛 ✓ · [体检发现](docs/security-report.md#dsh-statusbar)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-statusbar
+  ```
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装
   <br><sub>2637⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>

@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-11-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-1-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-15-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -80,6 +80,20 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   ```
 
 ### UI & Themes
+
+- [dsh-appearance](https://github.com/LeeKai233/dsh-appearance) — Appearance coordinator: adds an Appearance page to DSH settings that registers, toggles and health-checks appearance plugins (conflict/danger/performance checks over each plugin's whale-picks manifest)
+  <br><sub>0⭐ · MIT · machine pass 2026-08-16 · spec gate ✓ · [pass findings](docs/security-report.md#dsh-appearance)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-appearance
+  ```
+
+- [dsh-statusbar](https://github.com/LeeKai233/dsh-statusbar) — tmux-style status bar: replaces the stats line under the composer with statistics + DeepSeek balance (threshold-colored) on the left and location/temperature/hourly forecast/sunrise-sunset on the right
+  <br><sub>0⭐ · MIT · machine pass 2026-08-16 · spec gate ✓ · [pass findings](docs/security-report.md#dsh-statusbar)</sub>
+
+  ```sh
+  dsh plugin --profile web add dsh-statusbar
+  ```
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Plugin and skin collection for the Web UI: task board, git graph, side panels, mobile UI — one aggregate install
   <br><sub>2637⭐ · Apache-2.0 · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-web-ui)</sub>

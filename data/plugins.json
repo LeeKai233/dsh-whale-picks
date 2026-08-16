@@ -44,7 +44,7 @@
       "submittedAt": "2026-08-15",
       "listedAt": "2026-08-15",
       "reviewedBy": "LeeKai233",
-      "specVersion": "1.0",
+      "specVersion": "1.1",
       "manifestCompliant": true,
       "patches": {
         "insertIds": [
@@ -91,6 +91,100 @@
           "updatedAt": "2026-08-15"
         }
       }
+    },
+    {
+      "id": "dsh-appearance",
+      "name": "dsh-appearance",
+      "repo": "LeeKai233/dsh-appearance",
+      "npmName": "dsh-appearance",
+      "install": "dsh plugin --profile web add dsh-appearance",
+      "tier": "candidate",
+      "category": "ui",
+      "license": "MIT",
+      "stars": 0,
+      "pushedAt": "2026-08-16T14:28:52+08:00",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-16",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": false,
+        "repoPointerMatch": null,
+        "pushedRecent": null,
+        "redFlags": [],
+        "notes": "外观管理器：零网络请求；npm 尚未发布（转正前需 npm publish；目前 file: 安装可用）。"
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "外观协调器：在 DSH 设置中新增「外观」页，统一注册、开关与体检外观类插件（冲突/危险/性能检查，基于各插件声明的鲸选清单）",
+        "en": "Appearance coordinator: adds an Appearance page to DSH settings that registers, toggles and health-checks appearance plugins (conflict/danger/performance checks over each plugin's whale-picks manifest)"
+      },
+      "submittedAt": "2026-08-16",
+      "listedAt": null,
+      "reviewedBy": null,
+      "specVersion": "1.1",
+      "manifestCompliant": true,
+      "patches": {
+        "insertIds": [
+          "appearance"
+        ],
+        "namespaces": [],
+        "slots": [
+          "settings.section"
+        ]
+      },
+      "radar": null
+    },
+    {
+      "id": "dsh-statusbar",
+      "name": "dsh-statusbar",
+      "repo": "LeeKai233/dsh-statusbar",
+      "npmName": "dsh-statusbar",
+      "install": "dsh plugin --profile web add dsh-statusbar",
+      "tier": "candidate",
+      "category": "ui",
+      "license": "MIT",
+      "stars": 0,
+      "pushedAt": "2026-08-16T14:32:28+08:00",
+      "archived": false,
+      "verifiedAgainst": null,
+      "lastVerified": null,
+      "score": null,
+      "security": {
+        "scannedAt": "2026-08-16",
+        "reviewStatus": "pending-human",
+        "hasLicense": true,
+        "npmPublished": false,
+        "repoPointerMatch": null,
+        "pushedRecent": null,
+        "redFlags": [],
+        "notes": "状态栏：余额/天气浏览器直连官方接口（capabilities.network=true）；npm 尚未发布（转正前需 npm publish）。"
+      },
+      "reviewNotes": null,
+      "description": {
+        "zh": "tmux 风格状态栏：替换输入框下方统计行，左为统计信息与 DeepSeek 余额（三色阈值提醒），右为地点/温度/逐小时预报/日出日落",
+        "en": "tmux-style status bar: replaces the stats line under the composer with statistics + DeepSeek balance (threshold-colored) on the left and location/temperature/hourly forecast/sunrise-sunset on the right"
+      },
+      "submittedAt": "2026-08-16",
+      "listedAt": null,
+      "reviewedBy": null,
+      "specVersion": "1.1",
+      "manifestCompliant": true,
+      "patches": {
+        "insertIds": [
+          "statusbar"
+        ],
+        "namespaces": [
+          "dsh-statusbar.settings"
+        ],
+        "slots": [
+          "conversation.composer.dock#stats"
+        ]
+      },
+      "radar": null
     },
     {
       "id": "dsh-market",

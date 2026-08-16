@@ -10,6 +10,9 @@
 | 🧪 试验品（存档标记，闭环） | dsh-ui-attention | 试验结论：删除残留 TEMPORARY PROBE 调试代码；files 补 whalepicks.json；whalepicks.json bump 1.1（deps/perf/security 按事实填写）；AGENTS/README 标记试验品身份。验收全绿：npm test 93/93、check-plugin 门槛 PASS、--structure 全绿、template-sync 零漂移。有意豁免 4 项归档于其 docs/DEVELOPMENT（runtime 快照引擎、2 个额外平台模块、3 个额外 devDeps、shims 已回流模板）。试验品状态：已归档，确立为 canonical reference |
 | 📐 模板 v2 + 范式成文 | templates/plugin 全体 + spec/PARADIGM.md | 模板 whalepicks.json bump 1.1（deps/perf/security）；补齐全量平台模块表、测试 shims、DEVELOPMENT 骨架、扩展点注释；新增 PARADIGM.md 把「统一范式、不按类型分化」正式成文；SPEC 第 3 节同步 |
 | 🛠 迁移工具链上线 | scripts/scaffold.mjs + check-plugin --init 1.1 / --structure + scripts/template-sync.mjs | 第三方迁移能力：scaffold 生成范式骨架；--structure 输出对齐报告（只报告不进门槛，门槛仍以 whalepicks.json 事实一致性为准）；template-sync 做骨架漂移自查。全部零运行时依赖 |
+| 📐 appearance.manager 契约 i18n 接缝 | dsh-appearance | 模块自述描述符的 name/title/desc/placeholder 支持 string（旧值直显）或 { key }（走模块 t）；检查结果改为结构化 CheckItem {level, key, params}（manager 保持纯函数），渲染经 locale 词典——范式「文案双语」规则在通用体检页面的落实 |
+| 🧪 进入候选池 | [dsh-appearance](https://github.com/LeeKai233/dsh-appearance) | 范式范例 #2（服务提供者 + settings.section）：迁移完成，check-plugin 门槛 PASS、--structure 全绿、template-sync 零漂移、12/12 测试；迁移前存档 git tag v0.1.0-pre-paradigm。npm 发布后转正 |
+| 🧪 进入候选池 | [dsh-statusbar](https://github.com/LeeKai233/dsh-statusbar) | 范式范例 #3（服务消费者 + dock#stats 遮蔽 + 联网）：迁移完成，check-plugin 门槛 PASS（安全 4=诚实声明联网）、--structure 全绿、template-sync 零漂移、20/20 测试（zh 栏内文案逐字不变）；迁移前存档 git tag v0.1.0-pre-paradigm。npm 发布后转正 |
 
 ## 2026-08-15
 

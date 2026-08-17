@@ -53,7 +53,7 @@
 
 ### dsh-session-search-plus
 
-- 许可证 MIT ✅ · npm 0.1.0 发布 ✅ 且 repository 指针正确 ✅（含 manifest 的 0.1.1 待 OTP 发布）· 活跃 ✅（2026-08-17 推送）· 文档 ✅（双语 README + 仓内 AGENTS.md）· 规范门槛 ✅（2026-08-17 本地复跑 check-plugin 门槛 PASS）。
+- 许可证 MIT ✅ · npm 0.2.0 发布 ✅ 且 repository 指针正确 ✅ · 活跃 ✅（2026-08-17 推送）· 文档 ✅（双语 README + 仓内 AGENTS.md）· 规范门槛 ✅（2026-08-17 本地复跑 check-plugin --strict 全绿）。
 - 信号对账（2026-08-17 实跑）：1 处网络特征 fetch(（src/client/workspace-browser.js:2716）——人工复核为**本机同源** `/api/search-plus/query`（自身宿主半区提供，非外部请求），与 network=false 声明的语义一致；无危险特征命中。
 - 功能复核（深度复核）：宿主半区内存索引只存 user/assistant 消息文本，不碰工具参数/结果/推理；浏览器半区为官方 WorkspaceBrowser 逐字节 fork（改动带 [search-plus] 标记），页内高亮是纯 DOM 操作；跳转定位走运行时 chat 快照 anchorSeq，不做文本猜测。
 - 实测（2026-08-17，Playwright + dsh 0.1.0-rc.6）：搜 npm 点命中后折叠 context 注入行自动展开、填充高亮 1 处 + 页内框选 97 处；深历史命中（seq 12）约 15s 翻页后精确定位；范式迁移后冒烟（搜索出结果、过滤按钮在位、无页面错误）。

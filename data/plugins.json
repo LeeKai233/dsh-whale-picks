@@ -984,8 +984,8 @@
       },
       "reviewNotes": null,
       "description": {
-        "zh": "鲸选商店入口：在 DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、九轴 ASCII meter 柱状兑现度图、创始人评分与体检结论，一键复制安装命令",
-        "en": "The whale-picks store entry: a 鲸选 section right below Agent Presets in DSH settings, browsing suits and curated plugins with nine-axis ASCII meter charts, founder scores and copyable install commands"
+        "zh": "鲸选商店入口：在 DSH 设置侧栏「Agent 预设」下方加入鲸选，浏览套件与精选插件、btop 风格九轴米表（CSS 渲染、nord 配色，任意显示器与缩放观感一致）、创始人评分与体检结论，一键复制安装命令",
+        "en": "The whale-picks store entry: a 鲸选 section right below Agent Presets in DSH settings, browsing suits and curated plugins with btop-style nine-axis CSS meter charts in a nord palette, founder scores and copyable install commands"
       },
       "submittedAt": "2026-08-15",
       "listedAt": null,

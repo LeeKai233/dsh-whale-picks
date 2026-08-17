@@ -61,10 +61,10 @@ Every entry carries its exact install command. Most plugins install with `dsh pl
   dsh plugin --profile web add dsh-session-search-warmup
   ```
 
-- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH session search upgrade: a private in-memory index answers in milliseconds, with scope/fuzzy/case/whole-word filters, a per-session hit dropdown, and anchor-precise jump with in-page highlighting
+- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH session search upgrade: a private in-memory index answers in milliseconds, vscode-style Aa/ab/.*/fz mode toggles (case/whole-word/regex/fuzzy), a per-session hit dropdown, and anchor-precise jump with in-page highlighting
   <br><sub>0⭐ · MIT · verified on dsh 0.1.0-rc.6 (2026-08-17)</sub>
 
-  > **Founder’s notes**: Content search is barely usable on a large corpus with the official engine alone; this plugin answers in milliseconds from an in-memory index of user/assistant text, adding scope/fuzzy/case/whole-word filters, a per-session hit dropdown, and seq-anchored jumps — located via the runtime chat snapshot's anchorSeq, auto-expanding collapsed context rows before marking. Measured 2026-08-17 (Playwright, dsh 0.1.0-rc.6): one filled highlight + 97 in-page boxes after jumping to an npm hit; a deep-history hit (seq 12) located precisely after ~15s of paging. Known costs: deep jumps are bound by the official 50-messages-per-page paging; fuzzy defaults off (scattered subsequence hits have no contiguous string to mark). Complements dsh-session-search-warmup.
+  > **Founder’s notes**: Content search is barely usable on a large corpus with the official engine alone; this plugin answers in milliseconds from an in-memory index of user/assistant text, adding vscode-style inline mode toggles (Aa case / ab whole-word / .* regex / fz fuzzy), a per-session hit dropdown, and seq-anchored jumps — located via the runtime chat snapshot's anchorSeq, auto-expanding collapsed context rows before marking. Measured 2026-08-17 (Playwright, dsh 0.1.0-rc.6): one filled highlight + 97 in-page boxes after jumping to an npm hit; a deep-history hit located precisely after ~15s of paging; --strict green after the paradigm migration. Known costs: deep jumps are bound by the official 50-messages-per-page paging; fuzzy defaults off (scattered subsequence hits have no contiguous string to mark). Complements dsh-session-search-warmup.
 
   <sub>创始人评分 4/5 · Founder score 4/5</sub>
 

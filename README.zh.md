@@ -61,10 +61,10 @@
   dsh plugin --profile web add dsh-session-search-warmup
   ```
 
-- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH 会话搜索框增强：自建内存索引毫秒检索，范围/模糊/大小写/全词过滤，每会话多命中下拉，锚点精确跳转并页内高亮框选
+- [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH 会话搜索框增强：自建内存索引毫秒检索，vscode 风格 Aa/ab/.*/fz 模式开关（大小写/全词/正则/模糊），每会话多命中下拉，锚点精确跳转并页内高亮框选
   <br><sub>0⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-17)</sub>
 
-  > **创始人手记**: 官方搜索在大语料下内容检索近乎不可用；本插件用内存索引（仅 user/assistant 文本块）把内容搜索做到毫秒级，补齐范围/模糊/大小写/全词过滤、每会话多命中下拉与 seq 锚点跳转——定位直接读运行时 chat 快照的 anchorSeq（anchorSeq===事件 seq），折叠的 context 注入行先自动展开再标记。2026-08-17 实测（Playwright + dsh 0.1.0-rc.6）：搜 npm 跳转后填充高亮 1 处、页内框选 97 处全部正确；深历史命中（seq 12）约 15s 翻页后精确定位。已知代价：深历史跳转受官方 50 条/页翻页限速；fuzzy 默认关（散列子序列命中在 DOM 无连续串可标）。与 dsh-session-search-warmup 互补。
+  > **创始人手记**: 官方搜索在大语料下内容检索近乎不可用；本插件用内存索引（仅 user/assistant 文本块）把内容搜索做到毫秒级，vscode 风格内联模式开关（Aa 大小写 / ab 全词 / .* 正则 / fz 模糊）、每会话多命中下拉与 seq 锚点跳转——定位直接读运行时 chat 快照的 anchorSeq，折叠的 context 注入行先自动展开再标记。2026-08-17 实测（Playwright + dsh 0.1.0-rc.6）：搜 npm 跳转后填充高亮 1 处、页内框选 97 处全部正确；深历史命中约 15s 翻页后精确定位；范式迁移后 --strict 全绿。已知代价：深历史跳转受官方 50 条/页翻页限速；fuzzy 默认关（散列子序列命中在 DOM 无连续串可标）。与 dsh-session-search-warmup 互补。
 
   <sub>创始人评分 4/5 · Founder score 4/5</sub>
 

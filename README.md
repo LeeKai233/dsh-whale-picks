@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-17-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-18-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -82,7 +82,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
 ### Discovery & Management
 
 - [dshmarket](https://github.com/dsh-market/dsh-market) — The plugin market inside DSH: browse and search 300+ plugins, one-click install/update/uninstall, one-click theme switching
-  <br><sub>815⭐ · none · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-market)</sub>
+  <br><sub>1027⭐ · none · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-market)</sub>
 
   ```sh
   dsh plugin --profile web add dshmarket
@@ -96,7 +96,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   ```
 
 - [dsh-find-plugin](https://github.com/awesome-dsh-plugin/dsh-find-plugin) — Find plugins inside the agent: live GitHub dsh-plugin topic search, star-ranked, with ready install commands
-  <br><sub>48⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-find-plugin)</sub>
+  <br><sub>56⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-find-plugin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-find-plugin
@@ -126,14 +126,14 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   ```
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Plugin and skin collection for the Web UI: task board, git graph, side panels, mobile UI — one aggregate install
-  <br><sub>4068⭐ · Apache-2.0 · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>4541⭐ · Apache-2.0 · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
   ```
 
 - [dsh-skin](https://github.com/KinGao294/dsh-skin) — Skin switcher + custom wallpaper: curated palettes, translucent wallpapers with opacity control
-  <br><sub>18⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-skin)</sub>
+  <br><sub>19⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-skin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-skin
@@ -142,26 +142,26 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
 ### Terminal & Desktop
 
 - [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — A terminal UI (TUI) for DSH: interactive DeepSeek Harness in your terminal, with harness workflow rendering
-  <br><sub>201⭐ · Apache-2.0 · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-tianshu-tui)</sub>
+  <br><sub>212⭐ · Apache-2.0 · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-tianshu-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @huiliyi37/dsh-tianshu-tui
   ```
 
 - [deepseek-harness-tui](https://github.com/openma-ai/deepseek-harness-tui) — Rust/ratatui terminal client speaking the DSH SDK JSON-RPC directly; standalone or as a profile bundle
-  <br><sub>36⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#deepseek-harness-tui)</sub>
+  <br><sub>40⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#deepseek-harness-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @openma/deepseek-harness-tui
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — Modern desktop client for DSH: no Node.js or CLI required; plugin marketplace and mobile remote control on its roadmap
-  <br><sub>11520⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>13496⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### Agents & Workflow
 
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams plugin: multi-agent team orchestration (roles, task assignment, turn routing)
-  <br><sub>489⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-agent-teams)</sub>
+  <br><sub>548⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-agent-teams)</sub>
 
   ```sh
   dsh plugin --profile web add @nanmicoder/dsh-agent-teams
@@ -170,7 +170,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
 ### Usage & Stats
 
 - [dsh-usage-stats](https://github.com/Make0209/dsh-usage-stats) — GitHub-style usage heatmap: token, cache-hit and account-balance dashboards plus workspace aliases
-  <br><sub>17⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-usage-stats)</sub>
+  <br><sub>18⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-usage-stats)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-usage-stats
@@ -196,7 +196,7 @@ We deliberately do not compete on quantity. The wide lanes are covered by:
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — machine-readable registry (1028 entries)
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — the in-DSH install market
 
-Maintained against dsh **0.1.0-rc.6** · registry updated 2026-08-17. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
+Maintained against dsh **0.1.0-rc.6** · registry updated 2026-08-18. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
 
 ## License
 

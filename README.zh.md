@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-19-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-08-20-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -62,7 +62,7 @@
   ```
 
 - [dsh-session-search-plus](https://github.com/LeeKai233/dsh-session-search-plus) — DSH 会话搜索框增强：自建内存索引毫秒检索，vscode 风格 Aa/ab/.*/fz 模式开关（大小写/全词/正则/模糊），每会话多命中下拉，锚点精确跳转并页内高亮框选
-  <br><sub>0⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-17)</sub>
+  <br><sub>1⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-17)</sub>
 
   > **创始人手记**: 官方搜索在大语料下内容检索近乎不可用；本插件用内存索引（仅 user/assistant 文本块）把内容搜索做到毫秒级，vscode 风格内联模式开关（Aa 大小写 / ab 全词 / .* 正则 / fz 模糊）、每会话多命中下拉与 seq 锚点跳转——定位直接读运行时 chat 快照的 anchorSeq，折叠的 context 注入行先自动展开再标记。选中态在命中行（头部不亮），其下拉层级线常驻；关搜索后点页面任意处清除填充与框选。2026-08-17 实测（Playwright + dsh 0.1.0-rc.6）：搜 npm 跳转后填充高亮 1 处、页内框选 97 处全部正确；深历史命中约 15s 翻页后精确定位；选中态/层级线/清标记三项线上复测通过；范式迁移后 --strict 全绿。npm 0.2.0 已发布。已知代价：深历史跳转受官方 50 条/页翻页限速；fuzzy 默认关（散列子序列命中在 DOM 无连续串可标）。与 dsh-session-search-warmup 互补。
 
@@ -82,7 +82,7 @@
 ### 发现与管理
 
 - [dshmarket](https://github.com/dsh-market/dsh-market) — 装在 DSH 里的插件市场：300+ 插件浏览、搜索、一键安装/更新/卸载、主题一键切换
-  <br><sub>1232⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
+  <br><sub>1437⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
 
   ```sh
   dsh plugin --profile web add dshmarket
@@ -96,7 +96,7 @@
   ```
 
 - [dsh-find-plugin](https://github.com/awesome-dsh-plugin/dsh-find-plugin) — 在会话里让 agent 帮你找插件：实时搜索 GitHub dsh-plugin topic，按 star 排序，附安装命令
-  <br><sub>62⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-find-plugin)</sub>
+  <br><sub>68⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-find-plugin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-find-plugin
@@ -126,7 +126,7 @@
   ```
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装
-  <br><sub>4861⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>5144⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
@@ -142,26 +142,26 @@
 ### 终端与桌面
 
 - [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — DSH 终端 UI（TUI）：在终端里交互式使用 DeepSeek Harness，含 harness workflow 渲染
-  <br><sub>220⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-tianshu-tui)</sub>
+  <br><sub>224⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-tianshu-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @huiliyi37/dsh-tianshu-tui
   ```
 
 - [deepseek-harness-tui](https://github.com/openma-ai/deepseek-harness-tui) — Rust/ratatui 终端客户端：直连 DSH SDK JSON-RPC，可独立运行或作为 profile bundle
-  <br><sub>41⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#deepseek-harness-tui)</sub>
+  <br><sub>45⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#deepseek-harness-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @openma/deepseek-harness-tui
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — DSH 现代化桌面端：免 Node.js 与命令行；插件市场与移动端远程控制在路线图上
-  <br><sub>15036⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>16383⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### 多 Agent 与工作流
 
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams 插件：多 agent 团队协作编排（角色、任务分配与回合流转）
-  <br><sub>607⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
+  <br><sub>684⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
 
   ```sh
   dsh plugin --profile web add @nanmicoder/dsh-agent-teams
@@ -170,7 +170,7 @@
 ### 用量与统计
 
 - [dsh-usage-stats](https://github.com/Make0209/dsh-usage-stats) — GitHub 风格用量热力图：Token / 缓存命中 / 账户余额看板 + 工作区别名管理
-  <br><sub>20⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-usage-stats)</sub>
+  <br><sub>22⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-usage-stats)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-usage-stats
@@ -196,7 +196,7 @@
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — 机器可读数据（1028 条）
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — DSH 内置安装市场
 
-按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-08-19。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
+按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-08-20。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
 
 ## License
 

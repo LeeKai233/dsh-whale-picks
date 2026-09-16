@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.2",
   "dshVersion": "0.1.0-rc.6",
-  "updatedAt": "2026-09-15",
+  "updatedAt": "2026-09-16",
   "plugins": [
     {
       "id": "dsh-ui-attention",
@@ -396,9 +396,9 @@
           "updatedAt": "2026-08-16"
         },
         "freshness": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-16T14:28:52+08:00 映射 合成",
-          "updatedAt": "2026-08-16"
+          "value": 4,
+          "evidence": "pushed_at 2026-08-16T17:29:53Z 映射 合成",
+          "updatedAt": "2026-09-16"
         },
         "remedy": {
           "value": 3,
@@ -497,9 +497,9 @@
           "updatedAt": "2026-08-16"
         },
         "freshness": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-16T14:32:28+08:00 映射 合成",
-          "updatedAt": "2026-08-16"
+          "value": 4,
+          "evidence": "pushed_at 2026-08-16T17:28:43Z 映射 合成",
+          "updatedAt": "2026-09-16"
         },
         "remedy": {
           "value": 3,
@@ -524,8 +524,8 @@
       "tier": "candidate",
       "category": "discovery",
       "license": "none",
-      "stars": 3970,
-      "pushedAt": "2026-09-15T06:53:39Z",
+      "stars": 4028,
+      "pushedAt": "2026-09-16T16:37:51Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -614,7 +614,7 @@
       "tier": "candidate",
       "category": "discovery",
       "license": "MIT",
-      "stars": 137,
+      "stars": 139,
       "pushedAt": "2026-08-19T05:24:43Z",
       "archived": false,
       "verifiedAgainst": null,
@@ -658,8 +658,8 @@
       "tier": "candidate",
       "category": "ui",
       "license": "Apache-2.0",
-      "stars": 7611,
-      "pushedAt": "2026-09-15T16:01:55Z",
+      "stars": 7659,
+      "pushedAt": "2026-09-16T16:58:11Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -746,7 +746,7 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "Apache-2.0",
-      "stars": 277,
+      "stars": 278,
       "pushedAt": "2026-09-15T09:31:11Z",
       "archived": false,
       "verifiedAgainst": null,
@@ -795,7 +795,7 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "MIT",
-      "stars": 75,
+      "stars": 76,
       "pushedAt": "2026-09-13T03:02:59Z",
       "archived": false,
       "verifiedAgainst": null,
@@ -837,8 +837,8 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "MIT",
-      "stars": 26779,
-      "pushedAt": "2026-09-15T14:17:38Z",
+      "stars": 27048,
+      "pushedAt": "2026-09-16T17:24:27Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -881,8 +881,8 @@
       "tier": "candidate",
       "category": "agents",
       "license": "MIT",
-      "stars": 1665,
-      "pushedAt": "2026-09-13T05:56:03Z",
+      "stars": 1688,
+      "pushedAt": "2026-09-16T16:17:23Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -1043,9 +1043,9 @@
           "updatedAt": "2026-08-16"
         },
         "freshness": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-15T13:30:19Z 映射 合成",
-          "updatedAt": "2026-08-16"
+          "value": 4,
+          "evidence": "pushed_at 2026-08-17T17:12:10Z 映射 合成",
+          "updatedAt": "2026-09-16"
         },
         "remedy": {
           "value": 3,

@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-09-23-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-09-24-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -82,7 +82,7 @@
 ### 发现与管理
 
 - [dshmarket](https://github.com/dsh-market/dsh-market) — 装在 DSH 里的插件市场：300+ 插件浏览、搜索、一键安装/更新/卸载、主题一键切换
-  <br><sub>4443⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
+  <br><sub>4504⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
 
   ```sh
   dsh plugin --profile web add dshmarket
@@ -126,14 +126,14 @@
   ```
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装
-  <br><sub>7961⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>7990⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
   ```
 
 - [dsh-skin](https://github.com/KinGao294/dsh-skin) — 皮肤切换器 + 自定义壁纸：多套精选调色板、半透明壁纸与透明度控制
-  <br><sub>18⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-skin)</sub>
+  <br><sub>19⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-skin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-skin
@@ -156,12 +156,12 @@
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — DSH 现代化桌面端：免 Node.js 与命令行；插件市场与移动端远程控制在路线图上
-  <br><sub>28695⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>28858⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### 多 Agent 与工作流
 
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams 插件：多 agent 团队协作编排（角色、任务分配与回合流转）
-  <br><sub>1785⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
+  <br><sub>1796⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
 
   ```sh
   dsh plugin --profile web add @nanmicoder/dsh-agent-teams
@@ -196,7 +196,7 @@
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — 机器可读数据（1028 条）
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — DSH 内置安装市场
 
-按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-09-23。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
+按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-09-24。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
 
 ## License
 

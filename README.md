@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-09-23-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-09-24-blue)
 
 > Big lists tell you **what exists**. The radar tells you **whether it runs**.
 > 鲸选 tells you **whether you should install it — and whether it is worth it**.
@@ -82,7 +82,7 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
 ### Discovery & Management
 
 - [dshmarket](https://github.com/dsh-market/dsh-market) — The plugin market inside DSH: browse and search 300+ plugins, one-click install/update/uninstall, one-click theme switching
-  <br><sub>4443⭐ · none · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-market)</sub>
+  <br><sub>4504⭐ · none · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-market)</sub>
 
   ```sh
   dsh plugin --profile web add dshmarket
@@ -126,14 +126,14 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   ```
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Plugin and skin collection for the Web UI: task board, git graph, side panels, mobile UI — one aggregate install
-  <br><sub>7961⭐ · Apache-2.0 · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>7990⭐ · Apache-2.0 · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
   ```
 
 - [dsh-skin](https://github.com/KinGao294/dsh-skin) — Skin switcher + custom wallpaper: curated palettes, translucent wallpapers with opacity control
-  <br><sub>18⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-skin)</sub>
+  <br><sub>19⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#dsh-skin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-skin
@@ -156,12 +156,12 @@ Machine pass done; awaiting the founder’s hands-on test before promotion. Your
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — Modern desktop client for DSH: no Node.js or CLI required; plugin marketplace and mobile remote control on its roadmap
-  <br><sub>28695⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>28858⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · ⚠️ 1 flag(s) pending human review · [pass findings](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### Agents & Workflow
 
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams plugin: multi-agent team orchestration (roles, task assignment, turn routing)
-  <br><sub>1785⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-agent-teams)</sub>
+  <br><sub>1796⭐ · MIT · machine pass 2026-08-15 · spec gate ✗ (whalepicks.json pending) · [pass findings](docs/security-report.md#dsh-agent-teams)</sub>
 
   ```sh
   dsh plugin --profile web add @nanmicoder/dsh-agent-teams
@@ -196,7 +196,7 @@ We deliberately do not compete on quantity. The wide lanes are covered by:
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — machine-readable registry (1028 entries)
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — the in-DSH install market
 
-Maintained against dsh **0.1.0-rc.6** · registry updated 2026-09-23. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
+Maintained against dsh **0.1.0-rc.6** · registry updated 2026-09-24. [Roadmap](docs/roadmap.md): storefront website, the in-DSH 鲸选 boutique plugin, ratings & discussions.
 
 ## License
 

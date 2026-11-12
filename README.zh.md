@@ -6,7 +6,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-11-11-blue)
+![license](https://img.shields.io/badge/license-MIT-green) ![featured](https://img.shields.io/badge/featured-3-ffb900) ![listed](https://img.shields.io/badge/listed-0-brightgreen) ![candidates](https://img.shields.io/badge/candidates-13-9cf) ![verified](https://img.shields.io/badge/verified-2026-11-12-blue)
 
 > 大列表告诉你**有什么**。雷达告诉你**能不能跑**。
 > 鲸选告诉你**敢不敢装、值不值得装**。
@@ -34,7 +34,7 @@
 ### 通知与提醒
 
 - [dsh-ui-attention](https://github.com/LeeKai233/dsh-ui-attention) — DSH Web 操作提醒：页面不在前台时，用浏览器通知、提示音、标题闪烁提醒待处理交互与回合完成
-  <br><sub>1⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-15)</sub>
+  <br><sub>2⭐ · MIT · 实测于 dsh 0.1.0-rc.6 (2026-08-15)</sub>
 
   > **创始人手记**: 创始人自研的提醒插件，每天在用：页面在后台时，提问、审批、回合完成都靠它推送。纯本地实现，零网络请求；浏览器通知权限只在用户手势中申请。注意：bundle 安装与手工 patch 安装二选一，绝不能同时使用（会报 duplicate loader entry id）。
 
@@ -82,7 +82,7 @@
 ### 发现与管理
 
 - [dshmarket](https://github.com/dsh-market/dsh-market) — 装在 DSH 里的插件市场：300+ 插件浏览、搜索、一键安装/更新/卸载、主题一键切换
-  <br><sub>12005⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
+  <br><sub>12162⭐ · none · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#dsh-market)</sub>
 
   ```sh
   dsh plugin --profile web add dshmarket
@@ -96,7 +96,7 @@
   ```
 
 - [dsh-find-plugin](https://github.com/awesome-dsh-plugin/dsh-find-plugin) — 在会话里让 agent 帮你找插件：实时搜索 GitHub dsh-plugin topic，按 star 排序，附安装命令
-  <br><sub>230⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-find-plugin)</sub>
+  <br><sub>231⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-find-plugin)</sub>
 
   ```sh
   dsh plugin --profile web add dsh-find-plugin
@@ -126,7 +126,7 @@
   ```
 
 - [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Web UI 插件与皮肤合集：任务板、Git 图谱、右侧面板、移动端 UI 等，聚合包装一键全装
-  <br><sub>10353⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
+  <br><sub>10379⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-web-ui)</sub>
 
   ```sh
   dsh plugin --profile web add @linxin666/dsh-web-ui-all
@@ -142,7 +142,7 @@
 ### 终端与桌面
 
 - [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — DSH 终端 UI（TUI）：在终端里交互式使用 DeepSeek Harness，含 harness workflow 渲染
-  <br><sub>302⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-tianshu-tui)</sub>
+  <br><sub>303⭐ · Apache-2.0 · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-tianshu-tui)</sub>
 
   ```sh
   dsh plugin --profile tui add @huiliyi37/dsh-tianshu-tui
@@ -156,12 +156,12 @@
   ```
 
 - [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) — DSH 现代化桌面端：免 Node.js 与命令行；插件市场与移动端远程控制在路线图上
-  <br><sub>35744⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
+  <br><sub>35855⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · ⚠️ 1 项待复核 · [体检发现](docs/security-report.md#deepseek-harness-desktop)</sub>
 
 ### 多 Agent 与工作流
 
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams 插件：多 agent 团队协作编排（角色、任务分配与回合流转）
-  <br><sub>2871⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
+  <br><sub>2902⭐ · MIT · 机器体检 2026-08-15 · 规范门槛 ✗（待补 whalepicks.json） · [体检发现](docs/security-report.md#dsh-agent-teams)</sub>
 
   ```sh
   dsh plugin --profile web add @nanmicoder/dsh-agent-teams
@@ -196,7 +196,7 @@
 - [dshworks/awesome-dsh-plugins](https://github.com/dshworks/awesome-dsh-plugins) — 机器可读数据（1028 条）
 - [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) — DSH 内置安装市场
 
-按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-11-11。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
+按 dsh **0.1.0-rc.6** 维护 · registry 更新于 2026-11-12。[路线图](docs/roadmap.md)：商店网站、DSH 内置鲸选插件、评分与讨论区。
 
 ## License
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.2",
   "dshVersion": "0.1.0-rc.6",
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-13",
   "plugins": [
     {
       "id": "dsh-ui-attention",
@@ -94,9 +94,9 @@
           "updatedAt": "2026-08-16"
         },
         "freshness": {
-          "value": 5,
-          "evidence": "pushed_at 2026-08-15T10:36:08Z 映射 + 实测于 dsh 0.1.0-rc.6（2026-08-15） 合成",
-          "updatedAt": "2026-08-16"
+          "value": 4,
+          "evidence": "pushed_at 2026-08-16T12:53:02Z 映射 + 实测于 dsh 0.1.0-rc.6，但复核已 90 天 合成",
+          "updatedAt": "2026-11-13"
         },
         "remedy": {
           "value": 5,
@@ -524,8 +524,8 @@
       "tier": "candidate",
       "category": "discovery",
       "license": "none",
-      "stars": 12162,
-      "pushedAt": "2026-11-12T16:52:32Z",
+      "stars": 12301,
+      "pushedAt": "2026-11-13T16:45:25Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -658,8 +658,8 @@
       "tier": "candidate",
       "category": "ui",
       "license": "Apache-2.0",
-      "stars": 10379,
-      "pushedAt": "2026-11-12T15:14:02Z",
+      "stars": 10394,
+      "pushedAt": "2026-11-13T13:00:14Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -746,7 +746,7 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "Apache-2.0",
-      "stars": 303,
+      "stars": 306,
       "pushedAt": "2026-11-10T05:26:24Z",
       "archived": false,
       "verifiedAgainst": null,
@@ -946,8 +946,8 @@
       "tier": "candidate",
       "category": "terminal-desktop",
       "license": "MIT",
-      "stars": 35855,
-      "pushedAt": "2026-11-06T16:29:38Z",
+      "stars": 35935,
+      "pushedAt": "2026-11-13T17:22:00Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
@@ -990,8 +990,8 @@
       "tier": "candidate",
       "category": "agents",
       "license": "MIT",
-      "stars": 2902,
-      "pushedAt": "2026-11-06T03:05:01Z",
+      "stars": 2920,
+      "pushedAt": "2026-11-13T03:30:36Z",
       "archived": false,
       "verifiedAgainst": null,
       "lastVerified": null,
